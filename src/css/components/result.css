@@ -1,0 +1,48 @@
+.main-search-result {
+}
+.section-title {
+  color: var(--font-color);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.16;
+
+  margin-bottom: 40px;
+}
+.cocktail-list {
+}
+.cocktail-item {
+  max-width: 335px;
+  min-height: 471px;
+  background-color: var(--white);
+  border-radius: 20px;
+  box-shadow: 0px 4px 46px 0px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+}
+.card-image {
+  border-radius: 16px;
+
+  margin-bottom: 20px;
+}
+.cocktail-name {
+  color: var(--font-color);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.33;
+
+  margin-bottom: 14px;
+}
+.cocktail-decr {
+  width: 295px;
+  height: 54px;
+  overflow: hidden;
+  color: var(--font-color);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.28;
+}
+.card-btn {
+}
+.icon {
+}
