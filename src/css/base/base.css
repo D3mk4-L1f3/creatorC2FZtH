@@ -1,29 +1,28 @@
 :root {
-  --body-bg-color: #11131f;
-  --white: #f6f5ef;
-  --normal-state: #93abae;
-  --card-bg: #1f212d;
-  --pressed-state: #88b3b9;
-  --secondary-title-color: #bec7c2;
+  --body-bg-color: ;
+  --white: #fdfdff;
+  --violet: #7e8fdd;
+  --font-color: #1f212d;
+  --torquoise: #9cdfdf;
+  --secondary-white: #f8f9ff;
 }
 
 html {
-  overflow-x: hidden;
-  scroll-behavior: smooth;
+  /* overflow-x: hidden;
+  scroll-behavior: smooth; */
 }
 
 body {
-  background-color: var(--body-bg-color);
-  color: var(--white);
+  background-color: var(--white);
+  color: var(--font-color);
 
-  font-family: "DM Sans", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  line-height: 1.4;
-  letter-spacing: -0.28px;
+  line-height: 1.28;
 
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 .container {
