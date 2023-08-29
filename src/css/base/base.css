@@ -1,10 +1,10 @@
 :root {
-  --body-bg-color: ;
   --white: #fdfdff;
   --violet: #7e8fdd;
   --font-color: #242424;
   --torquoise: #9cdfdf;
   --secondary-white: #f8f9ff;
+  --modal-backdrop: rgba(21, 21, 21, 0.6);
 }
 
 html {
