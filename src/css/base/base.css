@@ -1,0 +1,58 @@
+:root {
+  --body-bg-color: #11131f;
+  --white: #f6f5ef;
+  --normal-state: #93abae;
+  --card-bg: #1f212d;
+  --pressed-state: #88b3b9;
+  --secondary-title-color: #bec7c2;
+}
+
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--body-bg-color);
+  color: var(--white);
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: -0.28px;
+
+  overflow-x: hidden;
+}
+
+.container {
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 320px;
+  max-width: 374px;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 736px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .container {
+    max-width: 1248px;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  opacity: 0;
+}
