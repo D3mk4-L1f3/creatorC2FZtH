@@ -9,13 +9,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/goitacademy/parcel-project-template.git"
+    "url": "git+https://github.com/D3mk4-L1f3/creatorC2FZtH.git"
   },
   "keywords": [],
-  "author": "Alexander Repeta <alexander.repeta@gmail.com>",
+  "author": "team From Zero to Hero <dmtvchenko@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/goitacademy/parcel-project-template/issues"
+    "url": "https://github.com/D3mk4-L1f3/creatorC2FZtH/issues"
   },
   "dependencies": {
     "modern-normalize": "^1.1.0"
