@@ -2,7 +2,7 @@
   --body-bg-color: ;
   --white: #fdfdff;
   --violet: #7e8fdd;
-  --font-color: #1f212d;
+  --font-color: #242424;
   --torquoise: #9cdfdf;
   --secondary-white: #f8f9ff;
 }
@@ -26,8 +26,8 @@ body {
 }
 
 .container {
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: 20px;
+  padding-right: 20px;
   margin-left: auto;
   margin-right: auto;
   min-width: 320px;
@@ -36,13 +36,17 @@ body {
 
 @media screen and (min-width: 768px) {
   .container {
-    max-width: 736px;
+    padding-left: 32px;
+    padding-right: 32px;
+    max-width: 768px;
   }
 }
 
 @media screen and (min-width: 1280px) {
   .container {
-    max-width: 1248px;
+    padding-left: 100px;
+    padding-right: 100px;
+    max-width: 1280px;
   }
 }
 
