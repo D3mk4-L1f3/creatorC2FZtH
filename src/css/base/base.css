@@ -13,8 +13,8 @@ html {
 }
 
 body {
-  background-color: var(--font-color);
-  color: var(--white);
+  background-color: var(--white);
+  color: var(--font-color);
 
   font-family: 'Poppins', sans-serif;
   font-size: 14px;
