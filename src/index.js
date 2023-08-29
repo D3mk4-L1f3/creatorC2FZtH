@@ -1,1 +1,2 @@
-/* import'./js/smth'; */
+import './module/modal.js'; 
+import'./module/dark.js'; 
