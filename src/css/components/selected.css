@@ -40,9 +40,22 @@
   background: rgba(126, 143, 221, 0.4);
 }
 /* ================================================================= */
+.btn-container {
+  display: none;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 664px;
+  row-gap: 16px;
+  column-gap: 8px;
+
+  margin: auto;
+}
+
 .btn {
-  width: 40px;
+  /* width: 40px; */
+  width: calc(100% / 13);
   height: 40px;
+  /* flex-basis: calc((100% - 104px) / 13); */
 
   color: #fdfdff;
   text-align: center;
@@ -57,18 +70,6 @@
 
   background-color: rgba(126, 143, 221, 0.4);
 }
-
-.btn-container {
-  display: none;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 904px;
-  row-gap: 16px;
-  column-gap: 8px;
-
-  margin-top: 50px;
-}
-
 .btn-row {
   display: flex;
   justify-content: center;
