@@ -76,6 +76,8 @@
   line-height: 1.43;
   letter-spacing: 0.2em;
   text-transform: uppercase;
+
+  transition: var(--transition);
 }
 
 .card-btn:focus,
@@ -95,6 +97,8 @@
 
   border-radius: 12px;
   background: var(--violet);
+
+  transition: var(--transition);
 }
 
 .btn-favorite:hover,
