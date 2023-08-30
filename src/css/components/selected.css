@@ -73,11 +73,9 @@
     width: calc((100% - (8px * 13)) / 14);
   }
   .btn-select:nth-child(15) {
-    outline: 1px solid tomato;
     margin-left: 8px;
   }
   .btn-select:nth-child(27) {
-    outline: 1px solid tomato;
     margin-right: 8px;
   }
 }
@@ -93,15 +91,9 @@
 
 @media only screen and (min-width: 1280px) {
   .btn-container {
-    outline: 1px solid tomato;
     width: 904px;
   }
   .btn-select {
     width: 40px;
-  }
-  .btn-select:nth-child(20) {
-    outline: 1px solid tomato;
-
-    flex-shrink: 0;
   }
 }
