@@ -1,5 +1,6 @@
 .main-search-result {
 }
+
 .section-title {
   color: var(--font-color);
   font-size: 24px;
@@ -8,8 +9,10 @@
 
   margin-bottom: 40px;
 }
+
 .cocktail-list {
 }
+
 .cocktail-item {
   max-width: 335px;
   min-height: 471px;
@@ -18,13 +21,33 @@
   border-radius: 20px;
   box-shadow: 0px 4px 46px 0px rgba(0, 0, 0, 0.05);
 }
+@media only screen and (min-width: 768px) {
+  .cocktail-item {
+    max-width: 344px;
+    min-height: 523px;
+  }
+}
 .card-image {
+  width: 307px;
+  height: 257px;
   margin: 0 auto;
   border-radius: 16px;
   padding: 14px 14px 0;
 }
+@media only screen and (min-width: 768px) {
+  .card-image {
+    width: 316px;
+    height: 289px;
+  }
+}
+
 .text-box {
   padding: 20px;
+}
+@media only screen and (min-width: 768px) {
+  .text-box {
+    padding: 24px;
+  }
 }
 .cocktail-name {
   color: var(--font-color);
@@ -34,7 +57,14 @@
 
   margin-bottom: 14px;
 }
-.cocktail-decr {
+@media only screen and (min-width: 768px) {
+  .cocktail-name {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+}
+
+.cocktail-descr {
   width: 295px;
   height: 54px;
 
@@ -52,6 +82,7 @@
 
   margin-bottom: 20px;
 }
+
 .btn-box {
   width: 295px;
 
@@ -60,6 +91,12 @@
   gap: 15px;
   align-items: center;
 }
+@media only screen and (min-width: 768px) {
+  .btn-box {
+    width: 295px;
+  }
+}
+
 .card-btn {
   width: 232px;
   height: 48px;
@@ -74,10 +111,21 @@
   font-size: 14px;
   font-weight: 600;
   line-height: 1.43;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
 
   transition: var(--transition);
+}
+@media only screen and (min-width: 768px) {
+  .card-btn {
+    width: 225px;
+    height: 56px;
+
+    padding: 16px;
+
+    font-size: 18px;
+    line-height: 1.33;
+  }
 }
 
 .card-btn:focus,
@@ -97,8 +145,14 @@
 
   border-radius: 12px;
   background: var(--violet);
-
+  color: var(--white);
   transition: var(--transition);
+}
+@media only screen and (min-width: 768px) {
+  .btn-favorite {
+    width: 56px;
+    height: 56px;
+  }
 }
 
 .btn-favorite:hover,
@@ -106,6 +160,14 @@
 .btn-favorite:active {
   scale: 1.1;
 }
-.icon {
-  stroke: var(--white);
+.card-icon {
+  stroke: currentColor;
+  width: 18px;
+  height: 18px;
+}
+@media only screen and (min-width: 768px) {
+  .card-icon {
+    width: 24px;
+    height: 24px;
+  }
 }

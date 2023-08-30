@@ -19,6 +19,12 @@
 
   margin-bottom: 4px;
 }
+
+@media only screen and (min-width: 768px) {
+  .ingredient-name {
+    font-size: 20px;
+  }
+}
 .category {
   color: var(--modal-text-color);
   font-size: 14px;
