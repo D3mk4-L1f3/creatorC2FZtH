@@ -13,15 +13,18 @@
 .cocktail-item {
   max-width: 335px;
   min-height: 471px;
+
   background-color: var(--white);
   border-radius: 20px;
   box-shadow: 0px 4px 46px 0px rgba(0, 0, 0, 0.05);
-  padding: 20px;
 }
 .card-image {
+  margin: 0 auto;
   border-radius: 16px;
-
-  margin-bottom: 20px;
+  padding: 14px 14px 0;
+}
+.text-box {
+  padding: 20px;
 }
 .cocktail-name {
   color: var(--font-color);
@@ -34,15 +37,120 @@
 .cocktail-decr {
   width: 295px;
   height: 54px;
-  overflow: hidden;
+
   color: var(--font-color);
+
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
   text-overflow: ellipsis;
-  white-space: nowrap;
+
   font-size: 14px;
   font-weight: 400;
   line-height: 1.28;
+
+  margin-bottom: 20px;
+}
+.btn-box {
+  width: 295px;
+
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  align-items: center;
 }
 .card-btn {
+  width: 232px;
+  height: 48px;
+
+  background-color: inherit;
+
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid var(--violet);
+
+  color: var(--font-color);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.43;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.card-btn:focus,
+.card-btn:hover {
+  background-color: var(--violet);
+
+  color: var(--white);
+}
+
+.btn-favorite {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 12px;
+  background: var(--violet);
+}
+
+.btn-favorite:hover,
+.btn-favorite:focus,
+.btn-favorite:active {
+  scale: 1.1;
 }
 .icon {
+  stroke: var(--white);
+}
+
+/* особливі класи інгредієнту */
+.favorite-ingridients-result {
+}
+.ingredient-list {
+}
+.ingredient-item {
+  max-width: 335px;
+  min-height: 222px;
+
+  background-color: var(--white);
+  border-radius: 20px;
+  box-shadow: 0px 4px 46px 0px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+}
+.ingredient-name {
+  color: var(--font-color);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.33;
+
+  margin-bottom: 4px;
+}
+.category {
+  color: var(--modal-text-color);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.29;
+
+  margin-bottom: 14px;
+}
+.ingredient-decr {
+  width: 295px;
+  height: 54px;
+
+  color: var(--font-color);
+
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.28;
+
+  margin-bottom: 20px;
 }
