@@ -5,6 +5,8 @@
   --torquoise: #9cdfdf;
   --secondary-white: #f8f9ff;
   --modal-backdrop: rgba(21, 21, 21, 0.6);
+  --modal-text-color: rgba(36, 36, 36, 0.5);
+  --modal-secondary-text: rgba(36, 36, 36, 0.8);
   --hover-color: #6e7fcf;
 }
 
