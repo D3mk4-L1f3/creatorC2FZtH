@@ -5,13 +5,14 @@ const refs = {
   closeModalBtn: document.querySelector('[data-modal-close]'),
   modal: document.querySelector('[data-modal]'),
   modalDivEl: document.querySelector('.modal-cocktail'),
-  ingredLink: document.querySelector('.ingred-item-link'),
+  ingredLink: document.querySelector('.modal-ingredient-list'),
   body: document.body,
 };
 
 refs.cardBtn.addEventListener('click', onShowModal);
 refs.closeModalBtn.addEventListener('click', onCloseModal);
 refs.modal.addEventListener('click', onClick);
+refs.ingredLink.addEventListener('click', onIngredientClick);
 
 // const BASE_URL = '';
 
@@ -51,19 +52,19 @@ async function onShowModal() {
 //${renderListIngredients()}
 //
 //             <li class="modal-ingredient-item modal-text">
-//   <button class="ingred-item-link" type="button">....</button>
+//   <a href="#" class="ingred-item-link">Vodka</a>
 // </li>
 // <li class="modal-ingredient-item modal-text">
-//   <button class="ingred-item-link" type="button">....</button>
+//   <a href="#" class="ingred-item-link">Vodk</a>
 // </li>
 // <li class="modal-ingredient-item modal-text">
-//   <button class="ingred-item-link" type="button">....</button>
+//   <a href="#" class="ingred-item-link">Vod</a>
 // </li>
 // <li class="modal-ingredient-item modal-text">
-//   <button class="ingred-item-link" type="button">....</button>
+//   <a href="#" class="ingred-item-link">Vo</a>
 // </li>
 // <li class="modal-ingredient-item modal-text">
-//   <button class="ingred-item-link" type="button">....</button>
+//   <a href="#" class="ingred-item-link">V</a>
 // </li>
 //         </ul>
 //       </div>
@@ -105,4 +106,9 @@ function onEscape(event) {
   if (event.code === 'Escape') {
     onCloseModal();
   }
+}
+
+function onIngredientClick(e) {
+  e.preventDefault();
+  console.log(e.target);
 }
