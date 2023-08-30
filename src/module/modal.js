@@ -5,6 +5,7 @@ const refs = {
   closeModalBtn: document.querySelector('[data-modal-close]'),
   modal: document.querySelector('[data-modal]'),
   modalDivEl: document.querySelector('.modal-cocktail'),
+  ingredLink: document.querySelector('.ingred-item-link'),
   body: document.body,
 };
 
@@ -49,20 +50,20 @@ async function onShowModal() {
 //
 //${renderListIngredients()}
 //
-//         <li class="modal-ingredient-item modal-text">
-//   <button>....</button>
+//             <li class="modal-ingredient-item modal-text">
+//   <button class="ingred-item-link" type="button">....</button>
 // </li>
 // <li class="modal-ingredient-item modal-text">
-//   <button>....</button>
+//   <button class="ingred-item-link" type="button">....</button>
 // </li>
 // <li class="modal-ingredient-item modal-text">
-//   <button>....</button>
+//   <button class="ingred-item-link" type="button">....</button>
 // </li>
 // <li class="modal-ingredient-item modal-text">
-//   <button>....</button>
+//   <button class="ingred-item-link" type="button">....</button>
 // </li>
 // <li class="modal-ingredient-item modal-text">
-//   <button>....</button>
+//   <button class="ingred-item-link" type="button">....</button>
 // </li>
 //         </ul>
 //       </div>
