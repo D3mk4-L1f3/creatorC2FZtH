@@ -1,4 +1,19 @@
+.favorite-coctails-result {
+  padding-bottom: 80px;
+}
+@media only screen and (min-width: 768px) {
+  .favorite-coctails-result {
+    padding-bottom: 100px;
+  }
+}
+
 .favorite-ingridients-result {
+  padding-bottom: 80px;
+}
+@media only screen and (min-width: 768px) {
+  .favorite-ingridients-result {
+    padding-bottom: 100px;
+  }
 }
 .ingredient-list {
 }
