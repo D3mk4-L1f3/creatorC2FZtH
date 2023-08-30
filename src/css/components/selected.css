@@ -33,6 +33,12 @@
   top: 7px;
   fill: var(--white);
   pointer-events: none;
+
+  transform: rotate(90deg);
+  transition: transform 0.3s ease;
+}
+.icon.rotate {
+  transform: rotate(180deg);
 }
 
 .cocktail-select option {
