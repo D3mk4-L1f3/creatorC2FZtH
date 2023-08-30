@@ -5,7 +5,10 @@
   --torquoise: #9cdfdf;
   --secondary-white: #f8f9ff;
   --modal-backdrop: rgba(21, 21, 21, 0.6);
+  --modal-text-color: rgba(36, 36, 36, 0.5);
+  --modal-secondary-text: rgba(36, 36, 36, 0.8);
   --hover-color: #6e7fcf;
+  --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 html {
@@ -44,8 +47,8 @@ body {
 
 @media screen and (min-width: 1280px) {
   .container {
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 64px;
+    padding-right: 64px;
     max-width: 1280px;
   }
 }
