@@ -1,54 +1,24 @@
-/* .select-box {
-  display: flex;
-  justify-content: center;
-}
-.cocktail-select {
-  padding: 8px 14px;
-  width: 90px;
-  height: 34px;
-
-  font-family: Poppins;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 18px;
-
-  color: #fdfdff;
-  border-radius: 8px;
-  background: rgba(126, 143, 221, 0.4);
-}
-select {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
-}
-select::after {
-  content: 'dsadsa';
-  color: tomato;
-}
-
-.icon {
-  rotate: -90deg;
-  stroke: #fdfdff;
-  fill: tomato;
-} */
-
 .select-box {
   position: relative;
-  display: inline-block;
-  width: 90px; /* Увеличьте или уменьшите ширину селекта, если требуется */
+  display: iinline-flex;
+  gap: 33px;
+  width: 90px;
+  border: none;
 }
 
 .cocktail-select {
   position: relative;
+
   padding: 8px 14px;
   width: 100%;
   height: 34px;
+
   font-family: Poppins;
   font-size: 14px;
   font-style: normal;
   font-weight: 600;
   line-height: 18px;
+
   color: #fdfdff;
   border-radius: 8px;
   background: rgba(126, 143, 221, 0.4);
@@ -66,6 +36,6 @@ select::after {
 }
 
 .cocktail-select option {
-  color: black; /* Цвет текста опций */
-  background: white; /* Фон опций */
+  color: #fdfdff;
+  background: rgba(126, 143, 221, 0.4);
 }
