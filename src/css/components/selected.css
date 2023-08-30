@@ -39,13 +39,12 @@
   color: #fdfdff;
   background: rgba(126, 143, 221, 0.4);
 }
-/* ================================================================= */
+/* ============BUTTON SELECT============= */
 .btn-container {
   display: none;
   justify-content: center;
   flex-wrap: wrap;
   width: 664px;
-  /* flex-basis: calc((100% - 104px) / 13); */
   row-gap: 16px;
   column-gap: 8px;
 
@@ -68,6 +67,7 @@
 
   background-color: rgba(126, 143, 221, 0.4);
 }
+
 @media only screen and (min-width: 768px) and (max-width: 1279px) {
   .btn-select {
     width: calc((100% - (8px * 13)) / 14);
