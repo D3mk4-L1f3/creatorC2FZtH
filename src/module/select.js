@@ -6,7 +6,6 @@ const refs = {
 refs.cocktailSelect.addEventListener('change', onCocktailSelectClick);
 
 function onCocktailSelectClick(e) {
-  const selectOption = e.target.options[e.target.selectedIndex];
-
-  selectOption.style.backgroundColor = '#9CDFDF';
+  const selectedOption = e.target;
+  selectedOption.style.backgroundColor = '#9CDFDF';
 }
