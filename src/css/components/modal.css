@@ -1,4 +1,4 @@
-.backdrop {
+.backdrop, .backdrop-ingred {
     position: fixed;
     top: 0;
     left: 0;
@@ -11,14 +11,16 @@
         visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.backdrop.is-hidden {
+.backdrop.is-hidden,
+.backdrop-ingred.is-hidden {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
 }
 
-.modal-cocktail {
-    /* min-height: 843px; */
+.modal-cocktail, .modal-ingred {
+    max-height: 100%;
+    overflow: auto;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -42,7 +44,8 @@
 @media screen and (min-width: 768px) {
     .modal-cocktail {
         max-width: 600px;
-        /* min-height: 569px; */
+        max-height: 100%;
+        overflow: auto;
         padding: 40px 40px;
     }
 
@@ -128,6 +131,8 @@
 
 .modal-ingredient-list {
     margin-bottom: 40px;
+    list-style: disc;
+    padding-left: 20px;
 }
 
 .modal-ingredient-item {
@@ -145,7 +150,6 @@
     padding: 14px 28px;
     border-radius: 12px;
     background-color: var(--violet);
-    border: none;
     transition: background-color 250ms linear;
 }
 
@@ -155,7 +159,69 @@
 
 @media screen and (min-width: 768px) {
     .modal-button {
-        letter-spacing: 0.28px;
+        letter-spacing: 0.36px;
         padding: 16px 44px;
+        font-size: 18px;
     }
+}
+
+/* -------------ingred ------------ */
+
+.ingred-modal-title {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.33;
+    margin-bottom: 8px;
+}
+
+@media screen and (min-width:768px) {
+    .ingred-modal-title {
+        font-size: 20px;
+        line-height: 1.2;
+        margin-bottom: 12px;
+    }
+
+}
+
+.ingred-modal-subtitle {
+    color: var(--modal-text-color);
+    font-weight: 600;
+    line-height: 1.29;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--decoration-color);
+}
+
+@media screen and (min-width:768px) {
+    .ingred-modal-subtitle {
+        font-size: 16px;
+        line-height: 1.13;
+        padding-bottom: 22px;
+        margin-bottom: 18px;
+    }
+
+}
+
+.selected-title {
+    color: var(--font-color);
+    font-weight: 600;
+}
+
+.modal-ingred-desc {
+    color: var(--modal-text-color);
+    line-height: 1.4;
+    margin-bottom: 40px;
+}
+
+.modal-ingred-list {
+    list-style: disc;
+    padding-left: 20px;
+    margin-bottom: 40px;
+}
+
+.modal-ingred-item {
+    color: var(--modal-secondary-text);
+    line-height: 1.29;
+    margin-bottom: 8px;
 }
