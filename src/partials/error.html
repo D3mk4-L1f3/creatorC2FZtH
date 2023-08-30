@@ -5,13 +5,13 @@
     <ul class="cocktail-list list">
       <!-- Шаблон коктейлю для рендеру -->
       <li class="cocktail-item">
-        <img
-          class="card-image img"
-          src="#"
-          width="307"
-          height="257"
-          alt="empty space for render"
-        />
+        <picture>
+            <!-- тут типу ретіна і різні розширення но я не дупляю що поверне бекенд, бо його ще нема -->
+            <!-- <source media="(min-width: 1280px)" srcset="./images/testImg@desc.webp 1x, ./images/testimg@desk2x.webp 2x" /> -->
+            <source media="(min-width: 768px)" srcset="./images/testImg@tab.webp 1x, ./images/testimg@mob2x.webp 2x" />
+            <source media="(max-width: 767px)" srcset="./images/testImg@mob.webp 1x, ./images/testimg@mob2x.webp 2x" />
+            <img class="card-image img" src="./images/testImg@mob.webp" alt="empty space for render" />
+        </picture>
         <div class="text-box">
           <h2 class="cocktail-name">Negroni</h2>
           <p class="cocktail-descr">
