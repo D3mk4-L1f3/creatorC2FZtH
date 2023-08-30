@@ -1,6 +1,13 @@
+// import axios from 'axios';
+// =================================================================
+
+const BASE_URL = 'http://drinkify-backend.p.goit.global/api/v1/';
+
+// =================================================================
 const refs = {
   iconEl: document.querySelector('.icon'),
   cocktailSelect: document.querySelector('.cocktail-select'),
+  btnContainer: document.querySelector('.btn-container'),
 };
 
 refs.cocktailSelect.addEventListener('change', onCocktailSelectClick);
