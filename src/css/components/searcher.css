@@ -1,0 +1,71 @@
+/* .select-box {
+  display: flex;
+  justify-content: center;
+}
+.cocktail-select {
+  padding: 8px 14px;
+  width: 90px;
+  height: 34px;
+
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 18px;
+
+  color: #fdfdff;
+  border-radius: 8px;
+  background: rgba(126, 143, 221, 0.4);
+}
+select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+select::after {
+  content: 'dsadsa';
+  color: tomato;
+}
+
+.icon {
+  rotate: -90deg;
+  stroke: #fdfdff;
+  fill: tomato;
+} */
+
+.select-box {
+  position: relative;
+  display: inline-block;
+  width: 90px; /* Увеличьте или уменьшите ширину селекта, если требуется */
+}
+
+.cocktail-select {
+  position: relative;
+  padding: 8px 14px;
+  width: 100%;
+  height: 34px;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 18px;
+  color: #fdfdff;
+  border-radius: 8px;
+  background: rgba(126, 143, 221, 0.4);
+  border: none;
+  appearance: none;
+}
+
+.icon {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  fill: #fdfdff;
+  cursor: pointer;
+}
+
+.cocktail-select option {
+  color: black; /* Цвет текста опций */
+  background: white; /* Фон опций */
+}
