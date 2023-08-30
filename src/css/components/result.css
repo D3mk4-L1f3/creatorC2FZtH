@@ -1,5 +1,5 @@
-.main-search-result {
-}
+.main-search-result {}
+
 .section-title {
   color: var(--font-color);
   font-size: 24px;
@@ -8,8 +8,9 @@
 
   margin-bottom: 40px;
 }
-.cocktail-list {
-}
+
+.cocktail-list {}
+
 .cocktail-item {
   max-width: 335px;
   min-height: 471px;
@@ -18,14 +19,17 @@
   border-radius: 20px;
   box-shadow: 0px 4px 46px 0px rgba(0, 0, 0, 0.05);
 }
+
 .card-image {
   margin: 0 auto;
   border-radius: 16px;
   padding: 14px 14px 0;
 }
+
 .text-box {
   padding: 20px;
 }
+
 .cocktail-name {
   color: var(--font-color);
   font-size: 18px;
@@ -34,6 +38,7 @@
 
   margin-bottom: 14px;
 }
+
 .cocktail-decr {
   width: 295px;
   height: 54px;
@@ -52,6 +57,7 @@
 
   margin-bottom: 20px;
 }
+
 .btn-box {
   width: 295px;
 
@@ -60,6 +66,7 @@
   gap: 15px;
   align-items: center;
 }
+
 .card-btn {
   width: 232px;
   height: 48px;
@@ -102,15 +109,16 @@
 .btn-favorite:active {
   scale: 1.1;
 }
+
 .icon {
   stroke: var(--white);
 }
 
 /* особливі класи інгредієнту */
-.favorite-ingridients-result {
-}
-.ingredient-list {
-}
+.favorite-ingridients-result {}
+
+.ingredient-list {}
+
 .ingredient-item {
   max-width: 335px;
   min-height: 222px;
@@ -120,6 +128,7 @@
   box-shadow: 0px 4px 46px 0px rgba(0, 0, 0, 0.05);
   padding: 20px;
 }
+
 .ingredient-name {
   color: var(--font-color);
   font-size: 18px;
@@ -128,6 +137,7 @@
 
   margin-bottom: 4px;
 }
+
 .category {
   color: var(--modal-text-color);
   font-size: 14px;
@@ -136,6 +146,7 @@
 
   margin-bottom: 14px;
 }
+
 .ingredient-decr {
   width: 295px;
   height: 54px;
