@@ -1,7 +1,17 @@
 // import axios from 'axios';
 // =================================================================
 
-const BASE_URL = 'http://drinkify-backend.p.goit.global/api/v1/';
+const BASE_URL =
+  'https://drinkify-backend.p.goit.global/api/v1/cocktails/search';
+
+function fetchCocktailsbyFirstLetter(letter) {
+  return fetch(`BASE_URL?${letter}`).then(res => {
+    if (!res.ok) {
+      throw new Error(res.statusText);
+    }
+    return res.json();
+  });
+}
 
 // =================================================================
 const refs = {
