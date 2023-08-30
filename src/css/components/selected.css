@@ -20,9 +20,9 @@
   font-weight: 600;
   line-height: 18px;
 
-  color: #fdfdff;
+  color: var(--white);
   border-radius: 8px;
-  background-color: rgba(126, 143, 221, 0.4);
+  background-color: var(--btn-select-color);
   border: none;
   appearance: none;
 }
@@ -31,13 +31,13 @@
   position: absolute;
   right: 14px;
   top: 7px;
-  fill: #fdfdff;
+  fill: var(--white);
   pointer-events: none;
 }
 
 .cocktail-select option {
-  color: #fdfdff;
-  background: rgba(126, 143, 221, 0.4);
+  color: var(--white);
+  background: var(--btn-select-color);
 }
 /* ============BUTTON SELECT============= */
 .btn-container {
@@ -54,7 +54,7 @@
 .btn-select {
   height: 40px;
 
-  color: #fdfdff;
+  color: var(--white);
   text-align: center;
   font-family: Poppins;
   font-size: 20px;
@@ -65,7 +65,11 @@
   border-radius: 8px;
   border: none;
 
-  background-color: rgba(126, 143, 221, 0.4);
+  background-color: var(--btn-select-color);
+}
+.btn-select:hover,
+.btn-select:focus {
+  background-color: var(--torquoise);
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1279px) {
