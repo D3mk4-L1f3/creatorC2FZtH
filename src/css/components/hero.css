@@ -153,6 +153,30 @@
 
 @media screen and (min-width:768px) {
 
+    .header-hero {
+        max-width: 384px;
+
+        font-family: Poppins;
+        font-size: 44px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 48px;
+
+    }
+
+    .paragraf-hero {
+        color: #242424;
+        font-family: Poppins;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.5;
+      max-width: 338px;
+
+
+
+    }
+
 
 
     .main-hero-box {
@@ -164,13 +188,19 @@
 
     .girl-hero {
         position: absolute;
-        top: -5px;
-        right: 35px;
-        
+        top:-7px;
+        right: 49px;
+
 
     }
 
+    .fav-drink {
+        bottom: 110px;
+        left: 20px;
+        scale: 0.6;
+        min-width: 198px;
 
+    }
 
 
 
