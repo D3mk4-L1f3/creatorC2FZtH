@@ -1,3 +1,6 @@
+.selected {
+  margin-bottom: 80px;
+}
 .select-box {
   position: relative;
   display: iinline-flex;
@@ -94,6 +97,9 @@
 }
 
 @media only screen and (min-width: 768px) {
+  .selected {
+    margin-bottom: 100px;
+  }
   .select-box {
     display: none;
   }
