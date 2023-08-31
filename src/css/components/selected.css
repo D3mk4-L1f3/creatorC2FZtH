@@ -29,7 +29,6 @@
   appearance: none;
 
   outline: none;
-
   overflow: hidden;
 }
 
@@ -54,20 +53,20 @@
 /* ============BUTTON SELECT============= */
 .btn-container {
   display: none;
+
   justify-content: center;
   flex-wrap: wrap;
-  width: 664px;
   row-gap: 16px;
   column-gap: 8px;
+  width: 664px;
 
   margin: auto;
 }
 
 .btn-select {
   height: 40px;
-
-  color: var(--white);
   text-align: center;
+
   font-family: Poppins;
   font-size: 20px;
   font-style: normal;
@@ -77,6 +76,7 @@
   border-radius: 8px;
   border: none;
 
+  color: var(--white);
   background-color: var(--btn-select-color);
 }
 .btn-select:hover,
