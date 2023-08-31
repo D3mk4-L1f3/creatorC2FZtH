@@ -4,7 +4,6 @@
   margin: auto;
   gap: 33px;
   width: 90px;
-  border: none;
 }
 
 .cocktail-select {
@@ -25,6 +24,10 @@
   background-color: var(--btn-select-color);
   border: none;
   appearance: none;
+
+  outline: none;
+
+  overflow: hidden;
 }
 
 .icon {
@@ -35,10 +38,10 @@
   pointer-events: none;
 
   transform: rotate(90deg);
-  transition: transform 0.3s ease;
+  transition: var(--transition);
 }
 .icon.rotate {
-  transform: rotate(180deg);
+  transform: rotate(-90deg);
 }
 
 .cocktail-select option {
