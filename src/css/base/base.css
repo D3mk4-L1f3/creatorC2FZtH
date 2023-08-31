@@ -11,6 +11,26 @@
   --hover-color: #6e7fcf;
   --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   --decoration-color: rgba(36, 36, 36, 0.1);
+  --bg-top-vector: rgba(156, 223, 223, 0.8);
+  --bg-md-vector: rgba(156, 223, 223, 0.5);
+}
+
+.usual-mode {
+  background: linear-gradient(
+    175deg,
+    rgba(253, 253, 255, 0.1) 14.85%,
+    rgba(8, 2, 21, 0) 95.72%
+  );
+  backdrop-filter: blur(100px);
+}
+
+.dark-mode {
+  background: linear-gradient(
+    175deg,
+    rgba(0, 0, 0, 0.1) 14.85%,
+    rgba(8, 2, 21, 0) 95.72%
+  );
+  backdrop-filter: blur(100px);
 }
 
 html {
