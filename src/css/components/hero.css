@@ -80,13 +80,18 @@
     scale: 0.9;
 
 
-   transition: var(--transition);
+    transition: var(--transition);
 
 }
 
 
 
 @media screen and (min-width:340px) {
+
+
+
+
+
 
     .fav-drink {
         bottom: 39px;
@@ -159,9 +164,15 @@
 
     .girl-hero {
         position: absolute;
-        top: -52px;
-        left: ;
+        top: -5px;
+        right: 35px;
+        
+
     }
+
+
+
+
 
 
 
