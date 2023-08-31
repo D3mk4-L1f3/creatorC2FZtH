@@ -1,0 +1,187 @@
+.header-hero {
+    color: #242424;
+    font-family: Poppins;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.18;
+    margin-bottom: 18px;
+    margin-left: 20px;
+
+}
+
+.span-drink {
+    color: #7E8FDD;
+    font-style: italic;
+    line-height: 1.18;
+
+}
+
+.btn-hero {
+    background-color: #7E8FDD;
+    border-color: transparent;
+    color: #FDFDFF;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.42;
+    letter-spacing: 0.28px;
+    text-transform: uppercase;
+    display: inline-flex;
+    padding: 22px 44px;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 12px;
+    margin-left: 20px;
+
+
+
+}
+
+
+.paragraf-hero {
+
+    color: #242424;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.42;
+    margin-bottom: 36px;
+    margin-left: 20px;
+
+}
+
+
+.hero-twice {
+    position: relative;
+    height: 400px;
+
+}
+
+
+
+
+.fav-drink {
+    position: absolute;
+    text-align: start;
+    color: #242424;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.42;
+    letter-spacing: 0.28px;
+    text-transform: uppercase;
+    max-width: 200px;
+    bottom: 56px;
+    left: 59px;
+    scale: 0.9;
+
+
+   transition: var(--transition);
+
+}
+
+
+
+@media screen and (min-width:340px) {
+
+    .fav-drink {
+        bottom: 39px;
+        left: 60px;
+        scale: 1;
+
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.hero-box {
+    margin-left: 15px;
+    position: relative;
+}
+
+
+
+
+
+
+
+.star-svg {
+    top: 102px;
+    left: 190px;
+
+}
+
+
+
+
+
+
+
+
+
+.girl-hero {
+    position: absolute;
+    top: -16px;
+
+}
+
+
+
+
+/* Tablet version width 768px */
+
+@media screen and (min-width:768px) {
+
+
+
+    .main-hero-box {
+        display: flex;
+        align-items: center;
+    }
+
+
+
+    .girl-hero {
+        position: absolute;
+        top: -52px;
+        left: ;
+    }
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* DESKTOP version width 1280px */
+
+@media screen and (min-width:1280px) {}
