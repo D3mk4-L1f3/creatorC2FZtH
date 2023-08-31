@@ -195,12 +195,17 @@
     }
 
     .fav-drink {
-        bottom: 110px;
-        left: 20px;
-        scale: 0.6;
+        bottom: 10px;
+        left: 55px;
+        scale: 0.7;
         min-width: 198px;
 
     }
+
+
+
+.btn-hero{
+
 
 
 
