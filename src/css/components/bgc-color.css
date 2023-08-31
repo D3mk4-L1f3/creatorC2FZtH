@@ -1,0 +1,10 @@
+.background-img-top {
+  z-index: -1;
+  position: absolute;
+  background-image: url(../../images/Vector\ 30part-top-mob.png);
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  -webkit-filter: blur(10px);
+  filter: blur(10px);
+}
