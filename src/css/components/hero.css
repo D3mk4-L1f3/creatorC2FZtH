@@ -168,10 +168,9 @@
         color: #242424;
         font-family: Poppins;
         font-size: 16px;
-        font-style: normal;
         font-weight: 400;
         line-height: 1.5;
-      max-width: 338px;
+        max-width: 338px;
 
 
 
@@ -188,31 +187,29 @@
 
     .girl-hero {
         position: absolute;
-        top:-7px;
+        top: -7px;
         right: 49px;
 
 
     }
 
     .fav-drink {
-        bottom: 10px;
-        left: 55px;
+        bottom: 1px;
+        left: 60px;
         scale: 0.7;
         min-width: 198px;
+        color: #242424;
+        font-family: Poppins;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.5;
+        letter-spacing: 0.32px;
 
     }
 
 
 
-.btn-hero{
-
-
-
-
-
-
-
-}
+    .btn-hero {}
 
 
 
@@ -228,6 +225,6 @@
 
 
 
-/* DESKTOP version width 1280px */
+    /* DESKTOP version width 1280px */
 
-@media screen and (min-width:1280px) {}
+    @media screen and (min-width:1280px) {}
