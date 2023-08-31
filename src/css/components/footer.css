@@ -2,8 +2,13 @@
 .footer-page {
     background-color: var(--violet);
     min-height: 186px;
+    /* min-width: 100%; */
+}
+
+.footer-content {
     display: flex;
-    gap: 85px;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .footer-logo.link {
@@ -12,7 +17,6 @@
     display: flex;
     align-items: center;
     gap: 4px;
-    margin-top: 40px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -43,6 +47,8 @@
 
 .footer-logo-icon {
     fill: var(--torquoise);
+    width: 24px;
+    height: 20px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -52,11 +58,17 @@
     }
 }
 
+@media only screen and (min-width: 1280px) {
+    .footer-logo-icon {
+        width: 35px;
+        height: 30px;
+    }
+}
+
 .social-media {
     display: flex;
-        justify-content: center;
-        gap: 14px;
-        margin-top: 16px;
+    flex-direction: column;
+    align-items: center;
 }
 
 .social-media-text {
@@ -68,6 +80,16 @@
     font-weight: 600;
     line-height: 18px;
     text-transform: uppercase;
+    margin-bottom: 14px;
+    order: -1;
+}
+
+@media only screen and (min-width: 767px) {
+    .social-media-text {
+        padding-top: 32px;
+        line-height: 15.4px;
+        margin-bottom: 16px;
+        }
 }
 
 .mobile-social-media-icons {
@@ -81,5 +103,25 @@
     width: 32px;
     height: 32px;
     border-radius: 6px;
-    border: 1px solid rgba(253, 253, 255, 0.50);
+}
+
+@media only screen and (min-width: 767px) {
+.mobile-social-media-icons {
+    width: 40px;
+    height: 40px;
+}
+}
+
+.mobile-social-media-icons.youtube {
+        border: 1px solid rgba(253, 253, 255, 0.50);
+}
+
+.mobile-social-item {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.mobile-social-item.youtube {
+    display: inline-block;
+    margin-right: 10px;
 }
