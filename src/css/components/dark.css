@@ -1,13 +1,13 @@
 html.dark,
 .dark body {
-  background-color: #1a1a1a;
-  color: #fdfdff;
+  background-color: var(--bg-dark);
+  color: var(--white);
 }
 
 .dark {
-  color: #fdfdff;
+  color: var(--white);
 }
 
 .dark-background {
-  background-color: #232330;
+  background-color: var(--bg-second-dark);
 }
