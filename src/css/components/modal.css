@@ -1,11 +1,13 @@
-.backdrop, .backdrop-ingred {
+.backdrop {
     position: fixed;
     top: 0;
     left: 0;
     z-index: 50;
     width: 100%;
     height: 100%;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: var(--modal-backdrop);
     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
         visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -18,19 +20,25 @@
     pointer-events: none;
 }
 
-.modal-cocktail, .modal-ingred {
+.modal-cocktail {
     max-height: 100%;
     overflow: auto;
-    position: absolute;
+    /* position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); */
     width: 100%;
     border-radius: 20px;
     background-color: var(--secondary-white);
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    /* transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1); */
     max-width: 320px;
     padding: 40px 20px;
+    transform: scale(0);
+    transition: transform 250ms ease-in-out;
+}
+
+.modal-cocktail.active {
+    transform: scale(1);
 }
 
 
@@ -150,6 +158,7 @@
     width: 5px;
     height: 5px;
     background-color: var(--modal-secondary-text);
+    transition: background-color 250ms linear;
 }
 
 .modal-button {
@@ -177,6 +186,11 @@
     }
 }
 
+.ingred-item-link {
+    transition: color 250ms linear;
+
+}
+
 .modal-ingredient-item:hover .ingred-item-link, .modal-ingredient-item:focus .ingred-item-link {
     color: var(--violet);
 }
@@ -186,6 +200,35 @@
 }
 
 /* -------------ingred ------------ */
+
+
+.backdrop-ingred {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 55;
+    width: 100%;
+    height: 100%;
+    background-color: var(--modal-backdrop);
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-ingred {
+    max-height: 100%;
+    overflow: auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    border-radius: 20px;
+    background-color: var(--secondary-white);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    max-width: 320px;
+    padding: 40px 20px;
+
+}
 
 .ingred-modal-title {
     font-size: 18px;
