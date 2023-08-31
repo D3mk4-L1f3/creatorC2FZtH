@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'Poppins', sans-serif;
-  src: url(/src/fonts/Poppins-Regular.ttf),
-    url(/src/fonts/Poppins-Medium.ttf) url(/src/fonts/Poppins-SemiBold.ttf);
+  font-family: 'Poppins';
+  src: url(/src/fonts/Poppins-Regular.ttf), url(/src/fonts/Poppins-Medium.ttf),
+    url(/src/fonts/Poppins-SemiBold.ttf);
 }
