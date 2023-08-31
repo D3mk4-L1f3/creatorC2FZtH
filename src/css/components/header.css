@@ -44,14 +44,34 @@ padding-bottom: 100px;
     }
 }
 
-.icon-hamburger {
-    fill: var(--font-color);
+.menu-toggle {
+    min-height: 24px;
+    min-width: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+    outline: none;
 }
 
 @media only screen and (min-width: 1280px) {
     .menu-toggle {
         display: none;
     }
+}
+
+.icon-burger {
+    stroke: var(--font-color);
+}
+
+.icon-burger:hover,
+.icon-burger:focus {
+    stroke: var(--hover-color);
 }
 
 .logo.link {
