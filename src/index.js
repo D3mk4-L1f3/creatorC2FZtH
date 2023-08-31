@@ -1,4 +1,5 @@
 import './module/header.js';
+import './module/localStorage.js';
 import './module/hero.js';
 import './module/modal.js';
 import './module/upperSearchNav.js'
