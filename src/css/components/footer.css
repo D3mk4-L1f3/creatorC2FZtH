@@ -53,17 +53,12 @@
 
 @media only screen and (min-width: 768px) {
     .footer-logo-icon {
+        fill: var(--torquoise);
         width: 35px;
         height: 30px;
     }
 }
 
-@media only screen and (min-width: 1280px) {
-    .footer-logo-icon {
-        width: 35px;
-        height: 30px;
-    }
-}
 
 .social-media {
     display: flex;
