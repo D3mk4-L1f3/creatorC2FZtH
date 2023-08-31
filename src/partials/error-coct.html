@@ -1,12 +1,23 @@
-<!-- Шаблон коктейлю головна сторінка -->
-<section class="main-search-result">
+<section class="favorite-coctails-result">
   <div class="container">
-    <h2 class="section-title">Cocktails</h2>
-    <!-- Шаблон коктейлю для рендеру -->
+    <h2 class="section-title">Favorite cocktails</h2>
+    <!-- Помилка коли нема фаворит коктейлів -->
+    <div class="error-box">
+      <svg class="icon-error">
+        <use href="./public/sprite.svg#icon-error"></use>
+      </svg>
+      <p class="error-text">
+        You haven't added any
+        <span class="error-accent-text">favorite cocktails</span> yet
+      </p>
+    </div>
+
+    <!-- список для коктейлів  -->
     <ul class="cocktail-list list">
+      <!-- Шаблон коктейлю для рендеру -->
       <li class="cocktail-item">
         <picture>
-          <!-- тут типу ретіна і різні розширення но я не дупляю що поверне бекенд(якого ще нема) чи лише 1  формат чи відразу декілька -->
+          <!-- тут типу ретіна і різні розширення но я не дупляю що поверне бекенд, бо його ще нема -->
           <!-- <source media="(min-width: 1280px)" srcset="./images/testImg@desc.webp 1x, ./images/testimg@desk2x.webp 2x" /> -->
           <source
             media="(min-width: 768px)"
@@ -37,12 +48,10 @@
             a robust and refreshing taste experience.
           </p>
           <div class="btn-box">
-            <button type="button" class="card-btn btn js-btn-learn-more">
-              learn more
-            </button>
-            <button type="button" class="btn-favorite btn js-btn-favorite">
-              <svg class="card-icon">
-                <use href="./public/sprite.svg#heart"></use>
+            <button class="card-btn btn js-btn-learn-more">learn more</button>
+            <button class="btn-favorite btn js-btn-favorite">
+              <svg class="card-icon" width="18" height="18">
+                <use href="./public/sprite.svg#trash-icon"></use>
               </svg>
             </button>
           </div>

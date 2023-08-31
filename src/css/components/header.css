@@ -1,3 +1,106 @@
+@media only screen and (min-width: 1280px) {
+    .container {
+        padding-left: 36px;
+        padding-right: 36px;
+    }
+}
+
+.header-container {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding-top: 20px;
+padding-bottom: 68px;
+} 
+
+@media only screen and (min-width: 768px) {
+.header-container{
+padding-top: 24px;
+padding-bottom: 100px;
+}
+}
+
+@media only screen and (min-width: 1280px) {
+    .header-container {
+        padding-bottom: 44px;
+    }
+}
+
+@media only screen and (max-width: 1279px) {
+    .menu-list {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .forms {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1279px) {
+    .mode-container {
+        display: none;
+    }
+}
+
+.icon-hamburger {
+    fill: var(--font-color);
+}
+
+@media only screen and (min-width: 1280px) {
+    .menu-toggle {
+        display: none;
+    }
+}
+
+.logo.link {
+    width: 99px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+@media only screen and (min-width: 768px) {
+    .logo.link {
+        gap: 8px;
+        }
+}
+
+.logo-text {
+    color: var(--font-color);
+    font-family: 'Poppins',
+        sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 18px;
+    letter-spacing: -0.16px;
+    text-transform: uppercase;
+}
+
+@media only screen and (min-width: 768px) {
+    .logo-text {
+        font-size: 22px;
+        line-height: 24px;
+        letter-spacing: -0.22px;
+        }
+}
+
+.logo-icon {
+    fill: var(--violet)
+}
+
+@media only screen and (min-width: 768px) {
+    .logo-icon {
+        width: 35px;
+        height: 30px;
+    }
+}
+
+
+
 /* Search form  */
 
 /* Light-dark mode */
@@ -178,3 +281,82 @@
     transform: rotate(10deg);
     top: 20%;
     }
+
+/* hamburger-menu */
+
+.header-alternative-menu {
+    background-color: var(--violet);
+}
+.logo-burger {
+margin-right: 136px;
+}
+
+.logo-text-hamburger {
+    color: var(--white);
+}
+.logo-icon-burger {
+fill: var(--torquoise);
+}
+
+.burger-header {
+    padding: 20px 20px 40px 20px;
+    display: flex;
+}
+.modal-icon-burger {
+    fill: var(--white);
+}
+
+.burger-requests {
+    display: inline-flex;
+    gap: 10px;
+    padding-bottom: 100px;
+}
+
+.burger-home {
+    color: #FDFDFF;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.36px;
+}
+
+/* Site navigation - burger*/
+.burger-nav-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-left: 136px;
+    display: block;
+}
+
+.burger-nav-menu ul li {
+    margin-right: 20px;
+}
+
+.burger-nav-menu ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    padding: 10px;
+}
+
+.dropdown-menu li {
+    margin-bottom: 5px;
+}
+
+.dropdown-menu a {
+    color: #fff;
+    text-decoration: none;
+}
+

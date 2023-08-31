@@ -1,0 +1,36 @@
+<!-- Шаблон інгредієнта фаворит-->
+<section class="favorite-ingridients-result">
+  <div class="container">
+    <h2 class="section-title">Favorite ingredients</h2>
+    <!-- Помилка коли нема фаворит інгредієнта -->
+    <div class="error-box">
+      <svg class="icon-error">
+        <use href="./public/sprite.svg#icon-error"></use>
+      </svg>
+      <p class="error-text">
+        You haven't added any
+        <span class="error-accent-text">favorite ingredients</span> yet
+      </p>
+    </div>
+    <!-- список для інгредієнтів  -->
+    <ul class="ingredient-list list">
+      <!-- Шаблон інгредієнта для рендеру -->
+      <li class="ingredient-item">
+        <h2 class="ingredient-name">Campari</h2>
+        <p class="category">Alcoholic</p>
+        <p class="ingredient-descr">
+          Campari is an Italian alcoholic liqueur, considered an apéritif,
+          obtained from the infusion of herbs and fruit in alcohol and water.
+        </p>
+        <div class="btn-box">
+          <button class="card-btn js-btn-learn-more">learn more</button>
+          <button class="btn-favorite js-btn-favorite">
+            <svg class="card-icon" width="18" height="18">
+              <use href="./public/sprite.svg#trash-icon"></use>
+            </svg>
+          </button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>

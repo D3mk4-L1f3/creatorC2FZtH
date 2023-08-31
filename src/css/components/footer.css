@@ -1,0 +1,122 @@
+/* logo */
+.footer-page {
+    background-color: var(--violet);
+    min-height: 186px;
+    /* min-width: 100%; */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-logo.link {
+    width: 99px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+@media only screen and (min-width: 768px) {
+    .footer-logo.link {
+        gap: 8px;
+    }
+}
+
+.footer-logo-text {
+    color: var(--white);
+    font-family: 'Poppins',
+        sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 18px;
+    letter-spacing: -0.16px;
+    text-transform: uppercase;
+}
+
+@media only screen and (min-width: 768px) {
+    .footer-logo-text {
+        font-size: 22px;
+        line-height: 24px;
+        letter-spacing: -0.22px;
+    }
+}
+
+.footer-logo-icon {
+    fill: var(--torquoise);
+    width: 24px;
+    height: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+    .footer-logo-icon {
+        fill: var(--torquoise);
+        width: 35px;
+        height: 30px;
+    }
+}
+
+
+.social-media {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social-media-text {
+    padding-top: 40px;
+    color: var(--white);
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 18px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    order: -1;
+}
+
+@media only screen and (min-width: 767px) {
+    .social-media-text {
+        padding-top: 32px;
+        line-height: 15.4px;
+        margin-bottom: 16px;
+        }
+}
+
+.mobile-social-media-icons {
+    fill: var(--white);
+}
+
+.mobile-social-media-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+}
+
+@media only screen and (min-width: 767px) {
+.mobile-social-media-icons {
+    width: 40px;
+    height: 40px;
+}
+}
+
+.mobile-social-media-icons.youtube {
+        border: 1px solid rgba(253, 253, 255, 0.50);
+}
+
+.mobile-social-item {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.mobile-social-item.youtube {
+    display: inline-block;
+    margin-right: 10px;
+}

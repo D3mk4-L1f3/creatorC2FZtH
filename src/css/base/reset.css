@@ -31,15 +31,12 @@ a {
 
 button {
   cursor: pointer;
+  border: none;
+  color: inherit;
 }
 
 img {
   display: block;
   max-width: 100%;
   height: auto;
-}
-
-.btn {
-  border: none;
-  color: inherit;
 }
