@@ -5,14 +5,24 @@ const refs = {
   closeModalBtn: document.querySelector('[data-modal-close]'),
   modal: document.querySelector('[data-modal]'),
   modalDivEl: document.querySelector('.modal-cocktail'),
-  ingredLink: document.querySelector('.modal-ingredient-list'),
+
   body: document.body,
+};
+
+const refers = {
+  closeModalBtn: document.querySelector('[data-modal-ing-close]'),
+  ingredLink: document.querySelector('.modal-ingredient-list'),
+  modalDivIng: document.querySelector('.modal-ingred'),
+  modal: document.querySelector('[data-modal-ing]'),
 };
 
 refs.cardBtn.addEventListener('click', onShowModal);
 refs.closeModalBtn.addEventListener('click', onCloseModal);
 refs.modal.addEventListener('click', onClick);
-refs.ingredLink.addEventListener('click', onIngredientClick);
+
+refers.ingredLink.addEventListener('click', onIngredientClick);
+refers.closeModalBtn.addEventListener('click', onCloseModalIngred);
+refers.modal.addEventListener('click', onClickIng);
 
 // const BASE_URL = '';
 
@@ -23,9 +33,12 @@ refs.ingredLink.addEventListener('click', onIngredientClick);
 // }
 
 async function onShowModal() {
-  refs.body.addEventListener('keydown', onEscape);
   refs.modal.classList.remove('is-hidden');
   document.body.style.overflow = 'hidden';
+
+  setTimeout(() => {
+    refs.modalDivEl.classList.add('active');
+  }, 100);
   // try {
   //   const response = await getCocktailDetails();
   //   renderCocktailDetails(response.data);
@@ -89,9 +102,11 @@ function renderListIngredients(arr) {
 }
 
 function onCloseModal(e) {
-  refs.modal.classList.add('is-hidden');
-  document.body.style.overflow = 'auto';
-  refs.body.removeEventListener('keydown', onEscape);
+  document.body.style.overflowY = 'auto';
+  refs.modalDivEl.classList.remove('active');
+  setTimeout(() => {
+    refs.modal.classList.add('is-hidden');
+  }, 100);
 }
 
 function onClick(e) {
@@ -102,13 +117,25 @@ function onClick(e) {
   }
 }
 
-function onEscape(event) {
-  if (event.code === 'Escape') {
-    onCloseModal();
-  }
-}
+// ---------------------------ingred modal------------------------
 
 function onIngredientClick(e) {
+  refs.modal.classList.add('is-hidden');
+
   e.preventDefault();
-  console.log(e.target);
+  refers.modal.classList.remove('is-hidden');
+}
+
+function onCloseModalIngred(e) {
+  refs.modal.classList.remove('is-hidden');
+
+  refers.modal.classList.add('is-hidden');
+}
+
+function onClickIng(e) {
+  const withinBoundaries = e.composedPath().includes(refers.modalDivIng);
+
+  if (!withinBoundaries) {
+    onCloseModalIngred();
+  }
 }
