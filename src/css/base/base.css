@@ -31,14 +31,22 @@ body {
   font-weight: 400;
   line-height: 1.28;
 
+  transition: background-color var(--transition);
   /* overflow-x: hidden; */
+}
+
+body.dark-theme {
+  background-color: var(--bg-dark);
+  color: var(--white);
 }
 .dark-mode body {
   background-color: var(--bg-dark);
   color: var(--white);
 }
-.light-mode body {
-}
+
+
+
+
 
 .container {
   padding-left: 20px;
@@ -74,8 +82,6 @@ body {
   padding: 0;
   opacity: 0;
 }
-<<<<<<< Updated upstream
-=======
 
 /* .dark-mode {
   background: linear-gradient(
