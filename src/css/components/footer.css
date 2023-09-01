@@ -12,10 +12,10 @@
 }
 
 .footer-logo.link {
-    width: 99px;
+    
     height: 20px;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     gap: 4px;
 }
 
@@ -63,7 +63,7 @@
 .social-media {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .social-media-text {
@@ -100,6 +100,11 @@
     border-radius: 6px;
 }
 
+.mobile-social-media-icons:hover
+.mobile-social-media-icons:focus {
+    stroke: var(--violet);
+}
+
 @media only screen and (min-width: 767px) {
 .mobile-social-media-icons {
     width: 40px;
@@ -109,6 +114,7 @@
 
 .mobile-social-media-icons.youtube {
         border: 1px solid rgba(253, 253, 255, 0.50);
+        padding: 5px;
 }
 
 .mobile-social-item {
