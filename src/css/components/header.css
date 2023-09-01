@@ -589,6 +589,10 @@ fill: var(--torquoise);
     padding: 10px;
 }
 
+.dropdown-menu.is-open {
+    display: block;
+}
+
 .dropdown-menu li {
     margin-bottom: 5px;
 }
