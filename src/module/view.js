@@ -43,7 +43,7 @@ getCocktails();
 function createMarkup({ drinkThumb, description, drink, _id }) {
   return `<li class="cocktail-item dynamic-box">
           <img
-            class="card-image img"
+            class="card-image img "
             src="${drinkThumb}"
             alt="${drink}"
             loading="lazy"

@@ -9,45 +9,57 @@ const refs = {
   cockDesc: document.querySelector('.cocktail-descr'),
   learnMoreBtn: document.querySelector('.card-btn'),
   cocktailBox: document.querySelector('.cocktail-item'),
+  cocktailList: document.querySelector('.cocktail-list'),
+  modalCocktail: document.querySelector('.modal-cocktail'),
+  btnCloseIcon: document.querySelector('.button-close-icon'),
+  modalIngredBox: document.querySelector('.modal-ingred'),
 };
 
 refs.modeChange.addEventListener('click', onModeChangeClick);
 
 function onModeChangeClick() {
-  if (localStorage.getItem('theme') === 'dark') {
-    localStorage.removeItem('theme');
-  } else {
+  if (localStorage.getItem('theme') !== 'dark') {
     localStorage.setItem('theme', 'dark');
+  } else {
+    localStorage.removeItem('theme');
   }
-  addDarkClassToHTML();
+
+  toggleDarkMode();
+  toggleDynamicMarkup();
 }
 
-function addDarkClassToHTML() {
-  try {
-    if (localStorage.getItem('theme') === 'dark') {
-      document.querySelector('html').classList.add('dark');
-      refs.logo.classList.add('dark');
-      refs.headerHero.classList.add('dark');
-      refs.paragHero.classList.add('dark');
-      refs.favDrinkMassage.classList.add('dark');
-      refs.cocktailSectionTitle.classList.add('dark');
-      refs.cocktName.classList.add('dark');
-      refs.cockDesc.classList.add('dark');
-      refs.learnMoreBtn.classList.add('dark');
-      refs.cocktailBox.classList.add('dark-background');
-    } else {
-      document.querySelector('html').classList.remove('dark');
-      refs.logo.classList.remove('dark');
-      refs.headerHero.classList.remove('dark');
-      refs.paragHero.classList.remove('dark');
-      refs.favDrinkMassage.classList.remove('dark');
-      refs.cocktailSectionTitle.classList.remove('dark');
-      refs.cocktName.classList.remove('dark');
-      refs.cockDesc.classList.remove('dark');
-      refs.learnMoreBtn.classList.remove('dark');
-      refs.cocktailBox.classList.remove('dark-background');
-    }
-  } catch (err) {}
+function toggleDarkMode() {
+  const isDark = localStorage.getItem('theme') === 'dark';
+
+  document.querySelector('html').classList.toggle('dark', isDark);
+
+  refs.logo.classList.toggle('dark', isDark);
+  refs.headerHero.classList.toggle('dark', isDark);
+  refs.paragHero.classList.toggle('dark', isDark);
+  refs.favDrinkMassage.classList.toggle('dark', isDark);
+  refs.cocktailSectionTitle.classList.toggle('dark', isDark);
+  refs.cocktName.classList.toggle('dark', isDark);
+  refs.cockDesc.classList.toggle('dark', isDark);
+  refs.learnMoreBtn.classList.toggle('dark', isDark);
+  refs.cocktailBox.classList.toggle('dark-background', isDark);
+  refs.modalCocktail.classList.toggle('dark-background', isDark);
+  refs.btnCloseIcon.classList.toggle('dark-svg', isDark);
+  refs.modalIngredBox.classList.toggle('dark-background', isDark);
+
+  const dynamicLi = document.querySelectorAll('.dynamic-box');
+  dynamicLi.forEach(element => {
+    element.classList.toggle('dark-background', isDark);
+  });
 }
 
-addDarkClassToHTML();
+function toggleDynamicMarkup() {
+  const isDark = localStorage.getItem('theme') === 'dark';
+
+  const dynamicElements = document.querySelectorAll('.dynamic-element');
+  dynamicElements.forEach(el => {
+    el.classList.toggle('dark', isDark);
+  });
+}
+
+toggleDynamicMarkup();
+toggleDarkMode();
