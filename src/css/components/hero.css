@@ -10,9 +10,9 @@
 
 }
 
-.link-btn .btn-hero{
+.link-btn .btn-hero {
 
-display: block;
+    display: block;
 
 }
 
@@ -22,7 +22,7 @@ display: block;
 
 
 .header-hero {
-    color: #242424;
+    color: var(--font-color);
     font-family: Poppins;
     font-size: 32px;
     font-style: normal;
@@ -36,7 +36,7 @@ display: block;
 }
 
 .span-drink {
-    color: #7E8FDD;
+    color: var(--violet);
     font-style: italic;
     line-height: 1.18;
     display: block;
@@ -44,7 +44,7 @@ display: block;
 }
 
 .btn-hero {
-    background-color: #7E8FDD;
+    background-color: var(--violet);
     border-color: transparent;
     color: #FDFDFF;
     font-family: Poppins;
@@ -71,7 +71,7 @@ display: block;
 
 .btn-hero:hover {
 
-    background-color: #6E7FCF;
+    background-color: var(--btn-hover);
 
     transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -80,7 +80,7 @@ display: block;
 
 .paragraf-hero {
 
-    color: #242424;
+    color: var(--font-color);
     font-family: Poppins;
     font-size: 14px;
     font-style: normal;
@@ -105,7 +105,7 @@ display: block;
 .fav-drink {
     position: absolute;
     text-align: start;
-    color: #242424;
+    color: var(--font-color);
     font-family: Poppins;
     font-size: 14px;
     font-style: normal;
@@ -203,14 +203,6 @@ display: block;
 
 
 
-
-
-
-
-
-
-
-
 /* Tablet version width 768px */
 
 @media screen and (min-width:768px) {
@@ -228,7 +220,7 @@ display: block;
     }
 
     .paragraf-hero {
-        color: #242424;
+        color: var(--font-color);
         font-family: Poppins;
         font-size: 16px;
         font-weight: 400;
@@ -295,14 +287,6 @@ display: block;
 
 
 
-
-
-
-
-
-
-
-
 /* DESKTOP version width 1280px */
 
 @media screen and (min-width:1280px) {
@@ -318,7 +302,7 @@ display: block;
 
     .header-hero {
 
-        color: #242424;
+        color: var(--font-color);
         font-family: Poppins;
         font-size: 64px;
         font-style: normal;
