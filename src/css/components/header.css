@@ -32,11 +32,42 @@ padding-bottom: 100px;
     }
 }
 
+@media only screen and (min-width: 1280px) {
+    .menu-list {
+        display: flex;
+        gap: 28px;
+    }
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+@media only screen and (min-width: 1280px) {
+    .header-page-nav {
+        display: flex;
+        gap: 300px;
+    }
+}
+
+.forms {
+    display: flex;
+    gap: 10px;
+}
+
 @media only screen and (max-width: 767px) {
     .forms {
         display: none;
     }
 }
+
+@media only screen and (min-width: 1280px) {
+    .forms {
+        gap: 24px;
+        }
+    }
 
 @media only screen and (max-width: 1279px) {
     .mode-container {
@@ -75,16 +106,16 @@ padding-bottom: 100px;
 }
 
 .logo.link {
-    width: 99px;
     height: 20px;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     gap: 4px;
 }
 
 @media only screen and (min-width: 768px) {
     .logo.link {
         gap: 8px;
+        padding-right: 220px;
         }
 }
 
@@ -143,6 +174,13 @@ padding-bottom: 100px;
     cursor: pointer;
     box-shadow: 3px 3px 5px #0000003d;
         }
+
+@media only screen and (max-width: 767px) {
+    .toggle {
+        height: 25px;
+        width: 50px;
+    }
+}
     
 .mountains {
     height: 100%;
@@ -302,14 +340,64 @@ padding-bottom: 100px;
     top: 20%;
     }
 
+/* Search form main page */
+.search-form-main {
+    max-width: 220px;
+    max-height: 40px;
+    padding: 0;
+    position: relative;
+    /* margin-right: 150px; */
+}
+
+/* @media only screen and (min-width: 768px) {
+    .search-form-main {
+        display: block;
+    }
+} */
+
+/* @media only screen and (min-width: 1280px) {
+    .search-form-main {
+        gap: 24px;
+    }
+} */
+
+.search-form-input-main {
+    max-width: 220px;
+    height: 34.8px;
+    border-radius: 80.179px;
+    border: 2px solid var(--violet);
+    background-color: transparent;
+    padding-left: 42px;
+
+    color: rgba(253, 253, 255, 0.20);
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.svg-search-main {
+fill: var(--violet);
+    position: absolute;
+    top: 10px;
+    left: 14px;
+}
 /* hamburger-menu */
 
 .header-alternative-menu {
+    width: 100%;
     background-color: var(--violet);
 }
-.logo-burger {
-margin-right: 136px;
+
+.burger-header-right-part {
+    display: flex;
+    gap: 10px;
 }
+
+/* .logo-burger {
+margin-right: 35%;
+} */
 
 .logo-text-hamburger {
     color: var(--white);
@@ -378,6 +466,8 @@ fill: var(--torquoise);
 .burger-header {
     /* padding: 20px 20px 40px 20px; */
     display: flex;
+    justify-content: space-between;
+    padding-bottom: 40px;
 }
 
 .modal-icon-burger {
@@ -390,6 +480,63 @@ fill: var(--torquoise);
     padding-bottom: 100px;
 }
 
+@media only screen and (min-width: 768px) {
+.burger-requests {
+        display: none;
+    }
+}
+
+.search-form {
+    max-width: 220px;
+    max-height: 40px;
+    padding: 0;
+    position: relative;
+    margin-right: 29px;
+}
+
+@media only screen and (min-width: 768px) {
+    .search-form {
+            display: block;
+        }
+    }
+
+@media only screen and (min-width: 1280px)
+ {
+ .search-form {
+     margin-left: 162px;
+     margin-right: 24px;
+ }
+}
+
+.search-form-input {
+    max-width: 250px;
+    height: 34.8px;
+    border-radius: 80.179px;
+    border: 2px solid var(--white);
+    background-color: transparent;
+    padding-left: 42px;
+
+    color: rgba(253, 253, 255, 0.20);
+        font-family: Poppins;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+}
+
+.svg-search {
+    fill: var(--white);
+    position: absolute;
+    top: 10px;
+    left: 14px;
+}
+
+.burger-nav-menu {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+}
+
 .burger-home {
     color: #FDFDFF;
     font-family: Poppins;
@@ -400,12 +547,25 @@ fill: var(--torquoise);
     letter-spacing: 0.36px;
 }
 
+@media only screen and (min-width: 768px) {
+    .header-menu-burger-item{
+        font-size: 24px;
+        line-height: 32px;
+        letter-spacing: 0.48px;
+    }
+}
+
+.mode-burger-container {
+    height: 100%;
+    width: 100%;
+}
+
 /* Site navigation - burger*/
 .burger-nav-menu ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    margin-left: 136px;
+    /* margin-left: 136px; */
     display: block;
 }
 
