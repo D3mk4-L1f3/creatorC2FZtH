@@ -15,6 +15,8 @@
   --decoration-color: rgba(36, 36, 36, 0.1);
   --bg-top-vector: rgba(156, 223, 223, 0.8);
   --bg-md-vector: rgba(156, 223, 223, 0.5);
+  --bg-background-light: #fdfdff;
+  --text-color-light: #242424;
 }
 
 html {
@@ -24,6 +26,7 @@ html {
 body {
   background-color: var(--white);
   color: var(--font-color);
+  transition: background-color var(--transition);
 
   font-family: 'Poppins', sans-serif;
   font-size: 14px;
@@ -32,6 +35,10 @@ body {
   line-height: 1.28;
 
   /* overflow-x: hidden; */
+}
+body.dark-theme {
+  background-color: var(--bg-dark);
+  color: var(--white);
 }
 
 .container {

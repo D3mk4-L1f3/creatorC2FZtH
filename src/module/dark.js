@@ -1,3 +1,30 @@
+const refs = {
+  modeChange: document.querySelector('.mode-container'),
+  body: document.body,
+};
+refs.modeChange.addEventListener('click', onModeChangeClick);
+
+function onModeChangeClick() {
+  refs.body.classList.toggle('dark-theme');
+
+  if (refs.body.classList.contains('dark-theme')) {
+    document.documentElement.style.setProperty(
+      '--bg-background',
+      'var(--bg-dark)'
+    );
+    document.documentElement.style.setProperty('--text-color', 'var(--white)');
+  } else {
+    document.documentElement.style.setProperty(
+      '--bg-background',
+      'var(--bg-background-light)'
+    );
+    document.documentElement.style.setProperty(
+      '--text-color',
+      'var(--text-color-light)'
+    );
+  }
+}
+
 // const refs = {
 //   modeChange: document.querySelector('.mode-container'),
 //   logo: document.querySelector('.logo-text'),
