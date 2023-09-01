@@ -1,4 +1,5 @@
 const refs = {
+<<<<<<< Updated upstream
   modeChange: document.querySelector('.mode-container'),
   body: document.body,
 };
@@ -13,6 +14,17 @@ function onModeChangeClick() {
       'var(--bg-dark)'
     );
     document.documentElement.style.setProperty('--text-color', 'var(--white)');
+=======
+  // modeChange: document.querySelector('.mode-container'),
+  darkBtn: document.querySelector('#dark-btn'),
+};
+
+refs.darkBtn.addEventListener('click', () => {
+  document.documentElement.classList.toggle('dark-mode');
+
+  if (document.documentElement.classList.contains('dark-mode')) {
+    localStorage.setItem('theme', 'dark');
+>>>>>>> Stashed changes
   } else {
     document.documentElement.style.setProperty(
       '--bg-background',
@@ -23,8 +35,18 @@ function onModeChangeClick() {
       'var(--text-color-light)'
     );
   }
+<<<<<<< Updated upstream
 }
 
+=======
+});
+
+if (localStorage.getItem('theme') === 'dark') {
+  document.documentElement.classList.add('dark-mode');
+}
+
+// ==========================================================================
+>>>>>>> Stashed changes
 // const refs = {
 //   modeChange: document.querySelector('.mode-container'),
 //   logo: document.querySelector('.logo-text'),
