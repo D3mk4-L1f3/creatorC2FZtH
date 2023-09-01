@@ -12,6 +12,8 @@ const refs = {
   cocktailList: document.querySelector('.cocktail-list'),
   modalCocktail: document.querySelector('.modal-cocktail'),
   btnCloseIcon: document.querySelector('.button-close-icon'),
+  modalIngredBox: document.querySelector('.modal-ingred'),
+  // modalIngredContent: document.querySelector('.modal-ingred-content'),
 };
 
 refs.modeChange.addEventListener('click', onModeChangeClick);
@@ -25,7 +27,7 @@ function onModeChangeClick() {
   toggleDarkMode();
   toggleDynamicMarkup();
 }
-function toggleDarkMode() {
+async function toggleDarkMode() {
   const isDark = localStorage.getItem('theme') === 'dark';
 
   document.querySelector('html').classList.toggle('dark', isDark);
@@ -40,6 +42,8 @@ function toggleDarkMode() {
   refs.cocktailBox.classList.toggle('dark-background', isDark);
   refs.modalCocktail.classList.toggle('dark-background', isDark);
   refs.btnCloseIcon.classList.toggle('dark-svg', isDark);
+  refs.modalIngredBox.classList.toggle('dark-background', isDark);
+  // refs.modalIngredContent.classList.toggle('dark-background', isDark);
 
   const dynamicLi = document.querySelectorAll('.dynamic-box');
   dynamicLi.forEach(element => {
@@ -52,7 +56,7 @@ function toggleDynamicMarkup() {
   const dynamicElements = document.querySelectorAll('.dynamic-element');
   dynamicElements.forEach(el => {
     el.classList.toggle('dark', isDark);
-    console.log('Element:', el, 'Is Dark:', isDark);
+    console.log('Element:', el, isDark);
   });
 }
 toggleDynamicMarkup();

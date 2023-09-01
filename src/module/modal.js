@@ -70,7 +70,7 @@ export function renderCocktailDetails({
       <div class="modal-content">
         <h3 class="cocktail-modal-title visually-hidden">${drink}</h3>
         <h4 class="modal-capture">Ingredients:</h4>
-        <p class="modal-text dynamic-element modal-subtitle">Per cocktail</p>
+        <p class="modal-text  modal-subtitle">Per cocktail</p>
         <ul class="modal-ingredient-list">
 
 ${renderListIngredients(ingredients)}
@@ -151,8 +151,8 @@ function renderIngredientDetails({
   flavour,
   description,
 }) {
-  const markup = ` <h3 class="ingred-modal-title">${title}</h3>
-      <p class="ingred-modal-subtitle">${type}</p>
+  const markup = ` <h3 class="ingred-modal-title dynamic-element">${title}</h3>
+      <p class="ingred-modal-subtitle ">${type}</p>
       <p class="modal-ingred-desc">
         <span class="selected-title">${title}</span> ${description}
       </p>

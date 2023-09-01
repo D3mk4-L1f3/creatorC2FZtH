@@ -4,8 +4,7 @@ const BASE_URL = 'https://drinkify-backend.p.goit.global/API/V1/cocktails';
 const refs = {
   cocktailList: document.querySelector('.cocktail-list'),
 };
-
-export async function getCocktails() {
+async function getCocktails() {
   const res = await axios.get(`${BASE_URL}?r=8`);
 
   const arrCocktails = await Promise.all(
@@ -22,10 +21,10 @@ export async function getCocktails() {
 
 getCocktails();
 
-export function createMarkup({ drinkThumb, description, drink, _id }) {
+function createMarkup({ drinkThumb, description, drink, _id }) {
   return `<li class="cocktail-item dynamic-box">
           <img
-            class="card-image img dynamic-element"
+            class="card-image img "
             src="${drinkThumb}"
             alt="${drink}"
           />

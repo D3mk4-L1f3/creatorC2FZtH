@@ -10,8 +10,17 @@ html.dark,
 
 .dark-background {
   background-color: var(--bg-second-dark);
+  color: var(--white);
 }
 
 .dark-svg {
   stroke: var(--white);
+}
+
+.dark-ingred-subt {
+  color: rgba(253, 253, 255, 0.5);
+}
+
+.dark-ingred-options {
+  color: rgba(253, 253, 255, 0.8);
 }
