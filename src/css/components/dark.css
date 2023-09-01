@@ -18,9 +18,9 @@ html.dark,
 }
 
 .dark-ingred-subt {
-  color: rgba(253, 253, 255, 0.5);
+  color: var(--dark-ingred-subt);
 }
 
 .dark-ingred-options {
-  color: rgba(253, 253, 255, 0.8);
+  color: var(--dark-igred-options);
 }
