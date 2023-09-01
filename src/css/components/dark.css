@@ -23,7 +23,7 @@
 
 .dark-ingred-options {
   color: rgba(253, 253, 255, 0.8);
-}
+} */
 
 /* Щоб створити темний режим для свого веб-сайту за допомогою :rootвизначених вами змінних CSS, виконайте такі дії: */
 
@@ -55,15 +55,14 @@ html */
 <button id="dark-mode-toggle">Toggle Dark Mode</button>
 javascript
 
-Скопіюйте код
+
 const toggleButton = document.getElementById("dark-mode-toggle");
 
 toggleButton.addEventListener("click", () => {
   document.documentElement.classList.toggle("dark-mode"); */
 /* });
 
-// You can use localStorage to remember the user's preference and load it on page load.
-// Here's a simple example:
+
 
 if (localStorage.getItem("dark-mode") === "enabled") {
   document.documentElement.classList.add("dark-mode");
