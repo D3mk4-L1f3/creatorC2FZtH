@@ -1,4 +1,4 @@
-html.dark,
+/* html.dark,
 .dark body {
   background-color: var(--bg-dark);
   color: var(--white);
@@ -23,7 +23,7 @@ html.dark,
 
 .dark-ingred-options {
   color: rgba(253, 253, 255, 0.8);
-}
+} */
 
 /* Щоб створити темний режим для свого веб-сайту за допомогою :rootвизначених вами змінних CSS, виконайте такі дії: */
 
