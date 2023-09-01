@@ -89,7 +89,7 @@
 }
 
 .cocktail-descr {
-  width: 295px;
+  max-width: 295px;
   height: 54px;
 
   color: var(--font-color);
@@ -108,7 +108,7 @@
 }
 
 .btn-box {
-  max-width: 295px;
+  flex-basis: 232px;
 
   display: flex;
   justify-content: center;
