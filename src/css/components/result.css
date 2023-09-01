@@ -17,6 +17,24 @@
 }
 
 .cocktail-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+@media only screen and (min-width: 768px) {
+  .cocktail-list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    column-gap: 16px;
+    row-gap: 32px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .cocktail-list {
+    column-gap: 24px;
+    row-gap: 44px;
+  }
 }
 
 .cocktail-item {
@@ -26,7 +44,6 @@
   background-color: var(--white);
   border-radius: 20px;
   box-shadow: 0px 4px 46px 0px rgba(0, 0, 0, 0.05);
-  margin-bottom: 20px;
 }
 @media only screen and (min-width: 768px) {
   .cocktail-item {
@@ -72,7 +89,7 @@
 }
 
 .cocktail-descr {
-  width: 295px;
+  max-width: 295px;
   height: 54px;
 
   color: var(--font-color);
@@ -91,7 +108,7 @@
 }
 
 .btn-box {
-  width: 295px;
+  flex-basis: 232px;
 
   display: flex;
   justify-content: center;
@@ -100,12 +117,12 @@
 }
 @media only screen and (min-width: 768px) {
   .btn-box {
-    width: 295px;
+    width: 296px;
   }
 }
 
 .card-btn {
-  width: 232px;
+  flex-basis: 232px;
   height: 48px;
 
   background-color: inherit;
