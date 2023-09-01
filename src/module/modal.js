@@ -49,7 +49,7 @@ async function onShowModal(e) {
   }, 100);
   try {
     const response = await getCocktailDetails(id);
-    console.log(response.data[0]);
+    // console.log(response.data[0]);
     renderCocktailDetails(response.data[0]);
   } catch (error) {
     console.log(error);
