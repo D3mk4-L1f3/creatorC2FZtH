@@ -26,16 +26,12 @@
 
 
 <!-- Search form -->
-  <form class="search-form" action="">
-  <label class="search-form-field" for="search_form_field">
-  <input class="search-form-input"
-    type="text"
-    name="text"
-    placeholder="Search"
-    id="search_form_field"
-    required>
-  </label>
-  </form>
+<form class="search-form-main" id="search-form">
+  <input class="search-form-input-main" type="text" name="searchQuery" autocomplete="off" placeholder=Search />
+  <svg class="svg-search-main" width="16" height="16">
+    <use href="./public/sprite.svg#icon-search"></use>
+  </svg>
+</form>
 
 <!-- light-dark mode  -->
 <div class="mode-container">
@@ -109,8 +105,8 @@
 <!-- Site navigation -->
 <nav class="burger-nav-menu">
       <ul class="burger-menu-list list">
-        <li class="header-menu-item burger-home"><a href="/src/index.html">Home</a></li>
-        <li class="header-menu-item dropdown">
+        <li class="header-menu-burger-item burger-home"><a href="/src/index.html">Home</a></li>
+        <li class="header-menu-burger-item dropdown">
           <a href="">Favorite</a>
           <ul class="dropdown-menu">
             <li><a href="/src/fav-coctails.html">Favorite cocktails</a></li>
