@@ -15,6 +15,8 @@ const refers = {
   modalDivIng: document.querySelector('.modal-ingred'),
   modal: document.querySelector('[data-modal-ing]'),
   modalIngredContent: document.querySelector('.modal-ingred-content'),
+
+  // ingredIenlistFav: document.querySelector('.ingredient-list'),
 };
 
 refs.cardList.addEventListener('click', onShowModal);
@@ -24,6 +26,7 @@ refs.modal.addEventListener('click', onClick);
 refs.modalContentRender.addEventListener('click', onIngredientClick);
 refers.closeModalBtn.addEventListener('click', onCloseModalIngred);
 refers.modal.addEventListener('click', onClickIng);
+// refers.ingredIenlistFav.addEventListener('click', onIngredientClick);
 
 const BASE_URL =
   'https://drinkify-backend.p.goit.global/API/V1/cocktails/lookup';
@@ -56,7 +59,7 @@ async function onShowModal(e) {
 function renderCocktailDetails({
   drink,
   drinkThumb,
-  description,
+  instructions,
   ingredients,
 }) {
   const markup = ` <div class="modal-flex-wrapper">
@@ -80,7 +83,7 @@ ${renderListIngredients(ingredients)}
     </div>
     <h4 class="modal-capture">Instractions:</h4>
     <p class="modal-text text">
-    ${description}
+    ${instructions}
     </p>
     <button class="modal-button" type="button">add to favorite</button>
   </div>`;
