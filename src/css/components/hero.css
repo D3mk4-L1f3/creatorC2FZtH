@@ -10,7 +10,11 @@
 
 }
 
+.link-btn .btn-hero{
 
+display: block;
+
+}
 
 
 
@@ -59,7 +63,7 @@
     margin-bottom: 27px;
 
 
-    
+
 
 
 
@@ -209,7 +213,7 @@
 
 /* Tablet version width 768px */
 
-@media screen and (min-width:768px)  {
+@media screen and (min-width:768px) {
 
 
     .header-hero {
