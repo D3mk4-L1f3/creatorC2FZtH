@@ -115,7 +115,7 @@
 @media only screen and (min-width: 768px) {
   .logo.link {
     gap: 8px;
-    padding-right: 220px;
+    padding-right: 140px;
   }
 }
 
@@ -158,6 +158,10 @@
 }
 
 #checkbox {
+  display: none;
+}
+
+#burger-checkbox {
   display: none;
 }
 
@@ -538,12 +542,8 @@ margin-right: 35%;
 }
 
 .burger-home {
-    color: var(--white);
-    font-family: Poppins;
     font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 24px;
+    line-height: 1.33;
     letter-spacing: 0.36px;
 }
 
@@ -553,6 +553,11 @@ margin-right: 35%;
     line-height: 32px;
     letter-spacing: 0.48px;
   }
+
+    .burger-favorite {
+      color: var(--white);
+      cursor: pointer;
+    }
 }
 
 .mode-burger-container {

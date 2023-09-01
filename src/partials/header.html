@@ -36,12 +36,10 @@
 <!-- light-dark mode  -->
 <div class="mode-container" id="dark-btn">
 <div class="daynight">
-        
-<label for="checkbox">
-<input class="js-theme-change" type="checkbox" name="" id="checkbox">
-<div class="toggle">
+
+  <div class="toggle">
   <label for="checkbox">
-    <input type="checkbox" name="" id="checkbox">
+  <input class="js-theme-change" type="checkbox" name="mode-checkbox" id="checkbox">
     <div class="cloud"></div>
     <div class="star"></div>
     <div class="sea"></div>
@@ -58,7 +56,6 @@
   </svg>
 </button>
 
-</div>
 </header>
 
     <!--HAMBURGER MENU-->
@@ -76,21 +73,21 @@
           <div class="mode-burger-container">
             <div class="daynight">
           
-              <label for="checkbox">
-                <input class="js-theme-change" type="checkbox" name="" id="checkbox">
-                <div class="toggle">
+              <div class="toggle">
+              <label for="burger-checkbox">
+                <input class="js-theme-change" type="checkbox" name="mode-burger-checkbox" id="burger-checkbox">
                   <div class="cloud"></div>
                   <div class="star"></div>
                   <div class="sea"></div>
                   <div class="mountains"></div>
-                </div>
               </label>
+            </div>
             </div>
           </div>
           <button class="menu-toggle js-close-menu">
           <svg class="modal-icon modal-icon-burger" width="32" height="32">
             <use href="./public/sprite.svg#icon-close"></use>
-          </svg>
+          </svg> </button>
                 </div>
         </div>
 
@@ -98,7 +95,7 @@
         <!-- Log-in button -->
         <button class="login-button" id="login-modal-btn"> Log In </button>
         <!-- search form -->
-        <form class="search-form" id="search-form">
+        <form class="search-form" id="burger-search-form">
           <input class="search-form-input" type="text" name="searchQuery" autocomplete="off" placeholder=Search />
           <svg class="svg-search" width="16" height="16">
             <use href="./public/sprite.svg#icon-search"></use>
@@ -109,8 +106,8 @@
 <nav class="burger-nav-menu">
       <ul class="burger-menu-list list">
         <li class="header-menu-burger-item burger-home"><a href="/src/index.html">Home</a></li>
-        <li class="header-menu-burger-item dropdown">
-          <a href="">Favorite</a>
+        <li class="header-menu-burger-item burger-favorite" id="favorite-menu">
+          <p class="dropdown">Favorite</p>
           <ul class="dropdown-menu">
             <li><a href="/src/fav-coctails.html">Favorite cocktails</a></li>
             <li><a href="/src/fav-ingridients.html">Favorite ingredients</a></li>
