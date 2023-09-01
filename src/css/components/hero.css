@@ -4,6 +4,21 @@
 
 }
 
+.link-btn {
+    height: 48px;
+    width: 178px;
+
+}
+
+.link-btn .btn-hero{
+
+display: block;
+
+}
+
+
+
+
 
 
 .header-hero {
@@ -24,6 +39,7 @@
     color: #7E8FDD;
     font-style: italic;
     line-height: 1.18;
+    display: block;
 
 }
 
@@ -45,6 +61,9 @@
     border-radius: 12px;
     margin-left: 20px;
     margin-bottom: 27px;
+
+
+
 
 
 
@@ -149,12 +168,15 @@
 
 
 
-@media screen and (min-width: 340px) and (max-width: 767px) {
+@media screen and (min-width: 340px) and (max-width: 768px) {
 
-   
+
+
+
+
     .girl-hero {
         scale: 0.99;
-    
+
     }
 
 
@@ -228,8 +250,8 @@
 
     .girl-hero {
         position: absolute;
-        top: -7px;
-        right: 49px;
+        top: -8px;
+        right: 50px;
 
 
     }
@@ -243,6 +265,7 @@
         font-weight: 400;
         line-height: 1.5;
         letter-spacing: 0.32px;
+        scale: 0.8;
 
     }
 
@@ -255,7 +278,11 @@
 
 
 
+    .link-btn {
+        height: 68px;
+        width: 245px;
 
+    }
 
 
 
@@ -316,6 +343,9 @@
         font-weight: 400;
         line-height: 1.33;
         letter-spacing: 0.36px;
+        scale: 0.6;
+        max-width: 291px;
+        left: 40px;
 
     }
 
