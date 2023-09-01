@@ -1,5 +1,7 @@
 :root {
   --white: #fdfdff;
+  --bg-dark: #1a1a1a;
+  --bg-second-dark: #232330;
   --violet: #7e8fdd;
   --font-color: #242424;
   --torquoise: #9cdfdf;
@@ -14,24 +16,6 @@
   --decoration-color: rgba(36, 36, 36, 0.1);
   --bg-top-vector: rgba(156, 223, 223, 0.8);
   --bg-md-vector: rgba(156, 223, 223, 0.5);
-}
-
-.usual-mode {
-  background: linear-gradient(
-    175deg,
-    rgba(253, 253, 255, 0.1) 14.85%,
-    rgba(8, 2, 21, 0) 95.72%
-  );
-  backdrop-filter: blur(100px);
-}
-
-.dark-mode {
-  background: linear-gradient(
-    175deg,
-    rgba(0, 0, 0, 0.1) 14.85%,
-    rgba(8, 2, 21, 0) 95.72%
-  );
-  backdrop-filter: blur(100px);
 }
 
 html {
@@ -85,3 +69,24 @@ body {
   padding: 0;
   opacity: 0;
 }
+
+/* .dark-mode {
+  background: linear-gradient(
+    290deg,
+    rgb(0, 0, 0) 0%,
+    rgb(8, 8, 8) 65%,
+    rgb(147, 186, 175) 100%
+  );
+  backdrop-filter: blur(100px);
+  color: var(--white);
+}
+
+.light-mode {
+  background: linear-gradient(
+    0.78turn,
+    rgb(250, 250, 254) 35%,
+    rgba(8, 2, 21, 0)
+  );
+  backdrop-filter: blur(100px);
+  background-color: var(--bg-md-vector);
+} */

@@ -1,33 +1,15 @@
 <!-- Шаблон коктейлю головна сторінка -->
-<section class="main-search-result">
+<section class="main-search-result" id="cocktail-section">
   <div class="container">
     <h2 class="section-title">Cocktails</h2>
     <!-- Шаблон коктейлю для рендеру -->
     <ul class="cocktail-list list">
-      <li class="cocktail-item">
-        <picture>
-          <!-- тут типу ретіна і різні розширення но я не дупляю що поверне бекенд(якого ще нема) чи лише 1  формат чи відразу декілька -->
-          <!-- <source media="(min-width: 1280px)" srcset="./images/testImg@desc.webp 1x, ./images/testimg@desk2x.webp 2x" /> -->
-          <source
-            media="(min-width: 768px)"
-            srcset="
-              ./images/testImg@tab.webp   1x,
-              ./images/testimg@mob2x.webp 2x
-            "
-          />
-          <source
-            media="(max-width: 767px)"
-            srcset="
-              ./images/testImg@mob.webp   1x,
-              ./images/testimg@mob2x.webp 2x
-            "
-          />
-          <img
-            class="card-image img"
-            src="./images/testImg@mob.webp"
-            alt="cocktail"
-          />
-        </picture>
+      <!-- <li class="cocktail-item">
+        <img
+          class="card-image img"
+          src="./images/testImg@mob.webp"
+          alt="cocktail"
+        />
         <div class="text-box">
           <h2 class="cocktail-name">Negroni</h2>
           <p class="cocktail-descr">
@@ -47,7 +29,7 @@
             </button>
           </div>
         </div>
-      </li>
+      </li> -->
     </ul>
   </div>
 </section>
