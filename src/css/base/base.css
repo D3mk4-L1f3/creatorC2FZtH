@@ -85,7 +85,7 @@ body {
     rgb(147, 186, 175) 100%
   );
   backdrop-filter: blur(100px);
-  color: #fdfdff;
+  color: var(--white);
 }
 
 .light-mode {
@@ -107,5 +107,4 @@ body {
   );
   backdrop-filter: blur(100px);
   color: #fdfdff;
-} */
->>>>>>> Stashed changes
+}
