@@ -1,7 +1,7 @@
 :root {
+  --white: #fdfdff;
   --bg-dark: #1a1a1a;
   --bg-second-dark: #232330;
-  --white: #fdfdff;
   --violet: #7e8fdd;
   --font-color: #242424;
   --torquoise: #9cdfdf;
@@ -19,6 +19,15 @@
   --text-color-light: #242424;
 }
 
+/* --bg-dark: #1a1a1a; */
+/* --white: #fdfdff; */
+/* --bg-second-dark: #232330; */
+/* :root {
+  --bg-light: #ffffff; // Define your light background color
+  --bg-second-light: #f5f5f5; // Define your light secondary background color
+  --font-color-light: #333333; // Define your light font color
+  // Define other light mode variables here
+} */
 html {
   scroll-behavior: smooth;
 }
@@ -41,7 +50,12 @@ body.dark-theme {
   color: var(--white);
 }
 
-.container {
+/* body {
+  background-color: var(--bg-light);
+  color: var(--font-color-light);
+  // Other styling using the light mode variables
+} */
+*/ .container {
   padding-left: 20px;
   padding-right: 20px;
   margin-left: auto;
