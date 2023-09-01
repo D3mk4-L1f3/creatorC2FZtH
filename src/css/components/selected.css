@@ -3,7 +3,7 @@
 }
 .select-box {
   position: relative;
-  display: iinline-flex;
+  display: inline-flex;
   margin: auto;
   gap: 33px;
   width: 90px;
