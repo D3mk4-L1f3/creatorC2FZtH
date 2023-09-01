@@ -53,7 +53,7 @@ async function onShowModal(e) {
   }
 }
 
-export function renderCocktailDetails({
+function renderCocktailDetails({
   drink,
   drinkThumb,
   description,
@@ -69,8 +69,8 @@ export function renderCocktailDetails({
       />
       <div class="modal-content">
         <h3 class="cocktail-modal-title visually-hidden">${drink}</h3>
-        <h4 class="modal-capture">Ingredients:</h4>
-        <p class="modal-text  modal-subtitle">Per cocktail</p>
+        <h4 class="modal-capture">Ingredients</h4>
+        <p class="modal-text modal-subtitle">Per cocktail</p>
         <ul class="modal-ingredient-list">
 
 ${renderListIngredients(ingredients)}
@@ -79,7 +79,7 @@ ${renderListIngredients(ingredients)}
       </div>
     </div>
     <h4 class="modal-capture">Instractions:</h4>
-    <p class="modal-text dynamic-element text">
+    <p class="modal-text text">
     ${description}
     </p>
     <button class="modal-button" type="button">add to favorite</button>
@@ -87,11 +87,11 @@ ${renderListIngredients(ingredients)}
   refs.modalContentRender.insertAdjacentHTML('beforeend', markup);
 }
 
-export function renderListIngredients(arr) {
+function renderListIngredients(arr) {
   const markup = arr
     .map(
       ingredient =>
-        ` <li class="modal-ingredient-item modal-text dynamic-element">
+        ` <li class="modal-ingredient-item modal-text">
               <a href="#" class="ingred-item-link">${
                 ingredient.measure || ''
               } ${ingredient.title}</a>
@@ -151,8 +151,8 @@ function renderIngredientDetails({
   flavour,
   description,
 }) {
-  const markup = ` <h3 class="ingred-modal-title dynamic-element">${title}</h3>
-      <p class="ingred-modal-subtitle ">${type}</p>
+  const markup = ` <h3 class="ingred-modal-title">${title}</h3>
+      <p class="ingred-modal-subtitle">${type}</p>
       <p class="modal-ingred-desc">
         <span class="selected-title">${title}</span> ${description}
       </p>

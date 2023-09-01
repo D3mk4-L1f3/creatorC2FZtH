@@ -13,24 +13,26 @@ const refs = {
   modalCocktail: document.querySelector('.modal-cocktail'),
   btnCloseIcon: document.querySelector('.button-close-icon'),
   modalIngredBox: document.querySelector('.modal-ingred'),
-  // modalIngredContent: document.querySelector('.modal-ingred-content'),
 };
 
 refs.modeChange.addEventListener('click', onModeChangeClick);
 
 function onModeChangeClick() {
-  if (localStorage.getItem('theme') === 'dark') {
-    localStorage.removeItem('theme');
-  } else {
+  if (localStorage.getItem('theme') !== 'dark') {
     localStorage.setItem('theme', 'dark');
+  } else {
+    localStorage.removeItem('theme');
   }
+
   toggleDarkMode();
   toggleDynamicMarkup();
 }
-async function toggleDarkMode() {
+
+function toggleDarkMode() {
   const isDark = localStorage.getItem('theme') === 'dark';
 
   document.querySelector('html').classList.toggle('dark', isDark);
+
   refs.logo.classList.toggle('dark', isDark);
   refs.headerHero.classList.toggle('dark', isDark);
   refs.paragHero.classList.toggle('dark', isDark);
@@ -43,21 +45,21 @@ async function toggleDarkMode() {
   refs.modalCocktail.classList.toggle('dark-background', isDark);
   refs.btnCloseIcon.classList.toggle('dark-svg', isDark);
   refs.modalIngredBox.classList.toggle('dark-background', isDark);
-  // refs.modalIngredContent.classList.toggle('dark-background', isDark);
 
   const dynamicLi = document.querySelectorAll('.dynamic-box');
   dynamicLi.forEach(element => {
     element.classList.toggle('dark-background', isDark);
   });
 }
+
 function toggleDynamicMarkup() {
   const isDark = localStorage.getItem('theme') === 'dark';
 
   const dynamicElements = document.querySelectorAll('.dynamic-element');
   dynamicElements.forEach(el => {
     el.classList.toggle('dark', isDark);
-    console.log('Element:', el, isDark);
   });
 }
+
 toggleDynamicMarkup();
 toggleDarkMode();
