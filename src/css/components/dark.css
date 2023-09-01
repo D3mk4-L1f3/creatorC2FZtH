@@ -11,3 +11,7 @@ html.dark,
 .dark-background {
   background-color: var(--bg-second-dark);
 }
+
+.dark-svg {
+  stroke: var(--white);
+}
