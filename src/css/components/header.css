@@ -380,6 +380,8 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+
+  outline-color: var(--input-outline);
 }
 
 .svg-search-main {
@@ -532,7 +534,7 @@ margin-right: 35%;
   font-weight: 400;
   line-height: normal;
 
-  outline-color: lightslategrey;
+  outline-color: var(--input-outline);
 }
 
 .svg-search {

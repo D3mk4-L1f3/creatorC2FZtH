@@ -8,6 +8,7 @@
 }
 
 .auth-modal {
+  display: none;
   position: absolute;
   z-index: 999;
   top: 30vh;

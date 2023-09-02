@@ -12,10 +12,18 @@ async function fetchCocktailsbyFirstLetter(letter) {
   });
   try {
     const res = await axios.get(`${BASE_URL}${END_POINT}?${PARAMS}`);
-    const cocktailDetail = res.data;
+    const cocktailInfo = res.data;
     refs.cockList.innerHTML = '';
-    renderMarkUp(cocktailDetail);
-    return cocktailDetail;
+    renderMarkUp(cocktailInfo);
+    const section = document.getElementById('cocktail-section');
+    const distance = section.getBoundingClientRect().top;
+    window.scrollBy(0, distance);
+    Notify.success(`We found ${cocktailInfo.length} cocktails!`, {
+      position: 'center-top',
+      clickToClose: true,
+      fontSize: '22px',
+      width: 'fit-content',
+    });
   } catch (err) {
     Notify.failure(`Error: Unable to find cocktails starting with ${letter}`);
     throw err;
