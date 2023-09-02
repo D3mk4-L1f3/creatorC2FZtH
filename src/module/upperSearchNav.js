@@ -11,7 +11,16 @@ async function fetchCocktailsbyName(name) {
   const PARAMS = new URLSearchParams({
     s: name,
   });
+  const trimmedName = name.trim();
   try {
+    if (trimmedName === '') {
+      Notify.failure('Please fill in a cocktail name', {
+        clickToClose: true,
+        fontSize: '22px',
+        width: 'fit-content',
+      });
+      return;
+    }
     const res = await axios.get(`${BASE_URL}${END_POINT}?${PARAMS}`);
     const cocktailDetail = res.data;
     const newData = cocktailDetail.slice(0, totalCocktails);
