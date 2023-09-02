@@ -435,7 +435,14 @@ margin-right: 35%;
 
 @media only screen and (min-width: 1280px) {
   .header-alternative-menu {
-    display: none;
+    /* display: none; */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    opacity: 0;
   }
 }
 
@@ -524,6 +531,8 @@ margin-right: 35%;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+
+  outline-color: lightslategrey;
 }
 
 .svg-search {
