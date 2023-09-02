@@ -74,7 +74,7 @@ function renderCocktailDetails({
       />
       <div class="modal-content">
         <h3 class="cocktail-modal-title visually-hidden">${drink}</h3>
-        <h4 class="modal-capture">Ingredients</h4>
+        <h4 class="modal-capture">Ingredients:</h4>
         <p class="modal-text modal-subtitle">Per cocktail</p>
         <ul class="modal-ingredient-list">
 
@@ -158,51 +158,26 @@ function renderIngredientDetails({
   flavour,
   description,
 }) {
+  const strDefault = `<span class="colorDefault">${"...Sorry... we can't find any information"}<span>`;
   const markup = `<h3 class="ingred-modal-title">${title}</h3>
-      <p class="ingred-modal-subtitle">${type}</p>
+      <p class="ingred-modal-subtitle">${type || strDefault}</p>
       <p class="modal-ingred-desc">
-       ${description}
+       ${description || strDefault}
       </p>
       <ul class="modal-ingred-list">
-        <li class="modal-ingred-item">Type: ${type}</li>
-        <li class="modal-ingred-item">Country of origin: ${country}</li>
-        <li class="modal-ingred-item">Alcohol by volume: ${abv}</li>
-        <li class="modal-ingred-item">Flavour: ${flavour}</li>
+        <li class="modal-ingred-item">Type: ${type || strDefault}</li>
+        <li class="modal-ingred-item">Country of origin: ${
+          country || strDefault
+        }</li>
+        <li class="modal-ingred-item">Alcohol by volume: ${
+          abv || strDefault
+        }</li>
+        <li class="modal-ingred-item">Flavour: ${flavour || strDefault}</li>
       </ul>
       <button type="button" class="modal-button" type="button">
         add to favorite
       </button>`;
-  const arr = description.split(' ');
-  console.log(arr);
-  const arr2 = title.split(' ');
-  console.log(arr2);
-  // for (let i = 0; i <= arr2.length; i += 1) {
-  //   if (arr.includes(arr2[i])) {
-  //     console.log(arr.includes(arr2[i]));
-  //     // arr.splice(arr[i], arr[i + 1]);
-  //   }
-  // }
-  // console.log(arr2.includes(arr));
-  // if (arr2.includes(arr))
-  // if(title, ...)
-  function compareFirstElementsAndApplyClass(arr1, arr2, className) {
-    // Перевірка, чи обидва масиви мають хоча б один елемент
 
-    if (arr1.length > 0 && arr2.length > 0) {
-      // Порівняння перших елементів обох масивів
-      if (arr1[0] === arr2[0]) {
-        // Якщо перші елементи співпадають, застосовуємо клас
-        document.documentElement.classList.add(className);
-      } else {
-        // Якщо перші елементи не співпадають, видаляємо клас (якщо він вже був доданий)
-        document.documentElement.classList.remove(className);
-      }
-    } else {
-      // Якщо хоча б один з масивів порожній, також видаляємо клас (якщо він вже був доданий)
-      document.documentElement.classList.remove(className);
-    }
-  }
-  compareFirstElementsAndApplyClass(arr, arr2, 'selected-title');
   refers.modalIngredContent.insertAdjacentHTML('beforeend', markup);
 }
 
