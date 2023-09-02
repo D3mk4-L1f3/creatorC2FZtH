@@ -57,7 +57,7 @@ function createMarkup({ drinkThumb, description, drink, _id }) {
             </button>
             <button type="button" class="btn-favorite btn js-btn-favorite dynamic-element" data-id="${_id}">
               <svg class="card-icon">
-                <use href="${sprite}#heart"></use>;
+                <use class="js-icon-favorite" href="${sprite}#heart"></use>;
               </svg>
             </button>`;
 }
