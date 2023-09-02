@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { renderMarkUp } from './view';
 // ====================================================================
 
 const BASE_URL = 'https://drinkify-backend.p.goit.global/api/v1';
@@ -12,19 +13,21 @@ async function fetchCocktailsbyFirstLetter(letter) {
   try {
     const res = await axios.get(`${BASE_URL}${END_POINT}?${PARAMS}`);
     const cocktailDetail = res.data;
+    refs.cockList.innerHTML = '';
+    renderMarkUp(cocktailDetail);
     return cocktailDetail;
   } catch (err) {
     Notify.failure(`Error: Unable to find cocktails starting with ${letter}`);
     throw err;
   }
 }
-
 // =====================================================================
 const refs = {
   iconEl: document.querySelector('.icon'),
   cocktailSelect: document.querySelector('.cocktail-select'),
   btnContainer: document.querySelector('.btn-container'),
   body: document,
+  cockList: document.querySelector('.cocktail-list'),
 };
 
 // =====================================================================

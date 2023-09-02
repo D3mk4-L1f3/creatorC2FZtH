@@ -1,27 +1,60 @@
-// some plyshka for upper pagination.....
-// const favoriteList = document.getElementById('favoriteList');
-//         const searchInput = document.getElementById('searchInput');
+import axios from 'axios';
+import { renderMarkUp } from './view';
+import debounce from 'lodash.debounce';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
-//         function fetchIngredientsByFirstLetter(letter) {
-//             fetch(`/api/ingredients?startsWith=${letter}`)
-//                 .then(response => response.json())
-//                 .then(data => {
-//                     favoriteList.innerHTML = '';
+const BASE_URL = 'https://drinkify-backend.p.goit.global/api/v1';
+const END_POINT = '/cocktails/search/';
 
-//                     data.forEach(ingredient => {
-//                         const li = document.createElement('li');
-//                         li.textContent = ingredient.name;
-//                         favoriteList.appendChild(li);
-//                     });
-//                 })
-//                 .catch(error => console.error('Error fetching ingredients:', error));
-//         }
+const refs = {
+  searchForm: document.querySelector('.js-search'),
+  cockList: document.querySelector('.cocktail-list'),
+};
 
-//         fetchIngredientsByFirstLetter('A');
+function isScreenMobile() {
+  return window.matchMedia('(max-width: 1279px)').matches;
+}
 
-//         searchInput.addEventListener('input', event => {
-//             const searchLetter = event.target.value.trim().toUpperCase();
-//             if (searchLetter.length === 1) {
-//                 fetchIngredientsByFirstLetter(searchLetter);
-//             }
-//         });
+let totalCocktails = 8;
+if (!isScreenMobile()) {
+  totalCocktails = 9;
+}
+
+async function fetchCocktailsName(name) {
+  const PARAMS = new URLSearchParams({
+    s: name,
+  });
+  try {
+    const res = await axios.get(`${BASE_URL}${END_POINT}?${PARAMS}`);
+    const cocktailDetail = res.data;
+    const newData = cocktailDetail.slice(0, totalCocktails);
+    refs.cockList.innerHTML = '';
+    renderMarkUp(newData);
+    const section = document.getElementById('cocktail-section');
+    const distance = section.getBoundingClientRect().top;
+    window.scrollBy(0, distance);
+    Notify.success(`We found ${cocktailDetail.length} cocktails!`, {
+      position: 'center-top',
+      clickToClose: true,
+      fontSize: '22px',
+      width: 'fit-content',
+    });
+    return cocktailDetail;
+  } catch (err) {
+    console.log(err);
+    Notify.failure(`Error: Unable to find cocktail ${name}`, {
+      clickToClose: true,
+      fontSize: '22px',
+      width: 'fit-content',
+    });
+  }
+}
+
+refs.searchForm.addEventListener('input', debounce(onSearchFormInput, 1000));
+
+function onSearchFormInput(e) {
+  e.preventDefault();
+  const name = e.target.value;
+  fetchCocktailsName(name);
+  refs.searchForm.reset();
+}
