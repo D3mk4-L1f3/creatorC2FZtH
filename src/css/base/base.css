@@ -6,16 +6,17 @@
   --font-color: #242424;
   --torquoise: #9cdfdf;
   --secondary-white: #f8f9ff;
-  --btn-hover: #6E7FCF;
+  --btn-hover: #6e7fcf;
+  --hover-color: #6e7fcf;
+  --input-outline: lightslategrey;
   --modal-backdrop: rgba(21, 21, 21, 0.6);
   --modal-text-color: rgba(36, 36, 36, 0.5);
   --modal-secondary-text: rgba(36, 36, 36, 0.8);
   --btn-select-color: rgba(126, 143, 221, 0.4);
-  --hover-color: #6e7fcf;
-  --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   --decoration-color: rgba(36, 36, 36, 0.1);
   --bg-top-vector: rgba(156, 223, 223, 0.8);
   --bg-md-vector: rgba(156, 223, 223, 0.5);
+  --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 [data-theme='dark'] {
