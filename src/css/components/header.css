@@ -607,6 +607,7 @@ margin-right: 35%;
   display: flex;
   gap: 14px;
   justify-content: center;
+  text-align: center;
 }
 
 .burger-home {
@@ -657,22 +658,46 @@ margin-right: 35%;
   display: block;
 }
 
-.dropdown-menu {
+.list-dropdown {
   display: none;
   position: absolute;
-  background-color: #333;
-  padding: 10px;
+  left: 168px;
+  background-color: var(--violet);
+  border-radius: 16px;
+  padding: 18px 24px;
+  /* padding: 10px; */
 }
+
+/* .burger-list-dropdown {
+  position: absolute;
+  left: 35%;
+} */
 
 .dropdown-menu.is-open {
   display: block;
 }
 
-.dropdown-menu li {
-  margin-bottom: 5px;
+.dropdown-menu  {
+  margin-bottom: 8px;
 }
 
 .dropdown-menu a {
-  color: #fff;
+  color: var(--white);
   text-decoration: none;
+  gap: 8px;
 }
+
+.dropdown-elements {
+  gap: 8px;
+}
+
+.dropdown-elements:hover,
+.dropdown-elements:focus {
+  color: var(--modal-text-color);
+}
+
+.burger-dropdown-elements:hover,
+.burger-dropdown-elements:focus {
+  color: var(--modal-text-color);
+}
+
