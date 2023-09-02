@@ -1,0 +1,21 @@
+.auth-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: rgba(#6a6a6a, 0.5);
+}
+
+.auth-modal {
+  position: absolute;
+  z-index: 999;
+  top: 30vh;
+  left: 30vh;
+  width: 650px;
+  max-width: 700px;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 15px 20px -10px rgba(#000, 0.1);
+}
