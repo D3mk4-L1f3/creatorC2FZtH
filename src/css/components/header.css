@@ -344,6 +344,65 @@
   transform: rotate(10deg);
   top: 20%;
 }
+#checkbox:checked + .toggle {
+  background: linear-gradient(to bottom, #036daf, #003d63);
+}
+
+#burger-checkbox:checked + .toggle {
+  background: linear-gradient(to bottom, #036daf, #003d63);
+}
+
+/* Добавлены стили для #burger-checkbox:checked */
+#burger-checkbox:checked + .toggle::before {
+  transform: translateX(220%);
+}
+
+#burger-checkbox:checked + .toggle::after {
+  transform: translateX(360%);
+  height: 14px;
+  width: 14px;
+}
+
+#checkbox:checked + .toggle .mountains {
+  background-color: #05021a;
+  transform: translateY(100%);
+}
+
+#burger-checkbox:checked + .toggle .mountains {
+  background-color: #05021a;
+  transform: translateY(100%);
+}
+
+#checkbox:checked + .toggle .sea {
+  background-color: #05021a;
+  bottom: -125%;
+}
+
+#burger-checkbox:checked + .toggle .sea {
+  background-color: #05021a;
+  bottom: -167%;
+}
+
+#checkbox:checked + .toggle .star {
+  transform: rotate(10deg);
+  top: 20%;
+}
+
+#burger-checkbox:checked + .toggle .star {
+  transform: rotate(10deg);
+  top: 20%;
+}
+@media only screen and (min-width: 767px) {
+  #burger-checkbox:checked + .toggle::after {
+    transform: translateX(397%);
+    height: 16px;
+    width: 16px;
+  }
+  #burger-checkbox:checked + .toggle .sea {
+    background-color: #05021a;
+    bottom: -118%;
+  }
+}
 
 /* Search form main page */
 .search-form-main {

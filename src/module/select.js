@@ -13,8 +13,9 @@ async function fetchCocktailsbyFirstLetter(letter) {
   try {
     const res = await axios.get(`${BASE_URL}${END_POINT}?${PARAMS}`);
     const cocktailInfo = res.data;
+    const data = cocktailInfo.slice(0, totalCocktails);
     refs.cockList.innerHTML = '';
-    renderMarkUp(cocktailInfo);
+    renderMarkUp(data);
     const section = document.getElementById('cocktail-section');
     const distance = section.getBoundingClientRect().top;
     window.scrollBy(0, distance);
@@ -46,7 +47,6 @@ refs.body.addEventListener('click', onBodyClick);
 // =====================================================================
 
 // =============================SELECT DROPDOWN====================================
-let isDropdownOpen = false;
 
 function onCocktailSelectChange(e) {
   const selectedOption = e.target;
@@ -84,4 +84,14 @@ function onBtnClick(e) {
   const btnSelect = e.target;
   const btn = btnSelect.value;
   fetchCocktailsbyFirstLetter(btn);
+}
+
+let isDropdownOpen = false;
+let totalCocktails = 8;
+if (!isScreenMobile()) {
+  totalCocktails = 9;
+}
+
+function isScreenMobile() {
+  return window.matchMedia('(max-width: 1279px)').matches;
 }
