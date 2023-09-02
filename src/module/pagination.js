@@ -10,7 +10,7 @@ function isScreenDesktop() {
 }
 
 function isScreenMobile() {
-  return window.matchMedia('(min-width: 320px)').matches;
+  return window.matchMedia('(max-width: 375px)').matches;
 }
 
 let itemsPerPage = isScreenMobile() ? 8 : 9;
@@ -36,9 +36,6 @@ async function handlePageClick(pageNumber) {
   buttons[currentPage - 1].disabled = false;
   buttons[pageNumber - 1].disabled = true;
   currentPage = pageNumber;
-
-  console.log(`Go to page ${pageNumber}`);
-
   cocktailList.innerHTML = '';
   await getCocktails(currentPage, itemsPerPage);
   scrollToCocktailSection();
@@ -55,11 +52,11 @@ let startItems = [];
 let endItems = [];
 
 async function createPaginationButtons() {
-  itemList.innerHTML = ''; // Clear existing buttons
+  itemList.innerHTML = ''; 
 
   await getTotalCountPage();
 
-  for (let i = 1; i <= totalPageCount; i++) {
+  for (let i = 1; i <= totalPageCount; i += 1) {
     const button = document.createElement('button');
     button.classList.add('button-pagination');
     button.textContent = i;
@@ -85,6 +82,13 @@ async function createPaginationButtons() {
       threeDot.classList.add('button-pagination');
 
       itemList.append(...startItems, threeDot, ...endItems);
+    } else  if (isScreenMobile) {
+      startItems = buttons.slice(0, 3);
+      endItems = buttons.slice(buttons.length - 1, buttons.length);
+
+      const threeDot = document.createElement('button');
+      threeDot.textContent = '...';
+      threeDot.classList.add('button-pagination');
     }
 
     const nextButton = document.createElement('button');
