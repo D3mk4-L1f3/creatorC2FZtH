@@ -6,10 +6,13 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 const BASE_URL = 'https://drinkify-backend.p.goit.global/api/v1';
 const END_POINT = '/cocktails/search/';
 
-const refs = {
+let refs = {
   searchForm: document.querySelector('.js-search'),
   cockList: document.querySelector('.cocktail-list'),
+  burgerMenu: document.querySelector('.js-open-menu'),
 };
+
+refs.burgerMenu.addEventListener('click', () => {});
 
 function isScreenMobile() {
   return window.matchMedia('(max-width: 1279px)').matches;
