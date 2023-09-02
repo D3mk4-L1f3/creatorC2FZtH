@@ -554,10 +554,13 @@ margin-right: 35%;
     letter-spacing: 0.48px;
   }
 
-    .burger-favorite {
-      color: var(--white);
-      cursor: pointer;
-    }
+}
+
+@media only screen and (max-width: 1279px) {
+.burger-favorite {
+    color: var(--white);
+    cursor: pointer;
+  }
 }
 
 .mode-burger-container {
