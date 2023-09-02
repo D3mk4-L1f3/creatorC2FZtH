@@ -374,7 +374,7 @@
   background-color: transparent;
   padding-left: 42px;
 
-  color: rgba(253, 253, 255, 0.2);
+  color: var(--font-color);
   font-family: Poppins;
   font-size: 14px;
   font-style: normal;
@@ -435,7 +435,14 @@ margin-right: 35%;
 
 @media only screen and (min-width: 1280px) {
   .header-alternative-menu {
-    display: none;
+    /* display: none; */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    opacity: 0;
   }
 }
 
@@ -444,28 +451,26 @@ margin-right: 35%;
 }
 
 .header-alternative-menu.menu-toggle {
-    position: absolute;
-        color: var(--white);
-    
-        top: 20px;
-        right: 20px;
-    
-        width: 32px;
-        height: 32px;
-    
-        /* border-radius: 50%; */
-    
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0;
-    
-        background-color: transparent;
-    
-    
-        cursor: pointer;
-        transition: background-color var(--transition),
-            border var(--transition);
+  position: absolute;
+  color: var(--white);
+
+  top: 20px;
+  right: 20px;
+
+  width: 32px;
+  height: 32px;
+
+  /* border-radius: 50%; */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+
+  background-color: transparent;
+
+  cursor: pointer;
+  transition: background-color var(--transition), border var(--transition);
 }
 
 .burger-header {
@@ -526,6 +531,8 @@ margin-right: 35%;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+
+  outline-color: lightslategrey;
 }
 
 .svg-search {
@@ -542,9 +549,9 @@ margin-right: 35%;
 }
 
 .burger-home {
-    font-size: 18px;
-    line-height: 1.33;
-    letter-spacing: 0.36px;
+  font-size: 18px;
+  line-height: 1.33;
+  letter-spacing: 0.36px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -553,11 +560,10 @@ margin-right: 35%;
     line-height: 32px;
     letter-spacing: 0.48px;
   }
-
 }
 
 @media only screen and (max-width: 1279px) {
-.burger-favorite {
+  .burger-favorite {
     color: var(--white);
     cursor: pointer;
   }
