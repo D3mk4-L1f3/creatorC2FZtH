@@ -1,4 +1,3 @@
-
 // контроль пробілу та зміна кольору кнопки svg іконки пошуку в залежності
 // від дозволено та не дозволено
 // function onFormInputHandler() {
@@ -82,24 +81,25 @@
   });
 })();
 
-// // dropdown menu 
+// // dropdown menu
 
-const favoriteMenuItem = document.getElementById("favorite-menu");
-        const dropdownMenu = favoriteMenuItem.querySelector(".dropdown-menu");
+const favoriteMenuItem = document.getElementById('favorite-menu');
+const dropdownMenu = favoriteMenuItem.querySelector('.dropdown-menu');
 
-        // Function to toggle the dropdown menu visibility
-        function toggleDropdownMenu() {
-            if (dropdownMenu.style.display === "block" || dropdownMenu.style.display === "") {
-                dropdownMenu.style.display = "none";
-            } else {
-                dropdownMenu.style.display = "block";
-            }
-        }
+// Function to toggle the dropdown menu visibility
+function toggleDropdownMenu() {
+  if (
+    dropdownMenu.style.display === 'block' ||
+    dropdownMenu.style.display === ''
+  ) {
+    dropdownMenu.style.display = 'none';
+  } else {
+    dropdownMenu.style.display = 'block';
+  }
+}
 
-        // Add a click event listener to the "Favorite" menu item
-favoriteMenuItem.addEventListener("click", toggleDropdownMenu);
-        
-
+// Add a click event listener to the "Favorite" menu item
+favoriteMenuItem.addEventListener('click', toggleDropdownMenu);
 
 // document.addEventListener('click', function(event) {
 //   const dropdownMenus = document.querySelectorAll('.dropdown-menu');

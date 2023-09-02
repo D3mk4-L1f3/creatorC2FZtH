@@ -531,6 +531,8 @@ margin-right: 35%;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+
+  outline-color: lightslategrey;
 }
 
 .svg-search {
