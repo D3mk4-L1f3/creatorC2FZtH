@@ -19,6 +19,8 @@ const refers = {
   // ingredIenlistFav: document.querySelector('.ingredient-list'),
 };
 
+console.log(refers.modalIngredContent);
+
 refs.cardList.addEventListener('click', onShowModal);
 refs.closeModalBtn.addEventListener('click', onCloseModal);
 refs.modal.addEventListener('click', onClick);
@@ -95,9 +97,11 @@ function renderListIngredients(arr) {
     .map(
       ingredient =>
         ` <li class="modal-ingredient-item modal-text">
-              <a href="#" class="ingred-item-link">${
-                ingredient.measure || ''
-              } ${ingredient.title}</a>
+              <a href="#" data-id="${
+                ingredient.ingredientId
+              }" class="ingred-item-link">${ingredient.measure || ''} ${
+          ingredient.title
+        }</a>
             </li>`
     )
     .join('');
@@ -132,9 +136,9 @@ async function getIngredientsDetails(id) {
 let idIngred = '';
 async function onIngredientClick(e) {
   e.preventDefault();
-  refers.modalIngredContent = '';
-  if (!e.target.classList.contains('ingred-item-link')) return;
+  refers.modalIngredContent.innerHTML = '';
   idIngred = e.target.dataset.id;
+
   refs.modal.classList.add('is-hidden');
   refers.modal.classList.remove('is-hidden');
   try {
@@ -154,21 +158,22 @@ function renderIngredientDetails({
   flavour,
   description,
 }) {
-  const markup = ` <h3 class="ingred-modal-title">${title}</h3>
+  const markup = `<h3 class="ingred-modal-title">${title}</h3>
       <p class="ingred-modal-subtitle">${type}</p>
       <p class="modal-ingred-desc">
         <span class="selected-title">${title}</span> ${description}
       </p>
       <ul class="modal-ingred-list">
-        <li class="modal-ingred-item">Type:${type}</li>
-        <li class="modal-ingred-item">Country of origin:${country}</li>
-        <li class="modal-ingred-item">Alcohol by volume:${abv}</li>
-        <li class="modal-ingred-item">Flavour:${flavour}</li>
+        <li class="modal-ingred-item">Type: ${type}</li>
+        <li class="modal-ingred-item">Country of origin: ${country}</li>
+        <li class="modal-ingred-item">Alcohol by volume: ${abv}</li>
+        <li class="modal-ingred-item">Flavour: ${flavour}</li>
       </ul>
       <button type="button" class="modal-button" type="button">
         add to favorite
       </button>`;
-  refers.modalIngredContent.insertAdjacentHTML(markup);
+
+  refers.modalIngredContent.insertAdjacentHTML('beforeend', markup);
 }
 
 function onCloseModalIngred(e) {
