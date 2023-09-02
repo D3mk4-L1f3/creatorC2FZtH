@@ -607,6 +607,7 @@ margin-right: 35%;
   display: flex;
   gap: 14px;
   justify-content: center;
+  text-align: center;
 }
 
 .burger-home {
@@ -667,10 +668,10 @@ margin-right: 35%;
   /* padding: 10px; */
 }
 
-.burger-list-dropdown {
+/* .burger-list-dropdown {
   position: absolute;
   left: 35%;
-}
+} */
 
 .dropdown-menu.is-open {
   display: block;
@@ -699,3 +700,4 @@ margin-right: 35%;
 .burger-dropdown-elements:focus {
   color: var(--modal-text-color);
 }
+
