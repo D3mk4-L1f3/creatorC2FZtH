@@ -34,17 +34,18 @@
 </form>
 
 <!-- light-dark mode  -->
-<div class="mode-container" id="dark-btn">
+<div class="mode-container">
 <div class="daynight">
-        
-<label for="checkbox">
-<input class="js-theme-change" type="checkbox" name="" id="checkbox">
-<div class="toggle">
-<div class="cloud"></div>
-<div class="star"></div>
-<div class="sea"></div>
-<div class="mountains"></div>
-</div></label>
+
+  <label for="checkbox">
+  <input class="js-theme-change" type="checkbox" name="mode-checkbox" id="checkbox">
+  <div class="toggle">
+  <div class="cloud"></div>
+    <div class="star"></div>
+    <div class="sea"></div>
+    <div class="mountains"></div>
+  </div>
+  </label>
 </div></div>
 </div>
 </div>
@@ -55,64 +56,67 @@
   </svg>
 </button>
 
-</div>
 </header>
 
-    <!--HAMBURGER MENU-->
-    <div class="header-alternative-menu js-menu-container" id="mobile-menu">
-      <!-- Лого -->
-      <div class="burger-header">
-        <div class="burger-header-left-part">
-          <a class="logo link logo-burger" href="./index.html"><span class="logo-text logo-text-hamburger">DRINKIFY</span>
-            <svg class="logo-icon logo-icon-burger" width="24" height="20">
-              <use href="./public/cup.svg#icon-coc-cup"></use>
-            </svg></a>
-        </div>
-        <!-- light-dark mode  -->
-        <div class="burger-header-right-part">
-          <div class="mode-burger-container">
-            <div class="daynight">
-          
-              <label for="checkbox">
-                <input class="js-theme-change" type="checkbox" name="" id="checkbox">
-                <div class="toggle">
-                  <div class="cloud"></div>
-                  <div class="star"></div>
-                  <div class="sea"></div>
-                  <div class="mountains"></div>
-                </div>
-              </label>
-            </div>
-          </div>
-          <button class="menu-toggle js-close-menu">
-          <svg class="modal-icon modal-icon-burger" width="32" height="32">
-            <use href="./public/sprite.svg#icon-close"></use>
-          </svg>
-                </div>
-        </div>
-
-      <div class="burger-requests">
-        <!-- Log-in button -->
-        <button class="login-button" id="login-modal-btn">Log In</button>
-        <!-- search form -->
-        <form class="search-form" id="search-form">
-          <input class="search-form-input" type="text" name="searchQuery"autocomplete="off"placeholder=Search />
-          <svg class="svg-search" width="16" height="16">
-            <use href="./public/sprite.svg#icon-search"></use>
-          </svg>
-        </form>
-      </div>
-<!-- Site navigation -->
-<nav class="burger-nav-menu">
-      <ul class="burger-menu-list list">
-        <li class="header-menu-burger-item burger-home"><a href="/src/index.html">Home</a></li>
-        <li class="header-menu-burger-item dropdown">
-          <a href="">Favorite</a>
-          <ul class="dropdown-menu">
-            <li><a href="/src/fav-coctails.html">Favorite cocktails</a></li>
-            <li><a href="/src/fav-ingridients.html">Favorite ingredients</a></li>
-          </ul>
-        </li>
-      </ul>
-</nav>
+<!-- HAMBURGER MENU -->
+<div class="header-alternative-menu js-menu-container" id="mobile-menu">
+  <!-- Лого -->
+  <div class="burger-header">
+    <div class="burger-header-left-part">
+      <a class="logo link logo-burger" href="./index.html">
+        <span class="logo-text logo-text-hamburger">DRINKIFY</span>
+        <svg class="logo-icon logo-icon-burger" width="24" height="20">
+          <use href="./public/cup.svg#icon-coc-cup"></use>
+        </svg>
+      </a>
     </div>
+    <!-- light-dark mode -->
+    <div class="burger-header-right-part">
+      <div class="mode-burger-container">
+        <div class="daynight">
+          <label for="mode-burger-checkbox">
+            <input class="js-theme-change" type="checkbox" name="mode-burger-checkbox" id="burger-checkbox">
+            <div class="toggle">
+              <div class="cloud"></div>
+              <div class="star"></div>
+              <div class="sea"></div>
+              <div class="mountains"></div>
+            </div>
+          </label>
+        </div>
+      </div>
+      <button class="menu-toggle js-close-menu">
+        <svg class="modal-icon modal-icon-burger" width="32" height="32">
+          <use href="./public/sprite.svg#icon-close"></use>
+        </svg>
+      </button>
+    </div> 
+  </div> 
+
+  <div class="burger-requests">
+    <!-- Log-in button -->
+    <button class="login-button" id="login-modal-btn">Log In</button>
+    <!-- search form -->
+    <form class="search-form" id="burger-search-form">
+      <input class="search-form-input" type="text" name="searchQuery" autocomplete="off" placeholder="Search" />
+      <svg class="svg-search" width="16" height="16">
+        <use href="./public/sprite.svg#icon-search"></use>
+      </svg>
+    </form>
+  </div> 
+
+  <!-- Site navigation -->
+  <nav class="burger-nav-menu">
+    <ul class="burger-menu-list list">
+      <li class="header-menu-burger-item burger-home"><a href="/src/index.html">Home</a></li>
+      <li class="header-menu-burger-item burger-favorite" id="favorite-menu">
+        <p class="dropdown">Favorite</p>
+        <ul class="dropdown-menu">
+          <li><a href="/src/fav-coctails.html">Favorite cocktails</a></li>
+          <li><a href="/src/fav-ingridients.html">Favorite ingredients</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</div> 
+
