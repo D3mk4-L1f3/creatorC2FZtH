@@ -48,7 +48,8 @@ body {
   color: var(--font-color-light);
   // Other styling using the light mode variables
 } */
-*/ .container {
+
+.container {
   padding-left: 20px;
   padding-right: 20px;
   margin-left: auto;
@@ -84,33 +85,27 @@ body {
 }
 
 .dark-mode {
-  background: linear-gradient(
-    290deg,
-    rgb(0, 0, 0) 0%,
-    rgb(8, 8, 8) 65%,
-    rgb(147, 186, 175) 100%
-  );
+  background: linear-gradient(290deg,
+      rgb(0, 0, 0) 0%,
+      rgb(8, 8, 8) 65%,
+      rgb(147, 186, 175) 100%);
   backdrop-filter: blur(100px);
   color: #fdfdff;
 }
 
 .light-mode {
-  background: linear-gradient(
-    0.78turn,
-    rgb(250, 250, 254) 35%,
-    rgba(8, 2, 21, 0)
-  );
+  background: linear-gradient(0.78turn,
+      rgb(250, 250, 254) 35%,
+      rgba(8, 2, 21, 0));
   backdrop-filter: blur(100px);
   background-color: rgba(156, 223, 223, 0.5);
 }
 
 .dark-mode {
-  background: linear-gradient(
-    290deg,
-    rgb(0, 0, 0) 0%,
-    rgb(8, 8, 8) 65%,
-    rgb(147, 186, 175) 100%
-  );
+  background: linear-gradient(290deg,
+      rgb(0, 0, 0) 0%,
+      rgb(8, 8, 8) 65%,
+      rgb(147, 186, 175) 100%);
   backdrop-filter: blur(100px);
   color: #fdfdff;
 }

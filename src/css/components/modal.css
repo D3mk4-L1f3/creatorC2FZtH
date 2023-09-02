@@ -60,6 +60,7 @@ body::-webkit-scrollbar {
     }
 
     .cocktail-modal-title {
+        width: auto;
         opacity: 1;
         height: auto;
         position: static;
