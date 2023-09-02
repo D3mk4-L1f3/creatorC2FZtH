@@ -143,7 +143,7 @@ async function onIngredientClick(e) {
   refers.modal.classList.remove('is-hidden');
   try {
     const response = await getIngredientsDetails(idIngred);
-    // console.log(response.data[0]);
+    console.log(response.data[0]);
     renderIngredientDetails(response.data[0]);
   } catch (error) {
     console.log(error);
@@ -161,7 +161,7 @@ function renderIngredientDetails({
   const markup = `<h3 class="ingred-modal-title">${title}</h3>
       <p class="ingred-modal-subtitle">${type}</p>
       <p class="modal-ingred-desc">
-        <span class="selected-title">${title}</span> ${description}
+       ${description}
       </p>
       <ul class="modal-ingred-list">
         <li class="modal-ingred-item">Type: ${type}</li>
@@ -172,7 +172,37 @@ function renderIngredientDetails({
       <button type="button" class="modal-button" type="button">
         add to favorite
       </button>`;
+  const arr = description.split(' ');
+  console.log(arr);
+  const arr2 = title.split(' ');
+  console.log(arr2);
+  // for (let i = 0; i <= arr2.length; i += 1) {
+  //   if (arr.includes(arr2[i])) {
+  //     console.log(arr.includes(arr2[i]));
+  //     // arr.splice(arr[i], arr[i + 1]);
+  //   }
+  // }
+  // console.log(arr2.includes(arr));
+  // if (arr2.includes(arr))
+  // if(title, ...)
+  function compareFirstElementsAndApplyClass(arr1, arr2, className) {
+    // Перевірка, чи обидва масиви мають хоча б один елемент
 
+    if (arr1.length > 0 && arr2.length > 0) {
+      // Порівняння перших елементів обох масивів
+      if (arr1[0] === arr2[0]) {
+        // Якщо перші елементи співпадають, застосовуємо клас
+        document.documentElement.classList.add(className);
+      } else {
+        // Якщо перші елементи не співпадають, видаляємо клас (якщо він вже був доданий)
+        document.documentElement.classList.remove(className);
+      }
+    } else {
+      // Якщо хоча б один з масивів порожній, також видаляємо клас (якщо він вже був доданий)
+      document.documentElement.classList.remove(className);
+    }
+  }
+  compareFirstElementsAndApplyClass(arr, arr2, 'selected-title');
   refers.modalIngredContent.insertAdjacentHTML('beforeend', markup);
 }
 
