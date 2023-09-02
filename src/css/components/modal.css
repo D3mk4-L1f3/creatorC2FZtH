@@ -48,27 +48,28 @@ body::-webkit-scrollbar {
 }
 
 @media screen and (min-width: 768px) {
-  .modal-cocktail {
-    max-width: 600px;
-    max-height: 100%;
-    overflow: auto;
-    padding: 40px 40px;
-  }
+    .modal-cocktail {
+        max-width: 600px;
+        max-height: 100%;
+        overflow: auto;
+        padding: 40px 40px;
+    }
 
-  .cocktail-modal-title {
-    opacity: 1;
-    height: auto;
-    position: static;
-    margin: 0 0 20px;
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 1.2;
-  }
+    .cocktail-modal-title {
+        width: auto;
+        opacity: 1;
+        height: auto;
+        position: static;
+        margin: 0 0 20px;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 1.2;
+    }
 
-  .modal-flex-wrapper {
-    display: flex;
-    gap: 20px;
-  }
+    .modal-flex-wrapper {
+        display: flex;
+        gap: 20px;
+    }
 }
 
 .button-close-icon {

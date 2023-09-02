@@ -24,22 +24,7 @@ if (!isScreenMobile()) {
 const itemList = document.querySelector('.pagination-list');
 //     const pagination = document.getElementById('pagination');
 const items = [];
-
 let currentPage = 1;
-
-function displayItems(page) {
-  //   itemList.innerHTML = '';
-  const startIndex = page - 1 * itemsPerPage;
-
-  const endIndex = startIndex + itemsPerPage;
-  const pageItems = items.slice(startIndex, endIndex);
-
-  pageItems.forEach(item => {
-    const itemElement = document.createElement('div');
-    itemElement.textContent = item;
-    itemList.appendChild(itemElement);
-  });
-}
 async function createPaginationButtons() {
   const response = await getTotalCountPage();
   const numPages = Math.ceil(Number(response) / itemsPerPage);
@@ -49,25 +34,78 @@ async function createPaginationButtons() {
     if (numPages === 1) {
       break;
     }
-
     const button = document.createElement('button');
-    button.textContent = i;
-    button.addEventListener('click', async () => {
-      cocktailList.innerHTML = '';
-      currentPage = i;
-      displayItems(currentPage);
+    button.classList.add('button-pagination');
 
+    button.textContent = i;
+    button.addEventListener('click', async e => {
+      goToPage(i);
+      cocktailList.innerHTML = '';
       await getCocktails();
 
       const section = document.getElementById('cocktail-section');
-
       const distance = section.getBoundingClientRect().top;
       window.scrollBy(200, distance);
     });
-
-    itemList.appendChild(button);
+    if (i === currentPage) {
+      button.disabled = true;
+    }
+    items.push(button);
   }
+
+  const threeDot = document.createElement('button');
+  threeDot.textContent = '...';
+  threeDot.classList.add('button-pagination');
+
+  function isScreenTablet() {
+    return window.matchMedia('(min-width: 768px)').matches;
+  }
+  let startItens = items.slice(0, 3);
+  let endItems = items.slice(items.length - 3, items.length);
+  if (!isScreenTablet()) {
+    startItens = items.slice(0, 2);
+    endItems = items.slice(items.length - 2, items.length);
+  }
+  itemList.append(...startItens, threeDot, ...endItems);
 }
 
-displayItems(currentPage);
 createPaginationButtons();
+
+// const pagination = document.getElementById('pagination');
+// const totalPages = 10; // Total number of pages
+// let currentPage = 1; // Initially selected page
+
+// function createPaginationButtons() {
+//   for (let i = 1; i <= totalPages; i++) {
+//     const button = document.createElement('button');
+//     button.innerText = i;
+//     button.addEventListener('click', () => {
+//       // Handle button click event
+//       goToPage(i);
+//     });
+//     pagination.appendChild(button);
+
+//     // Disable current page button
+//     if (i === currentPage) {
+//       button.disabled = true;
+//     }
+//   }
+// }
+
+function goToPage(page) {
+  const buttons = itemList.getElementsByTagName('button');
+
+  // Enable previously selected page button
+  buttons[currentPage - 1].disabled = false;
+
+  // Disable current page button
+  buttons[page - 1].disabled = true;
+
+  // Update current page
+  currentPage = page;
+
+  // Perform desired action for page navigation
+  console.log(`Go to page ${page}`);
+}
+
+// createPaginationButtons();
