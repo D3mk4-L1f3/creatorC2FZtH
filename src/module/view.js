@@ -13,7 +13,7 @@ function isScreenMobile() {
   return window.matchMedia('(max-width: 1279px)').matches;
 }
 
-export default async function getCocktails() {
+export async function getCocktails() {
   let totalCocktails = 8;
   if (!isScreenMobile()) {
     totalCocktails = 9;
@@ -33,7 +33,7 @@ export default async function getCocktails() {
   renderMarkUp(arrCocktails);
 }
 
-function renderMarkUp(arr) {
+export function renderMarkUp(arr) {
   const markup = arr.flat().map(createMarkup).join('');
   refs.cocktailList.insertAdjacentHTML('beforeend', markup);
 }

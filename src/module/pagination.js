@@ -1,6 +1,6 @@
 // // some Plushka for pagination
 import axios from 'axios';
-import getCocktails from './view.js';
+import { getCocktails } from './view.js';
 const cocktailList = document.querySelector('.cocktail-list');
 const BASE_URL =
   'https://drinkify-backend.p.goit.global/API/V1/cocktails/count';
