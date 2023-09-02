@@ -143,7 +143,7 @@ async function onIngredientClick(e) {
   refers.modal.classList.remove('is-hidden');
   try {
     const response = await getIngredientsDetails(idIngred);
-    console.log(response.data[0]);
+    // console.log(response.data[0]);
     renderIngredientDetails(response.data[0]);
   } catch (error) {
     console.log(error);
@@ -158,11 +158,16 @@ function renderIngredientDetails({
   flavour,
   description,
 }) {
+  const serverString = title;
+  const modifiedString = description.replace(
+    title,
+    `<span class="selected-title">${title}</span>`
+  );
   const strDefault = `<span class="colorDefault">${"...Sorry... we can't find any information"}<span>`;
   const markup = `<h3 class="ingred-modal-title">${title}</h3>
       <p class="ingred-modal-subtitle">${type || strDefault}</p>
       <p class="modal-ingred-desc">
-       ${description || strDefault}
+       ${modifiedString || strDefault}
       </p>
       <ul class="modal-ingred-list">
         <li class="modal-ingred-item">Type: ${type || strDefault}</li>
