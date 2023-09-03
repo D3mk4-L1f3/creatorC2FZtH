@@ -6,7 +6,11 @@
       <nav class="header-page-nav">
         <ul class="menu-list list">
           <li class="header-menu-item"><a href="/src/index.html">Home</a></li>
-          <li class="header-menu-item dropdown"><a href="">Favorite</a>
+          <li class="header-menu-item dropdown"><p class="link-favourite">Favorite
+            <svg class="arrow" width="24" height="24" id="toggleDropdown">
+              <use href="./public/sprite.svg#arrow-to-down"></use>
+            </svg>
+          </p>
           <ul class="list-dropdown dropdown-menu">
             <li><a class="dropdown-elements" href="/src/fav-coctails.html">Favorite cocktails</a></li>
             <li><a class="dropdown-elements"  href="/src/fav-ingridients.html">Favorite ingredients</a></li>
@@ -110,7 +114,11 @@
     <ul class="burger-menu-list list">
       <li class="header-menu-burger-item burger-home"><a href="/src/index.html">Home</a></li>
       <li class="header-menu-burger-item burger-favorite" id="favorite-menu">
-        <p class="dropdown dropdown-favourite">Favorite</p>
+        <p class="dropdown dropdown-favourite">Favorite
+          <svg class="burger-arrow" width="20" height="20">
+            <use href="./public/sprite.svg#arrow-to-down"></use>
+          </svg>
+        </p>
         <ul class="burger-list-dropdown dropdown-menu">
           <li><a class="burger-dropdown-elements" href="/src/fav-coctails.html">Favorite cocktails</a></li>
           <li><a class="burger-dropdown-elements" href="/src/fav-ingridients.html">Favorite ingredients</a></li>

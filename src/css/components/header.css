@@ -701,3 +701,34 @@ margin-right: 35%;
   color: var(--modal-text-color);
 }
 
+.arrow {
+  stroke: var(--violet);
+  pointer-events: none;
+  margin-top: -2px;
+  cursor: pointer;
+
+  /* transform: rotate(180deg);
+  transition: var(--transition); */
+}
+
+.arrow:hover,
+.arrow:focus {
+  transform: rotate(180deg);
+  transition: var(--transition);
+}
+
+.burger-arrow {
+  stroke: var(--white);
+  margin-bottom: -7px;
+}
+
+.burger-arrow:hover,
+.burger-arrow:focus {
+  transform: rotate(180deg);
+  transition: var(--transition);
+}
+
+.link-favourite {
+  display: flex;
+  cursor: pointer;
+}
