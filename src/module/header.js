@@ -35,7 +35,7 @@ const favoriteMenuItem = document.getElementById('favorite-menu');
 const dropdownMenu = favoriteMenuItem.querySelector('.dropdown-menu');
 
 // Function to toggle the dropdown menu visibility
-function toggleDropdownMenu(e) {
+function toggleDropdownMenu() {
   if (
     dropdownMenu.style.display === 'block' ||
     dropdownMenu.style.display === ''
@@ -45,6 +45,18 @@ function toggleDropdownMenu(e) {
     dropdownMenu.style.display = 'block';
   }
 }
+
+// Add a click event listener to the "Favorite" menu item
+favoriteMenuItem.addEventListener('click', toggleDropdownMenu);
+
+// document.addEventListener('click', function(event) {
+//   const dropdownMenus = document.querySelectorAll('.dropdown-menu');
+//   dropdownMenus.forEach(function(menu) {
+//     if (!menu.contains(event.target)) {
+//       menu.style.display = 'none';
+//     }
+//   });
+// });
 
 // Add a click event listener to the "Favorite" menu item
 favoriteMenuItem.addEventListener('click', toggleDropdownMenu);

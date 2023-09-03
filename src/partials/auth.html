@@ -1,4 +1,4 @@
-<div class="auth-wrapper">
+<div class="auth-backdrop is-hidden">
   <div class="auth-modal">
     <h1>Sign up</h1>
     <form>
@@ -28,6 +28,10 @@
       <button type="submit" id="login-submit">Submit!</button>
     </form>
     <h2>Sign in with social networks</h2>
-    <button class="social-signin google">Log in with google</button>
+    <button type="submit" class="auth-logout">Log out</button>
+    <button type="button" class="social-signin" id="google">
+      Log in with google
+    </button>
+    <button id="login-modal-close">X</button>
   </div>
 </div>

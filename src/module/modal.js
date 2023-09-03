@@ -24,6 +24,16 @@ const refers = {
 
 console.log(refers.modalIngredContent);
 
+
+// refs.cardList.addEventListener('click', onShowModal);
+refs.closeModalBtn.addEventListener('click', onCloseModal);
+refs.modal?.addEventListener('click', onClick);
+
+refs.modalContentRender.addEventListener('click', onIngredientClick);
+refers.closeModalBtn.addEventListener('click', onCloseModalIngred);
+refers.modal?.addEventListener('click', onClickIng);
+// refers.ingredIenlistFav.addEventListener('click', onIngredientClick);
+
 refs.cardList?.addEventListener('click', onShowModal);
 refs.cocktailFavoriteList?.addEventListener('click', onShowModal);
 refs.closeModalBtn?.addEventListener('click', onCloseModal);
@@ -33,6 +43,7 @@ refs.modalContentRender?.addEventListener('click', onIngredientClick);
 refers.closeModalBtn?.addEventListener('click', onCloseModalIngred);
 refers.modal?.addEventListener('click', onClickIng);
 refers.ingredIenlistFav?.addEventListener('click', onIngredientClick);
+
 
 const BASE_URL =
   'https://drinkify-backend.p.goit.global/API/V1/cocktails/lookup';
@@ -50,7 +61,7 @@ let id = '';
 async function onShowModal(e) {
   refs.modalContentRender.innerHTML = '';
   if (!e.target.classList.contains('js-btn-learn-more')) return;
-  refs.modal.classList.remove('is-hidden');
+  refs.modal?.classList.remove('is-hidden');
   document.body.style.overflow = 'hidden';
   id = e.target.dataset.id;
 
@@ -126,7 +137,7 @@ function onCloseModal(e) {
   document.body.style.overflowY = 'auto';
   refs.modalDivEl.classList.remove('active');
   setTimeout(() => {
-    refs.modal.classList.add('is-hidden');
+    refs.modal?.classList.add('is-hidden');
   }, 100);
 }
 
@@ -160,8 +171,8 @@ async function onIngredientClick(e) {
   refers.modalIngredContent.innerHTML = '';
   idIngred = e.target.dataset.id;
 
-  refs.modal.classList.add('is-hidden');
-  refers.modal.classList.remove('is-hidden');
+  refs.modal?.classList.add('is-hidden');
+  refers.modal?.classList.remove('is-hidden');
   try {
     const response = await getIngredientsDetails(idIngred);
     // console.log(response.data[0]);
@@ -214,8 +225,8 @@ function renderIngredientDetails({
 }
 
 function onCloseModalIngred(e) {
-  refs.modal.classList.remove('is-hidden');
-  refers.modal.classList.add('is-hidden');
+  refs.modal?.classList.remove('is-hidden');
+  refers.modal?.classList.add('is-hidden');
 }
 
 function onClickIng(e) {

@@ -4,14 +4,15 @@ import { getCocktails } from './view.js';
 const cocktailList = document.querySelector('.cocktail-list');
 const BASE_URL =
   'https://drinkify-backend.p.goit.global/API/V1/cocktails/count';
+const spriteUrl = new URL('../public/sprite.svg', import.meta.url);
 const itemList = document.querySelector('.pagination-list');
 
 function isScreenDesktop() {
-  return window.matchMedia('(max-width: 1279px)').matches;
+  return window.matchMedia('(min-width: 768px)').matches;
 }
 
 function isScreenMobile() {
-  return window.matchMedia('(max-width: 375px)').matches;
+  return window.matchMedia('(max-width: 767px)').matches;
 }
 
 let itemsPerPage = isScreenMobile() ? 8 : 9;
@@ -38,6 +39,19 @@ async function handlePageClick(pageNumber) {
   currentPage = pageNumber;
   cocktailList.innerHTML = '';
   await getCocktails(currentPage, itemsPerPage);
+
+  const firstButton = itemList.firstChild;
+  const lastButton = itemList.lastChild;
+  if (currentPage === 1) {
+    firstButton.disabled = true;
+    lastButton.disabled = false; 
+  } else if (currentPage === totalPageCount) {
+    firstButton.disabled = false;
+    lastButton.disabled = true;
+  } else {
+    firstButton.disabled = false;
+    lastButton.disabled = false;
+  }
 
   scrollToCocktailSection();
 }
@@ -68,13 +82,24 @@ async function createPaginationButtons() {
   if (totalPageCount > 1) {
     const prevButton = document.createElement('button');
     prevButton.classList.add('button-pagination');
-    prevButton.textContent = '<';
+
+    const svgUse = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+      svgUse.setAttribute('href', `${spriteUrl}#arrow-to-left`);
+      svgUse.setAttribute('width', '7');
+    svgUse.setAttribute('height', '10');
+    svgUse.setAttribute('fill', 'currentColor');
+
+    const svgIcon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svgIcon.appendChild(svgUse);
+    
+    prevButton.appendChild(svgIcon);
+    
     prevButton.addEventListener('click', () =>
       handlePageClick(currentPage - 1)
     );
     itemList.insertBefore(prevButton, itemList.firstChild);
 
-    if (!isScreenDesktop()) {
+    if (isScreenDesktop()) {
       startItems = buttons.slice(0, 3);
       endItems = buttons.slice(buttons.length - 3, buttons.length);
 
@@ -92,11 +117,22 @@ async function createPaginationButtons() {
       threeDot.textContent = '...';
       threeDot.classList.add('button-pagination');
       itemList.append(...startItems, threeDot, ...endItems);
-    }
+    };
 
     const nextButton = document.createElement('button');
     nextButton.classList.add('button-pagination');
-    nextButton.textContent = '>';
+
+    const svgUseNext = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+      svgUseNext.setAttribute('href', `${spriteUrl}#arrow-to-right`);
+      svgUseNext.setAttribute('width', '7');
+    svgUseNext.setAttribute('height', '10');
+    svgUseNext.setAttribute('fill', 'currentColor');
+
+    const svgIconNext = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      svgIconNext.appendChild(svgUseNext);
+
+    nextButton.appendChild(svgIconNext);
+   
     nextButton.addEventListener('click', () =>
       handlePageClick(currentPage + 1)
     );
