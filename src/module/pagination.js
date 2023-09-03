@@ -4,6 +4,7 @@ import { getCocktails } from './view.js';
 const cocktailList = document.querySelector('.cocktail-list');
 const BASE_URL =
   'https://drinkify-backend.p.goit.global/API/V1/cocktails/count';
+const spriteUrl = new URL('../public/sprite.svg', import.meta.url);
 const itemList = document.querySelector('.pagination-list');
 
 function isScreenDesktop() {
@@ -31,8 +32,6 @@ async function getTotalCountPage() {
     return 0;
   }
 }
-
-// ...
 
 async function handlePageClick(pageNumber) {
   buttons[currentPage - 1].disabled = false;
@@ -83,7 +82,18 @@ async function createPaginationButtons() {
   if (totalPageCount > 1) {
     const prevButton = document.createElement('button');
     prevButton.classList.add('button-pagination');
-    prevButton.textContent = '<';
+
+    const svgUse = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+      svgUse.setAttribute('href', `${spriteUrl}#arrow-to-left`);
+      svgUse.setAttribute('width', '7');
+    svgUse.setAttribute('height', '10');
+    svgUse.setAttribute('fill', 'currentColor');
+
+    const svgIcon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svgIcon.appendChild(svgUse);
+    
+    prevButton.appendChild(svgIcon);
+    
     prevButton.addEventListener('click', () =>
       handlePageClick(currentPage - 1)
     );
@@ -111,7 +121,18 @@ async function createPaginationButtons() {
 
     const nextButton = document.createElement('button');
     nextButton.classList.add('button-pagination');
-    nextButton.textContent = '>';
+
+    const svgUseNext = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+      svgUseNext.setAttribute('href', `${spriteUrl}#arrow-to-right`);
+      svgUseNext.setAttribute('width', '7');
+    svgUseNext.setAttribute('height', '10');
+    svgUseNext.setAttribute('fill', 'currentColor');
+
+    const svgIconNext = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      svgIconNext.appendChild(svgUseNext);
+
+    nextButton.appendChild(svgIconNext);
+   
     nextButton.addEventListener('click', () =>
       handlePageClick(currentPage + 1)
     );
