@@ -742,3 +742,28 @@ margin-right: 35%;
   display: flex;
   cursor: pointer;
 }
+
+/* .star-background {
+  position: relative;
+} */
+
+@media only screen and (max-width: 767px) {
+.burger-star {
+  display: none;
+}
+}
+
+@media only screen and (min-width: 1280px) {
+  .burger-star {
+      display: none;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1279px) {
+.burger-star {
+  position: absolute;
+  top: 65%;
+  left: 53%;
+  fill: var(--bg-star);
+}
+}
