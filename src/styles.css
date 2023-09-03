@@ -6,7 +6,7 @@
 @import url('./css/components/header.css');
 @import url('./css/components/hero.css');
 @import url('./css/components/searcher.css');
-/* @import url('./css/components/auth.css'); */
+@import url('./css/components/auth.css');
 @import url('./css/components/modal.css');
 @import url('./css/components/result.css');
 @import url('./css/components/selected.css');
