@@ -7,11 +7,11 @@ const BASE_URL =
 const itemList = document.querySelector('.pagination-list');
 
 function isScreenDesktop() {
-  return window.matchMedia('(max-width: 1279px)').matches;
+  return window.matchMedia('(min-width: 768px)').matches;
 }
 
 function isScreenMobile() {
-  return window.matchMedia('(max-width: 375px)').matches;
+  return window.matchMedia('(max-width: 767px)').matches;
 }
 
 let itemsPerPage = isScreenMobile() ? 8 : 9;
@@ -32,12 +32,27 @@ async function getTotalCountPage() {
   }
 }
 
+// ...
+
 async function handlePageClick(pageNumber) {
   buttons[currentPage - 1].disabled = false;
   buttons[pageNumber - 1].disabled = true;
   currentPage = pageNumber;
   cocktailList.innerHTML = '';
   await getCocktails(currentPage, itemsPerPage);
+
+  const firstButton = itemList.firstChild;
+  const lastButton = itemList.lastChild;
+  if (currentPage === 1) {
+    firstButton.disabled = true;
+    lastButton.disabled = false; 
+  } else if (currentPage === totalPageCount) {
+    firstButton.disabled = false;
+    lastButton.disabled = true;
+  } else {
+    firstButton.disabled = false;
+    lastButton.disabled = false;
+  }
 
   scrollToCocktailSection();
 }
@@ -74,7 +89,7 @@ async function createPaginationButtons() {
     );
     itemList.insertBefore(prevButton, itemList.firstChild);
 
-    if (!isScreenDesktop()) {
+    if (isScreenDesktop()) {
       startItems = buttons.slice(0, 3);
       endItems = buttons.slice(buttons.length - 3, buttons.length);
 
@@ -92,7 +107,7 @@ async function createPaginationButtons() {
       threeDot.textContent = '...';
       threeDot.classList.add('button-pagination');
       itemList.append(...startItems, threeDot, ...endItems);
-    }
+    };
 
     const nextButton = document.createElement('button');
     nextButton.classList.add('button-pagination');
