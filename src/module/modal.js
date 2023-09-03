@@ -7,7 +7,9 @@ const refs = {
   modalDivEl: document.querySelector('.modal-cocktail'),
   modalContentRender: document.querySelector('.modal-content-render'),
   body: document.body,
+  cocktailFavoriteList: document.querySelector('.cocktail-favorite'),
 };
+// console.log(refs.cocktailFavoriteList);
 
 const refers = {
   closeModalBtn: document.querySelector('[data-modal-ing-close]'),
@@ -19,16 +21,17 @@ const refers = {
   // ingredIenlistFav: document.querySelector('.ingredient-list'),
 };
 
-console.log(refers.modalIngredContent);
+// console.log(refers.modalIngredContent);
 
-refs.cardList.addEventListener('click', onShowModal);
-refs.closeModalBtn.addEventListener('click', onCloseModal);
-refs.modal.addEventListener('click', onClick);
+refs.cardList?.addEventListener('click', onShowModal);
+refs.cocktailFavoriteList?.addEventListener('click', onShowModal);
+refs.closeModalBtn?.addEventListener('click', onCloseModal);
+refs.modal?.addEventListener('click', onClick);
 
-refs.modalContentRender.addEventListener('click', onIngredientClick);
-refers.closeModalBtn.addEventListener('click', onCloseModalIngred);
-refers.modal.addEventListener('click', onClickIng);
-// refers.ingredIenlistFav.addEventListener('click', onIngredientClick);
+refs.modalContentRender?.addEventListener('click', onIngredientClick);
+refers.closeModalBtn?.addEventListener('click', onCloseModalIngred);
+refers.modal?.addEventListener('click', onClickIng);
+// refers.ingredIenlistFav?.addEventListener('click', onIngredientClick);
 
 const BASE_URL =
   'https://drinkify-backend.p.goit.global/API/V1/cocktails/lookup';
