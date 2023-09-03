@@ -1,3 +1,4 @@
+
 // контроль пробілу та зміна кольору кнопки svg іконки пошуку в залежності
 // від дозволено та не дозволено
 // function onFormInputHandler() {
@@ -50,6 +51,7 @@
 //   bodyScrollLock.enableBodyScroll(document.body);
 // });
 
+
 // Hamburger-menu
 
 (() => {
@@ -86,6 +88,7 @@
 const favoriteMenuItem = document.getElementById('favorite-menu');
 const dropdownMenu = favoriteMenuItem.querySelector('.dropdown-menu');
 
+
 // Function to toggle the dropdown menu visibility
 function toggleDropdownMenu() {
   if (
@@ -98,8 +101,13 @@ function toggleDropdownMenu() {
   }
 }
 
+        // Add a click event listener to the "Favorite" menu item
+favoriteMenuItem.addEventListener("click", toggleDropdownMenu);
+
+
 // Add a click event listener to the "Favorite" menu item
 favoriteMenuItem.addEventListener('click', toggleDropdownMenu);
+
 
 // document.addEventListener('click', function(event) {
 //   const dropdownMenus = document.querySelectorAll('.dropdown-menu');
@@ -109,3 +117,5 @@ favoriteMenuItem.addEventListener('click', toggleDropdownMenu);
 //     }
 //   });
 // });
+
+

@@ -7,7 +7,9 @@ const refs = {
   modalDivEl: document.querySelector('.modal-cocktail'),
   modalContentRender: document.querySelector('.modal-content-render'),
   body: document.body,
+  cocktailFavoriteList: document.querySelector('.cocktail-favorite'),
 };
+// console.log(refs.cocktailFavoriteList);
 
 const refers = {
   closeModalBtn: document.querySelector('[data-modal-ing-close]'),
@@ -19,7 +21,8 @@ const refers = {
   // ingredIenlistFav: document.querySelector('.ingredient-list'),
 };
 
-console.log(refers.modalIngredContent);
+// console.log(refers.modalIngredContent);
+
 
 // refs.cardList.addEventListener('click', onShowModal);
 refs.closeModalBtn.addEventListener('click', onCloseModal);
@@ -29,6 +32,17 @@ refs.modalContentRender.addEventListener('click', onIngredientClick);
 refers.closeModalBtn.addEventListener('click', onCloseModalIngred);
 refers.modal?.addEventListener('click', onClickIng);
 // refers.ingredIenlistFav.addEventListener('click', onIngredientClick);
+
+refs.cardList?.addEventListener('click', onShowModal);
+refs.cocktailFavoriteList?.addEventListener('click', onShowModal);
+refs.closeModalBtn?.addEventListener('click', onCloseModal);
+refs.modal?.addEventListener('click', onClick);
+
+refs.modalContentRender?.addEventListener('click', onIngredientClick);
+refers.closeModalBtn?.addEventListener('click', onCloseModalIngred);
+refers.modal?.addEventListener('click', onClickIng);
+// refers.ingredIenlistFav?.addEventListener('click', onIngredientClick);
+
 
 const BASE_URL =
   'https://drinkify-backend.p.goit.global/API/V1/cocktails/lookup';
@@ -74,7 +88,7 @@ function renderCocktailDetails({
       />
       <div class="modal-content">
         <h3 class="cocktail-modal-title visually-hidden">${drink}</h3>
-        <h4 class="modal-capture">Ingredients</h4>
+        <h4 class="modal-capture">Ingredients:</h4>
         <p class="modal-text modal-subtitle">Per cocktail</p>
         <ul class="modal-ingredient-list">
 
@@ -143,7 +157,7 @@ async function onIngredientClick(e) {
   refers.modal?.classList.remove('is-hidden');
   try {
     const response = await getIngredientsDetails(idIngred);
-    console.log(response.data[0]);
+    // console.log(response.data[0]);
     renderIngredientDetails(response.data[0]);
   } catch (error) {
     console.log(error);
@@ -158,51 +172,31 @@ function renderIngredientDetails({
   flavour,
   description,
 }) {
+  const serverString = title;
+  const modifiedString = description.replace(
+    title,
+    `<span class="selected-title">${title}</span>`
+  );
+  const strDefault = `<span class="colorDefault">${"...Sorry... we can't find any information"}<span>`;
   const markup = `<h3 class="ingred-modal-title">${title}</h3>
-      <p class="ingred-modal-subtitle">${type}</p>
+      <p class="ingred-modal-subtitle">${type || strDefault}</p>
       <p class="modal-ingred-desc">
-       ${description}
+       ${modifiedString || strDefault}
       </p>
       <ul class="modal-ingred-list">
-        <li class="modal-ingred-item">Type: ${type}</li>
-        <li class="modal-ingred-item">Country of origin: ${country}</li>
-        <li class="modal-ingred-item">Alcohol by volume: ${abv}</li>
-        <li class="modal-ingred-item">Flavour: ${flavour}</li>
+        <li class="modal-ingred-item">Type: ${type || strDefault}</li>
+        <li class="modal-ingred-item">Country of origin: ${
+          country || strDefault
+        }</li>
+        <li class="modal-ingred-item">Alcohol by volume: ${
+          abv || strDefault
+        }</li>
+        <li class="modal-ingred-item">Flavour: ${flavour || strDefault}</li>
       </ul>
       <button type="button" class="modal-button" type="button">
         add to favorite
       </button>`;
-  const arr = description.split(' ');
-  console.log(arr);
-  const arr2 = title.split(' ');
-  console.log(arr2);
-  // for (let i = 0; i <= arr2.length; i += 1) {
-  //   if (arr.includes(arr2[i])) {
-  //     console.log(arr.includes(arr2[i]));
-  //     // arr.splice(arr[i], arr[i + 1]);
-  //   }
-  // }
-  // console.log(arr2.includes(arr));
-  // if (arr2.includes(arr))
-  // if(title, ...)
-  function compareFirstElementsAndApplyClass(arr1, arr2, className) {
-    // Перевірка, чи обидва масиви мають хоча б один елемент
 
-    if (arr1.length > 0 && arr2.length > 0) {
-      // Порівняння перших елементів обох масивів
-      if (arr1[0] === arr2[0]) {
-        // Якщо перші елементи співпадають, застосовуємо клас
-        document.documentElement.classList.add(className);
-      } else {
-        // Якщо перші елементи не співпадають, видаляємо клас (якщо він вже був доданий)
-        document.documentElement.classList.remove(className);
-      }
-    } else {
-      // Якщо хоча б один з масивів порожній, також видаляємо клас (якщо він вже був доданий)
-      document.documentElement.classList.remove(className);
-    }
-  }
-  compareFirstElementsAndApplyClass(arr, arr2, 'selected-title');
   refers.modalIngredContent.insertAdjacentHTML('beforeend', markup);
 }
 

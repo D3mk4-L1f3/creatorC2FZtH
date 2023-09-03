@@ -1,1 +1,75 @@
-  .button-pagination {}
+.pagination-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 100px;
+}
+
+.button-pagination {
+  font-family: 'Montserrat', sans-serif;
+  width: 32px;
+  height: 32px;
+  background-color: transparent;
+  color: var(--violet);
+  font-size: 16px;
+  border: 1px solid var(--violet);
+  border-radius: 4px;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 375px) {
+  .pagination-list {
+    gap: 8px;
+  }
+
+  .button-pagination:first-child {
+    margin-right: 20px;
+  }
+
+  .button-pagination:last-child {
+    margin-left: 20px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .button-pagination {
+    width: 40px;
+    height: 40px;
+  }
+
+  .button-pagination:first-child {
+    width: 60px;
+    height: 40px;
+    margin-right: 108px;
+  }
+
+  .button-pagination:last-child {
+    width: 60px;
+    height: 40px;
+    margin-left: 108px;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .button-pagination:first-child {
+    margin-right: 200px;
+  }
+
+  .button-pagination:last-child {
+    margin-left: 200px;
+  }
+}
+
+.button-pagination[disabled] {
+  background-color: var(--torquoise);
+  color: var(--white);
+  cursor: not-allowed;
+}
+
+.button-pagination:hover,
+.button-pagination:focus {
+  background-color: var(--torquoise);
+  color: var(--white);
+}
