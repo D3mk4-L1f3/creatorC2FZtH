@@ -30,13 +30,13 @@ export async function getCocktails() {
     })
   );
 
-  renderMarkUp(arrCocktails);
+  // renderMarkUp(arrCocktails);
 }
 
-export function renderMarkUp(arr) {
-  const markup = arr.flat().map(createMarkup).join('');
-  refs.cocktailList.insertAdjacentHTML('beforeend', markup);
-}
+// export function renderMarkUp(arr) {
+//   const markup = arr.flat().map(createMarkup).join('');
+//   refs.cocktailList.insertAdjacentHTML('beforeend', markup);
+// }
 
 getCocktails();
 

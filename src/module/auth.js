@@ -6,9 +6,15 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
+  GoogleAuthProvider,
+  signInWithPopup,
+  updateProfile,
 } from 'firebase/auth';
 import { getAnalytics } from 'firebase/analytics';
-import { getDatabase, set, ref, update } from 'firebase/database';
+import { getDatabase, set, ref, update, onValue } from 'firebase/database';
+import Notiflix from 'notiflix';
+import axios from 'axios';
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -24,19 +30,54 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
+const provider = new GoogleAuthProvider();
+provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
+provider.setCustomParameters({
+  login_hint: 'user@example.com',
+});
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth = getAuth(app);
 const database = getDatabase(app);
 const submitBtnReg = document.querySelector('#reg-submit');
 const submitBtnLogin = document.querySelector('#login-submit');
+const modal = document.querySelector('.auth-backdrop');
+const logout = document.querySelector('.auth-logout');
+const openModal = document.querySelector('#login-modal-btn');
+const closeModal = document.querySelector('#login-modal-close');
+const signinGoogle = document.querySelector('#google');
+let cocktailList;
+document.addEventListener('DOMContentLoaded', function () {
+  cocktailList = document.querySelector('.cocktail-list');
+});
+
+function getData(dataName) {
+  return new Promise((resolve, reject) => {
+    const db = getDatabase();
+    const userId = auth.currentUser.uid;
+    const dataRef = ref(db, 'users/' + userId + '/' + dataName);
+
+    onValue(
+      dataRef,
+      snapshot => {
+        const data = snapshot.val();
+        resolve(data);
+      },
+      error => {
+        reject(error);
+      }
+    );
+  });
+}
 
 // Detect auth state
 onAuthStateChanged(auth, user => {
   if (user != null) {
-    console.log('Registered!');
+    Notiflix.Notify.success('Welcome, (user)');
+    modal.classList.add('is-hidden');
   } else {
-    console.log('no user!');
+    modal.classList.remove('is-hidden');
+    Notiflix.Notify.warning('Please log in your account!');
   }
 });
 
@@ -50,16 +91,12 @@ submitBtnReg.addEventListener('click', evt => {
     .then(userCredential => {
       // Signed in
       const user = userCredential.user;
-      console.log(user);
       set(ref(database, 'users/' + user.uid), {
         username: username,
         email: email,
-        fav: {
-          name: 'Cocktail',
-          description: 'i dont know',
-        },
+        favorites: [' '],
       });
-      alert('user created');
+      Notiflix.Notify.success('You created your account,', username);
     })
     .catch(error => {
       const errorCode = error.code;
@@ -89,7 +126,7 @@ submitBtnLogin.addEventListener('click', evt => {
     .catch(error => {
       const errorCode = error.code;
       const errorMessage = error.message;
-      console.log('no valid date!!!');
+      console.error('no valid date!!!');
     });
 });
 
@@ -113,6 +150,115 @@ logout.addEventListener('click', evt => {
     })
     .catch(error => {
       // An error happened.
-      console.log('Error in log out');
+      console.error('Error in log out');
     });
 });
+
+openModal.addEventListener('click', () => {
+  modal.classList.remove('is-hidden');
+});
+
+closeModal.addEventListener('click', () => {
+  modal.classList.add('is-hidden');
+});
+
+signinGoogle.addEventListener('click', evt => {
+  signInWithPopup(auth, provider)
+    .then(result => {
+      // This gives you a Google Access Token. You can use it to access the Google API.
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+      const token = credential.accessToken;
+      // The signed-in user info.
+      const user = result.user;
+      // IdP data available using getAdditionalUserInfo(result)
+      // ...
+    })
+    .catch(error => {
+      // Handle Errors here.
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // The email of the user's account used.
+      const email = error.customData.email;
+      // The AuthCredential type that was used.
+      const credential = GoogleAuthProvider.credentialFromError(error);
+      // ...
+    });
+});
+if (cocktailList) {
+  cocktailList.addEventListener('click', async evt => {
+    if (
+      evt.target.classList.contains('js-btn-favorite') == false &&
+      evt.target.classList.contains('card-icon') == false
+    ) {
+      return;
+    }
+    try {
+      const favData = await getData('favorites');
+      const response = await axios.get(
+        `https://drinkify-backend.p.goit.global/API/V1/cocktails/lookup/?id=${evt.target.getAttribute(
+          'data-id'
+        )}`
+      );
+      let drink = favData;
+      drink.push({
+        name: response.data[0].drink,
+        description: response.data[0].description,
+        image: response.data[0].drinkThumb,
+      });
+      const db = getDatabase();
+      const userId = auth.currentUser.uid;
+      set(ref(db, 'users/' + userId), {
+        favorites: drink,
+      })
+        .then(() => {
+          // Data saved successfully!
+          console.log('Updated data');
+        })
+        .catch(error => {
+          console.error('Problems with updating data! Line: 213');
+          // The write failed...
+        });
+
+      console.log(favData);
+    } catch (error) {
+      console.error(error);
+    }
+  });
+}
+
+export async function createFavorites() {
+  if (!cocktailList) {
+    console.error('cocktailList not found!!!');
+    return;
+  } else {
+    console.log(cocktailList);
+  }
+  const favData = await getData('favorites');
+  data = favData;
+  if (data[0] == ' ') {
+    data.shift();
+  }
+  return data
+    .map(({ name, description, image }) => {
+      `<li class="cocktail-item dynamic-box">
+          <img
+            class="card-image img "
+            src="${image}"
+            alt="${name}"
+            loading="lazy"
+          />
+        <div class="text-box dynamic-element">
+          <h2 class="cocktail-name dynamic-element">${name}</h2>
+          <p class="cocktail-descr dynamic-element">${description}</p>
+          <div class="btn-box dynamic-element">
+            <button type="button" class="card-btn btn js-btn-learn-more dynamic-element">
+              learn more
+            </button>
+            <button type="button" class="btn-favorite btn js-btn-favorite dynamic-element">
+              <svg class="card-icon">
+                <use></use>;
+              </svg>
+            </button>`;
+    })
+    .join();
+}
