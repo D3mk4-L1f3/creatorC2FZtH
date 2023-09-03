@@ -57,8 +57,7 @@
   color: var(--torquoise);
   font-style: italic;
 }
-.ingredient-list {
-}
+
 .ingredient-item {
   max-width: 335px;
   min-height: 222px;

@@ -36,9 +36,13 @@ refers.modal?.addEventListener('click', onClickIng);
 const BASE_URL =
   'https://drinkify-backend.p.goit.global/API/V1/cocktails/lookup';
 async function getCocktailDetails(id) {
-  const response = await axios.get(`${BASE_URL}?id=${id}`);
+  try {
+    const response = await axios.get(`${BASE_URL}?id=${id}`);
 
-  return response;
+    return response;
+  } catch (err) {
+    console.log('NOT HERE', err);
+  }
 }
 
 let id = '';
@@ -54,7 +58,7 @@ async function onShowModal(e) {
   }, 100);
   try {
     const response = await getCocktailDetails(id);
-    // console.log(response.data[0]);
+    console.log(response.data[0]);
     renderCocktailDetails(response.data[0]);
   } catch (error) {
     console.log(error);
@@ -66,6 +70,7 @@ function renderCocktailDetails({
   drinkThumb,
   instructions,
   ingredients,
+  _id,
 }) {
   const markup = ` <div class="modal-flex-wrapper">
       <img
@@ -90,7 +95,7 @@ ${renderListIngredients(ingredients)}
     <p class="modal-text text">
     ${instructions}
     </p>
-    <button class="modal-button" type="button">add to favorite</button>
+    <button class="modal-button" type="button" data-id="${_id}">add to favorite</button>
   </div>`;
   refs.modalContentRender.insertAdjacentHTML('beforeend', markup);
 }
@@ -131,16 +136,22 @@ function onClick(e) {
 
 const BASE_URL2 = 'https://drinkify-backend.p.goit.global/api/v1/ingredients/';
 async function getIngredientsDetails(id) {
-  const response = await axios.get(`${BASE_URL2}${id}`);
+  try {
+    const response = await axios.get(`${BASE_URL2}${id}`);
 
-  return response;
+    return response;
+  } catch (err) {
+    console.log('ERROR HERE', err);
+  }
 }
 
 let idIngred = '';
 async function onIngredientClick(e) {
   e.preventDefault();
   refers.modalIngredContent.innerHTML = '';
+  console.log(e.target);
   idIngred = e.target.dataset.id;
+  console.log(idIngred);
 
   refs.modal.classList.add('is-hidden');
   refers.modal.classList.remove('is-hidden');

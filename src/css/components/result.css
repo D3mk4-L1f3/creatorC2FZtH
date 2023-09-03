@@ -16,13 +16,17 @@
   margin-bottom: 40px;
 }
 
-.cocktail-list {
+.cocktail-list,
+.cocktail-favorite,
+.ingredient-list {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 @media only screen and (min-width: 768px) {
-  .cocktail-list {
+  .cocktail-list,
+  .cocktail-favorite,
+  .ingredient-list {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -31,7 +35,9 @@
   }
 }
 @media only screen and (min-width: 1280px) {
-  .cocktail-list {
+  .cocktail-list,
+  .cocktail-favorite,
+  .ingredient-list {
     column-gap: 24px;
     row-gap: 44px;
   }

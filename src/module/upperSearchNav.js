@@ -25,7 +25,7 @@ async function fetchCocktailsbyName(name) {
     const cocktailDetail = res.data;
     const newData = cocktailDetail.slice(0, totalCocktails);
     refs.cockList.innerHTML = '';
-    renderMarkUp(newData);
+    renderMarkUp(newData, refs.cocktailList);
 
     refs.mobileMenu.classList.remove('is-open');
     bodyScrollLock.enableBodyScroll(document.body);
