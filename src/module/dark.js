@@ -17,6 +17,9 @@ refs.burgerCloseBtn.addEventListener('click', onBurgerCloseMenuClick);
 
 refs.themeModeChanges.forEach(themeChange => {
   themeChange.addEventListener('click', onThemeModeChangeClick);
+  if (savedTheme === 'dark') {
+    themeChange.checked = true;
+  }
 });
 
 function onBurgerCloseMenuClick() {
