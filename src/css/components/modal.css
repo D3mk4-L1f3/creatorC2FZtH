@@ -287,3 +287,7 @@ body::-webkit-scrollbar {
 .colorDefault {
     color: rgb(213, 213, 133)
 }
+
+div.vis-none {
+    display: none;
+}

@@ -14,15 +14,16 @@ const BASE_URL = 'https://drinkify-backend.p.goit.global/api/v1/ingredients/';
 const refs = {
   heart: document.querySelector('.js-btn-favorite'),
   favoriteList: document.querySelector('.ingredient-list'),
+  modal: document.querySelector('[data-modal]'),
 };
 
 refs.favoriteList.addEventListener('click', onTrashBtnClick);
 
 const arrCocktailsId = local.load('id_ing') || [];
 if (!arrCocktailsId.length) {
-  document.querySelector('.error-box').classList.remove('visually-hidden');
+  document.querySelector('.error-box').classList.remove('vis-none');
 } else {
-  document.querySelector('.error-box').classList.add('visually-hidden');
+  document.querySelector('.error-box').classList.add('vis-none');
 }
 
 async function getFavIngredients() {
@@ -59,9 +60,9 @@ function onTrashBtnClick(e) {
       e.target.closest('.cocktail-item').remove();
     }
     if (!tasksArr.length) {
-      document.querySelector('.error-box').classList.remove('visually-hidden');
+      document.querySelector('.error-box').classList.remove('vis-none');
     } else {
-      document.querySelector('.error-box').classList.add('visually-hidden');
+      document.querySelector('.error-box').classList.add('vis-none');
     }
   }
 }
