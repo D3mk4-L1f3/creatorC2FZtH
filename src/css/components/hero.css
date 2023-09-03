@@ -1,5 +1,4 @@
 .hero {
-  padding-top: 90px;
   padding-bottom: 200px;
 }
 
@@ -17,7 +16,6 @@
   font-size: 32px;
   line-height: 1.18;
   margin-bottom: 18px;
-  margin-left: 20px;
   transition: var(--transition);
   max-width: 335px;
 }
@@ -42,7 +40,6 @@
   align-items: flex-start;
   gap: 10px;
   border-radius: 12px;
-  margin-left: 20px;
   margin-bottom: 27px;
 }
 
@@ -56,7 +53,6 @@
   color: var(--font-color);
   line-height: 1.42;
   margin-bottom: 36px;
-  margin-left: 20px;
   transition: var(--transition);
 }
 
@@ -81,7 +77,6 @@
 }
 
 .hero-box {
-  margin-left: 15px;
   position: relative;
 }
 
@@ -150,15 +145,12 @@
   .hero-twice {
     position: relative;
     height: 400px;
+    top: -5px;
   }
 
   .hero {
-    padding-top: 90px;
     padding-bottom: 60px;
   }
-
-
-
 }
 
 /* Tablet version width 768px */
@@ -167,6 +159,8 @@
   .hero-twice {
     position: relative;
     height: 400px;
+    top: -50px;
+    left: 20px;
   }
   .girl-hero {
     position: absolute;
@@ -198,13 +192,9 @@
     transform: translate(-2px, 5px);
   }
 
-
   .hero {
-    padding-top: 90px;
     padding-bottom: 60px;
   }
-
-
 }
 
 /* DESKTOP version width 1280px */
@@ -252,10 +242,10 @@
   }
 
   .girl-hero {
-    
     top: -7px;
-    
   }
 
-
+  .hero {
+    padding-top: 90px;
+  }
 }
