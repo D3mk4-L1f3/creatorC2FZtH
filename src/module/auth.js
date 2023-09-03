@@ -47,8 +47,9 @@ const openModal = document.querySelector('#login-modal-btn');
 const closeModal = document.querySelector('#login-modal-close');
 const signinGoogle = document.querySelector('#google');
 let cocktailList;
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('load', function () {
   cocktailList = document.querySelector('.cocktail-list');
+  console.log(cocktailList);
 });
 
 function getData(dataName) {
@@ -238,27 +239,30 @@ export async function createFavorites() {
   if (data[0] == ' ') {
     data.shift();
   }
-  return data
+  const cocktailHTML = data
     .map(({ name, description, image }) => {
-      `<li class="cocktail-item dynamic-box">
-          <img
-            class="card-image img "
-            src="${image}"
-            alt="${name}"
-            loading="lazy"
-          />
-        <div class="text-box dynamic-element">
-          <h2 class="cocktail-name dynamic-element">${name}</h2>
-          <p class="cocktail-descr dynamic-element">${description}</p>
-          <div class="btn-box dynamic-element">
-            <button type="button" class="card-btn btn js-btn-learn-more dynamic-element">
-              learn more
-            </button>
-            <button type="button" class="btn-favorite btn js-btn-favorite dynamic-element">
-              <svg class="card-icon">
-                <use></use>;
-              </svg>
-            </button>`;
+      return `<li class="cocktail-item dynamic-box">
+      <img
+        class="card-image img "
+        src="${image}"
+        alt="${name}"
+        loading="lazy"
+      />
+      <div class="text-box dynamic-element">
+        <h2 class="cocktail-name dynamic-element">${name}</h2>
+        <p class="cocktail-descr dynamic-element">${description}</p>
+        <div class="btn-box dynamic-element">
+          <button type="button" class="card-btn btn js-btn-learn-more dynamic-element">
+            learn more
+          </button>
+          <button type="button" class="btn-favorite btn js-btn-favorite dynamic-element">
+            <svg class="card-icon">
+              <use></use>;
+            </svg>
+          </button>
+        </div>
+      </div>
+    </li>`;
     })
     .join();
 }
