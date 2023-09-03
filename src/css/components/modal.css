@@ -283,3 +283,7 @@ body::-webkit-scrollbar {
     line-height: 1.29;
     margin-bottom: 8px;
 }
+
+.colorDefault {
+    color: rgb(213, 213, 133)
+}

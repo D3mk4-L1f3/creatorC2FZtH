@@ -1,4 +1,4 @@
-<header class="header-page">
+<header class="header-page" id="header">
   <div class="header-container container">
     <div class="header-content">
 
@@ -7,9 +7,9 @@
         <ul class="menu-list list">
           <li class="header-menu-item"><a href="/src/index.html">Home</a></li>
           <li class="header-menu-item dropdown"><a href="">Favorite</a>
-          <ul class="dropdown-menu">
-            <li><a href="/src/fav-coctails.html">Favorite cocktails</a></li>
-            <li><a href="/src/fav-ingridients.html">Favorite ingredients</a></li>
+          <ul class="list-dropdown dropdown-menu">
+            <li><a class="dropdown-elements" href="/src/fav-coctails.html">Favorite cocktails</a></li>
+            <li><a class="dropdown-elements"  href="/src/fav-ingridients.html">Favorite ingredients</a></li>
           </ul></li>
         </ul>
         
@@ -73,18 +73,18 @@
     <!-- light-dark mode -->
     <div class="burger-header-right-part">
       <div class="mode-burger-container">
-        <div class="daynight">
-          <label for="mode-burger-checkbox">
-            <input class="js-theme-change" type="checkbox" name="mode-burger-checkbox" id="burger-checkbox">
-            <div class="toggle">
-              <div class="cloud"></div>
-              <div class="star"></div>
-              <div class="sea"></div>
-              <div class="mountains"></div>
-            </div>
-          </label>
-        </div>
+  <div class="daynight">
+    <label for="burger-checkbox">
+      <input class="js-theme-change" type="checkbox" name="mode-burger-checkbox" id="burger-checkbox">
+      <div class="toggle">
+        <div class="cloud"></div>
+        <div class="star"></div>
+        <div class="sea"></div>
+        <div class="mountains"></div>
       </div>
+    </label>
+  </div>
+</div>
       <button class="menu-toggle js-close-menu">
         <svg class="modal-icon modal-icon-burger" width="32" height="32">
           <use href="./public/sprite.svg#icon-close"></use>
@@ -110,10 +110,10 @@
     <ul class="burger-menu-list list">
       <li class="header-menu-burger-item burger-home"><a href="/src/index.html">Home</a></li>
       <li class="header-menu-burger-item burger-favorite" id="favorite-menu">
-        <p class="dropdown">Favorite</p>
-        <ul class="dropdown-menu">
-          <li><a href="/src/fav-coctails.html">Favorite cocktails</a></li>
-          <li><a href="/src/fav-ingridients.html">Favorite ingredients</a></li>
+        <p class="dropdown dropdown-favourite">Favorite</p>
+        <ul class="burger-list-dropdown dropdown-menu">
+          <li><a class="burger-dropdown-elements" href="/src/fav-coctails.html">Favorite cocktails</a></li>
+          <li><a class="burger-dropdown-elements" href="/src/fav-ingridients.html">Favorite ingredients</a></li>
         </ul>
       </li>
     </ul>
