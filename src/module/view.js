@@ -49,6 +49,7 @@ export function renderMarkUpFavCocktail(arr) {
 }
 export function renderMarkUpIngridients(arr) {
   const markup = arr.flat().map(createMarkupIngredients).join('');
+  console.log(refs.ingredientsList);
   refs.ingredientsList.insertAdjacentHTML('beforeend', markup);
 }
 
@@ -61,7 +62,7 @@ function createMarkup({ drinkThumb, description, drink, _id }) {
     icon = '#trash-icon';
   }
 
-  return `<li class="cocktail-item dynamic-box">
+  return `<li class="cocktail-item">
           <img
             class="card-image img "
             src="${drinkThumb}"
@@ -83,7 +84,7 @@ function createMarkup({ drinkThumb, description, drink, _id }) {
 }
 
 function createMarkupFavCocktails({ drinkThumb, description, drink, _id }) {
-  return `<li class="cocktail-item dynamic-box">
+  return `<li class="cocktail-fav-item">
           <img
             class="card-image img "
             src="${drinkThumb}"

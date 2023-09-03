@@ -14,17 +14,6 @@ refs.ingredientsList?.addEventListener('click', onHeartClick);
 
 let tasksArr = local.load('id') || [];
 
-// const currentSVGs = document.querySelectorAll('.card-icon');
-// currentSVGs.forEach(svg => {
-//   const iconID = svg.closest('.js-btn-favorite').dataset.id;
-//   if (local.load('id').includes(iconID)) {
-//     svg.firstElementChild.setAttribute(
-//       '[href=]',
-//       `href="${sprite}#trash-icon"`
-//     );
-//   }
-// });
-
 function onHeartClick(e) {
   if (
     e.target.classList.contains('js-btn-favorite') ||

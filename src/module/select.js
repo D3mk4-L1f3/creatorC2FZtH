@@ -40,10 +40,10 @@ const refs = {
 };
 
 // =====================================================================
-refs.cocktailSelect.addEventListener('change', onCocktailSelectChange);
-refs.cocktailSelect.addEventListener('click', onCocktailSelectClick);
-refs.btnContainer.addEventListener('click', onBtnClick);
-refs.body.addEventListener('click', onBodyClick);
+refs.cocktailSelect?.addEventListener('change', onCocktailSelectChange);
+refs.cocktailSelect?.addEventListener('click', onCocktailSelectClick);
+refs.btnContainer?.addEventListener('click', onBtnClick);
+refs.body?.addEventListener('click', onBodyClick);
 // =====================================================================
 
 // =============================SELECT DROPDOWN====================================

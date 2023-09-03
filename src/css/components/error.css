@@ -62,7 +62,7 @@
   max-width: 335px;
   min-height: 222px;
 
-  background-color: var(--white);
+  background-color: var(--bg-second);
   border-radius: 20px;
   box-shadow: 0px 4px 46px 0px rgba(0, 0, 0, 0.05);
   padding: 20px;
