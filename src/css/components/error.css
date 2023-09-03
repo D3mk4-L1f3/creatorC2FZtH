@@ -1,6 +1,7 @@
 .favorite-coctails-result {
   padding-bottom: 80px;
 }
+
 @media only screen and (min-width: 768px) {
   .favorite-coctails-result {
     padding-bottom: 100px;
@@ -10,11 +11,13 @@
 .favorite-ingridients-result {
   padding-bottom: 80px;
 }
+
 @media only screen and (min-width: 768px) {
   .favorite-ingridients-result {
     padding-bottom: 100px;
   }
 }
+
 .error-box {
   width: 244px;
   margin: 140px auto;
@@ -24,35 +27,42 @@
   align-items: center;
   gap: 20px;
 }
+
 @media only screen and (min-width: 768px) {
   .error-box {
     width: 372px;
     gap: 40px;
   }
 }
+
 .icon-error {
   width: 142px;
   height: 122px;
 }
+
 @media only screen and (min-width: 768px) {
   .icon-error {
     width: 234px;
     height: 201px;
   }
 }
+
 .error-text {
   color: var(--font-color);
   text-align: center;
   font-size: 18px;
   font-weight: 400;
-  line-height: 1.33; /* 133.333% */
+  line-height: 1.33;
+  /* 133.333% */
 }
+
 @media only screen and (min-width: 768px) {
   .error-text {
     font-size: 24px;
     line-height: 1.16;
   }
 }
+
 .error-accent-text {
   color: var(--torquoise);
   font-style: italic;
@@ -67,6 +77,7 @@
   box-shadow: 0px 4px 46px 0px rgba(0, 0, 0, 0.05);
   padding: 20px;
 }
+
 .ingredient-name {
   color: var(--font-color);
   font-size: 18px;
@@ -81,6 +92,7 @@
     font-size: 20px;
   }
 }
+
 .category {
   color: var(--modal-text-color);
   font-size: 14px;
@@ -89,6 +101,7 @@
 
   margin-bottom: 14px;
 }
+
 .ingredient-descr {
   width: 295px;
   height: 54px;
