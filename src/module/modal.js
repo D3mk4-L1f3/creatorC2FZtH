@@ -1,4 +1,5 @@
 import axios from 'axios';
+import local from './service.js';
 
 const refs = {
   cardList: document.querySelector('.cocktail-list'),
@@ -21,7 +22,7 @@ const refers = {
   // ingredIenlistFav: document.querySelector('.ingredient-list'),
 };
 
-// console.log(refers.modalIngredContent);
+console.log(refers.modalIngredContent);
 
 
 // refs.cardList.addEventListener('click', onShowModal);
@@ -41,15 +42,19 @@ refs.modal?.addEventListener('click', onClick);
 refs.modalContentRender?.addEventListener('click', onIngredientClick);
 refers.closeModalBtn?.addEventListener('click', onCloseModalIngred);
 refers.modal?.addEventListener('click', onClickIng);
-// refers.ingredIenlistFav?.addEventListener('click', onIngredientClick);
+refers.ingredIenlistFav?.addEventListener('click', onIngredientClick);
 
 
 const BASE_URL =
   'https://drinkify-backend.p.goit.global/API/V1/cocktails/lookup';
 async function getCocktailDetails(id) {
-  const response = await axios.get(`${BASE_URL}?id=${id}`);
+  try {
+    const response = await axios.get(`${BASE_URL}?id=${id}`);
 
-  return response;
+    return response;
+  } catch (err) {
+    console.log('NOT HERE', err);
+  }
 }
 
 let id = '';
@@ -65,7 +70,7 @@ async function onShowModal(e) {
   }, 100);
   try {
     const response = await getCocktailDetails(id);
-    // console.log(response.data[0]);
+    console.log(response.data[0]);
     renderCocktailDetails(response.data[0]);
   } catch (error) {
     console.log(error);
@@ -77,7 +82,13 @@ function renderCocktailDetails({
   drinkThumb,
   instructions,
   ingredients,
+  _id,
 }) {
+  let text = 'add to favorite';
+  const localStorage = local.load('id') || [];
+  if (localStorage.find(id => id === _id)) {
+    text = 'remove from favorite';
+  }
   const markup = ` <div class="modal-flex-wrapper">
       <img
         class="modal-image"
@@ -101,7 +112,7 @@ ${renderListIngredients(ingredients)}
     <p class="modal-text text">
     ${instructions}
     </p>
-    <button class="modal-button" type="button">add to favorite</button>
+    <button class="modal-button" type="button" data-id="${_id}">${text}</button>
   </div>`;
   refs.modalContentRender.insertAdjacentHTML('beforeend', markup);
 }
@@ -138,18 +149,25 @@ function onClick(e) {
   }
 }
 
-// // ---------------------------ingred modal------------------------
+// // ---------------------------ingred modal------------------------ =================================================
 
 const BASE_URL2 = 'https://drinkify-backend.p.goit.global/api/v1/ingredients/';
 async function getIngredientsDetails(id) {
-  const response = await axios.get(`${BASE_URL2}${id}`);
+  try {
+    const response = await axios.get(`${BASE_URL2}${id}`);
 
-  return response;
+    return response;
+  } catch (err) {
+    console.log('ERROR HERE', err);
+  }
 }
 
 let idIngred = '';
 async function onIngredientClick(e) {
   e.preventDefault();
+  if (e.target.nodeName !== 'A') {
+    return;
+  }
   refers.modalIngredContent.innerHTML = '';
   idIngred = e.target.dataset.id;
 
@@ -171,7 +189,13 @@ function renderIngredientDetails({
   abv,
   flavour,
   description,
+  _id,
 }) {
+  let text = 'add to favorite';
+  const localStorage = local.load('id_ing') || [];
+  if (localStorage.find(id => id === _id)) {
+    text = 'remove from favorite';
+  }
   const serverString = title;
   const modifiedString = description.replace(
     title,
@@ -193,8 +217,8 @@ function renderIngredientDetails({
         }</li>
         <li class="modal-ingred-item">Flavour: ${flavour || strDefault}</li>
       </ul>
-      <button type="button" class="modal-button" type="button">
-        add to favorite
+      <button type="button" class="modal-button js-ingrid-btn" type="button" data-id="${_id}">
+       ${text}
       </button>`;
 
   refers.modalIngredContent.insertAdjacentHTML('beforeend', markup);
@@ -210,5 +234,76 @@ function onClickIng(e) {
 
   if (!withinBoundaries) {
     onCloseModalIngred();
+  }
+}
+
+let tasksArr = local.load('id') || [];
+
+refs.modalContentRender.addEventListener('click', onModalButtonFav);
+refers.modalIngredContent.addEventListener('click', onIngridButtonFav);
+
+function onModalButtonFav(e) {
+  if (e.target.nodeName !== 'BUTTON') {
+    return;
+  }
+  const btnId = e.target.dataset.id;
+
+  if (!tasksArr.includes(btnId)) {
+    tasksArr.push(btnId);
+    local.save('id', tasksArr);
+
+    e.target.textContent = 'remove from favorite';
+  } else {
+    tasksArr = local.load('id').filter(id => id !== btnId);
+    local.save('id', tasksArr);
+
+    e.target.textContent = 'add to favorite';
+
+    document
+      .querySelector(`[data-id="${btnId}"]`)
+      .closest('.cocktail-fav-item')
+      .remove();
+
+    onCloseModal();
+
+    if (!tasksArr.length) {
+      document.querySelector('.error-box').classList.remove('visually-hidden');
+    } else {
+      document.querySelector('.error-box').classList.add('visually-hidden');
+    }
+  }
+}
+
+let arrIngrid = local.load('id_ing') || [];
+
+function onIngridButtonFav(e) {
+  if (e.target.nodeName !== 'BUTTON') {
+    return;
+  }
+  const btnId = e.target.dataset.id;
+
+  if (!arrIngrid.includes(btnId)) {
+    arrIngrid.push(btnId);
+    local.save('id_ing', arrIngrid);
+
+    e.target.textContent = 'remove from favorite';
+  } else {
+    arrIngrid = local.load('id_ing').filter(id => id !== btnId);
+    local.save('id_ing', arrIngrid);
+
+    e.target.textContent = 'add to favorite';
+
+    document
+      .querySelector(`[data-id="${btnId}"]`)
+      .closest('.ingredient-item')
+      .remove();
+
+    onCloseModalIngred();
+
+    if (!arrIngrid.length) {
+      document.querySelector('.error-box').classList.remove('visually-hidden');
+    } else {
+      document.querySelector('.error-box').classList.add('visually-hidden');
+    }
   }
 }
