@@ -1,3 +1,9 @@
+@media only screen and (max-width: 375px) {
+  .pagination-list {
+    gap: 8px;
+  }
+}
+
 .pagination-list {
   display: flex;
   justify-content: center;
@@ -5,41 +11,43 @@
   padding-bottom: 100px;
 }
 
-@media only screen and (max-width: 375px) {
-  .pagination-list {
-    gap: 8px;
-  }
-}
-
 .button-pagination {
   font-family: 'Montserrat', sans-serif;
+  width: 32px;
+  height: 32px;
   color: var(--violet);
-  padding: 10px 15px;
   font-size: 16px;
   border: 1px solid var(--violet);
   border-radius: 4px;
   transition: var(--transition);
   cursor: pointer;
 }
-.button-pagination:first-child {
-  padding: 7px;
-  margin-right: 200px;
-}
-
-.button-pagination:last-child {
-  padding: 8px 18px;
-  margin-left: 200px;
-}
 
 @media only screen and (min-width: 320px) and (max-width: 375px) {
   .button-pagination:first-child {
-    padding: 7px;
-    margin-right: 40px;
+    width: 32px;
+    height: 32px;
+    margin-right: 20px;
   }
 
   .button-pagination:last-child {
-    padding: 7px;
-    margin-right: 40px;
+    width: 32px;
+    height: 32px;
+    margin-left: 20px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .button-pagination:first-child {
+    width: 40px;
+    height: 40px;
+    margin-right: 200px;
+  }
+
+  .button-pagination:last-child {
+    width: 40px;
+    height: 40px;
+    margin-left: 200px;
   }
 }
 

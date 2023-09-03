@@ -2,7 +2,8 @@ import axios from 'axios';
 import { getCocktails } from './view.js';
 
 const cocktailList = document.querySelector('.cocktail-list');
-const BASE_URL = 'https://drinkify-backend.p.goit.global/API/V1/cocktails/count';
+const BASE_URL =
+  'https://drinkify-backend.p.goit.global/API/V1/cocktails/count';
 const itemList = document.querySelector('.pagination-list');
 
 function isScreenDesktop() {
@@ -24,7 +25,6 @@ async function getTotalCountPage() {
       Number(response.data.number_of_cocktails) / itemsPerPage
     );
 
-    console.log(totalPageCount);
     return totalPageCount;
   } catch (error) {
     console.error('Error fetching total count:', error);
@@ -38,6 +38,7 @@ async function handlePageClick(pageNumber) {
   currentPage = pageNumber;
   cocktailList.innerHTML = '';
   await getCocktails(currentPage, itemsPerPage);
+
   scrollToCocktailSection();
 }
 
@@ -52,7 +53,7 @@ let startItems = [];
 let endItems = [];
 
 async function createPaginationButtons() {
-  itemList.innerHTML = ''; 
+  itemList.innerHTML = '';
 
   await getTotalCountPage();
 
@@ -79,16 +80,18 @@ async function createPaginationButtons() {
 
       const threeDot = document.createElement('button');
       threeDot.textContent = '...';
+
       threeDot.classList.add('button-pagination');
 
       itemList.append(...startItems, threeDot, ...endItems);
-    } else  if (isScreenMobile) {
+    } else if (isScreenMobile) {
       startItems = buttons.slice(0, 3);
       endItems = buttons.slice(buttons.length - 1, buttons.length);
 
       const threeDot = document.createElement('button');
       threeDot.textContent = '...';
       threeDot.classList.add('button-pagination');
+      itemList.append(...startItems, threeDot, ...endItems);
     }
 
     const nextButton = document.createElement('button');
