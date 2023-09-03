@@ -459,6 +459,7 @@
 .burger-header-right-part {
   display: flex;
   gap: 10px;
+  align-items: center;
 }
 
 /* .logo-burger {
@@ -539,6 +540,7 @@ margin-right: 35%;
   display: flex;
   justify-content: space-between;
   padding-bottom: 40px;
+  align-items: center;
 }
 
 .modal-icon-burger {
