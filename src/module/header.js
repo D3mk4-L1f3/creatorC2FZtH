@@ -101,7 +101,7 @@ function toggleDropdownMenu() {
   }
 }
 
-        // Add a click event listener to the "Favorite" menu item
+// Add a click event listener to the "Favorite" menu item
 favoriteMenuItem.addEventListener("click", toggleDropdownMenu);
 
 
