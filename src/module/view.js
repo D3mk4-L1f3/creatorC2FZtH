@@ -49,7 +49,6 @@ export function renderMarkUpFavCocktail(arr) {
 }
 export function renderMarkUpIngridients(arr) {
   const markup = arr.flat().map(createMarkupIngredients).join('');
-  console.log(refs.ingredientsList);
   refs.ingredientsList.insertAdjacentHTML('beforeend', markup);
 }
 
