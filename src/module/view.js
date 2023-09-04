@@ -10,7 +10,7 @@ const refs = {
 };
 
 const logo = new URL('../public/sprite.svg#heart', import.meta.url);
-// const logo = new URL(`${heart}`, import.meta.url);
+
 
 function isScreenMobile() {
   return window.matchMedia('(max-width: 1279px)').matches;
@@ -35,7 +35,6 @@ export async function getCocktails() {
     );
     renderMarkUp(arrCocktails);
   } catch (err) {
-    console.log(err);
   }
 }
 

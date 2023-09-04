@@ -3,7 +3,6 @@ import './module/localStorage.js';
 import './module/modal.js';
 import './module/select.js';
 import './module/favorite.js';
-import './module/pagination.js';
 import './module/dark.js';
 
 import axios from 'axios';
@@ -37,7 +36,6 @@ async function getFavIngredients() {
 
     renderMarkUpIngridients(newData);
   } catch (err) {
-    console.log('при рендері:', err);
   }
 }
 

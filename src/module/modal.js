@@ -46,7 +46,6 @@ async function getCocktailDetails(id) {
 
     return response;
   } catch (err) {
-    console.log('NOT HERE', err);
   }
 }
 
@@ -63,10 +62,8 @@ async function onShowModal(e) {
   }, 100);
   try {
     const response = await getCocktailDetails(id);
-    console.log(response.data[0]);
     renderCocktailDetails(response.data[0]);
   } catch (error) {
-    console.log(error);
   }
 }
 
@@ -151,7 +148,6 @@ async function getIngredientsDetails(id) {
 
     return response;
   } catch (err) {
-    console.log('ERROR HERE', err);
   }
 }
 
@@ -168,10 +164,10 @@ async function onIngredientClick(e) {
   refers.modal?.classList.remove('is-hidden');
   try {
     const response = await getIngredientsDetails(idIngred);
-    // console.log(response.data[0]);
+
     renderIngredientDetails(response.data[0]);
   } catch (error) {
-    console.log(error);
+   
   }
 }
 
@@ -335,6 +331,5 @@ async function onIngredient(e) {
     const response = await getIngredientsDetails(idIngred);
     renderIngredientDetails(response.data[0]);
   } catch (error) {
-    console.log(error);
   }
 }

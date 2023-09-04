@@ -1,24 +1,3 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from 'firebase/app';
-import {
-  getAuth,
-  onAuthStateChanged,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  signOut,
-  GoogleAuthProvider,
-  signInWithPopup,
-  updateProfile,
-} from 'firebase/auth';
-import { getAnalytics } from 'firebase/analytics';
-import { getDatabase, set, ref, update, onValue } from 'firebase/database';
-import Notiflix from 'notiflix';
-import axios from 'axios';
-
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// web app's Firebase configuration
 const firebaseConfig = {
   apiKey: 'AIzaSyB5nzvMgM0XL_NZBrLuY523Oaf2cI4vwxQ',
   authDomain: 'drinkify-project.firebaseapp.com',

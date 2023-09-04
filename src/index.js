@@ -8,7 +8,6 @@ import './module/favorite.js';
 import './module/view.js';
 import './module/pagination.js';
 import './module/dark.js';
-// import './module/auth.js';
 
 import { getCocktails } from './module/view.js';
 
