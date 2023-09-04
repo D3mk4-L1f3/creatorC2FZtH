@@ -1,11 +1,7 @@
 import './module/header.js';
 import './module/localStorage.js';
 import './module/modal.js';
-import './module/pagination.js';
 import './module/dark.js';
-import './module/auth.js';
-import './module/cocktails-auth.js';
-
 import axios from 'axios';
 import local from './module/service';
 import { renderMarkUpFavCocktail } from './module/view';
@@ -20,11 +16,12 @@ refs.favoriteList.addEventListener('click', onTrashBtnClick);
 
 const arrCocktailsId = local.load('id') || [];
 if (!arrCocktailsId.length) {
-  document.querySelector('.error-box').classList.remove('visually-hidden');
+  document.querySelector('.error-box').classList.remove('vis-none');
 } else {
-  document.querySelector('.error-box').classList.add('visually-hidden');
+  document.querySelector('.error-box').classList.add('vis-none');
 }
 
+// on load
 async function getFavCocktails() {
   try {
     const arrId = local.load('id');
@@ -35,7 +32,6 @@ async function getFavCocktails() {
 
     renderMarkUpFavCocktail(newData);
   } catch (err) {
-    console.log(err);
   }
 }
 getFavCocktails();
@@ -56,9 +52,9 @@ function onTrashBtnClick(e) {
       e.target.closest('.cocktail-fav-item').remove();
     }
     if (!tasksArr.length) {
-      document.querySelector('.error-box').classList.remove('visually-hidden');
+      document.querySelector('.error-box').classList.remove('vis-none');
     } else {
-      document.querySelector('.error-box').classList.add('visually-hidden');
+      document.querySelector('.error-box').classList.add('vis-none');
     }
   }
 }

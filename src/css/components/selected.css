@@ -26,7 +26,6 @@
   border-radius: 8px;
   background-color: var(--btn-select-color);
   border: none;
-  appearance: none;
 
   outline: none;
   overflow: hidden;

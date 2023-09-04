@@ -3,7 +3,6 @@ import './module/localStorage.js';
 import './module/modal.js';
 import './module/select.js';
 import './module/favorite.js';
-import './module/pagination.js';
 import './module/dark.js';
 
 import axios from 'axios';
@@ -14,17 +13,19 @@ const BASE_URL = 'https://drinkify-backend.p.goit.global/api/v1/ingredients/';
 const refs = {
   heart: document.querySelector('.js-btn-favorite'),
   favoriteList: document.querySelector('.ingredient-list'),
+  modal: document.querySelector('[data-modal]'),
 };
 
 refs.favoriteList.addEventListener('click', onTrashBtnClick);
 
 const arrCocktailsId = local.load('id_ing') || [];
 if (!arrCocktailsId.length) {
-  document.querySelector('.error-box').classList.remove('visually-hidden');
+  document.querySelector('.error-box').classList.remove('vis-none');
 } else {
-  document.querySelector('.error-box').classList.add('visually-hidden');
+  document.querySelector('.error-box').classList.add('vis-none');
 }
 
+// on load
 async function getFavIngredients() {
   try {
     const arrId = local.load('id_ing');
@@ -32,11 +33,9 @@ async function getFavIngredients() {
 
     const arrForRender = await Promise.all(promises);
     const newData = arrForRender.map(el => el.data);
-    console.log(newData);
 
     renderMarkUpIngridients(newData);
   } catch (err) {
-    console.log(err);
   }
 }
 
@@ -56,12 +55,12 @@ function onTrashBtnClick(e) {
       tasksArr = local.load('id_ing').filter(id => id !== button.dataset.id);
       local.save('id_ing', tasksArr);
 
-      e.target.closest('.cocktail-item').remove();
+      e.target.closest('.ingredient-item').remove();
     }
     if (!tasksArr.length) {
-      document.querySelector('.error-box').classList.remove('visually-hidden');
+      document.querySelector('.error-box').classList.remove('vis-none');
     } else {
-      document.querySelector('.error-box').classList.add('visually-hidden');
+      document.querySelector('.error-box').classList.add('vis-none');
     }
   }
 }

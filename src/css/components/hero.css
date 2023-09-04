@@ -2,15 +2,6 @@
   padding-bottom: 200px;
 }
 
-.link-btn {
-  height: 48px;
-  width: 178px;
-}
-
-.link-btn .btn-hero {
-  display: block;
-}
-
 .header-hero {
   color: var(--font-color);
   font-size: 32px;
@@ -35,12 +26,15 @@
   line-height: 1.42;
   letter-spacing: 0.28px;
   text-transform: uppercase;
-  display: inline-flex;
-  padding: 22px 44px;
+  /* display: inline-flex;
+  padding: 22px 44px; */
+  text-align: center;
   align-items: flex-start;
   gap: 10px;
   border-radius: 12px;
   margin-bottom: 27px;
+  width: 178px;
+  height: 48px;
 }
 
 .btn-hero:hover {
@@ -54,6 +48,7 @@
   line-height: 1.42;
   margin-bottom: 36px;
   transition: var(--transition);
+  
 }
 
 .hero-twice {
@@ -106,11 +101,6 @@
   line-height: 1.5;
   letter-spacing: 0.32px;
   scale: 0.8;
-}
-
-.link-btn {
-  height: 68px;
-  width: 245px;
 }
 
 .fav-drink {
@@ -195,6 +185,12 @@
   .hero {
     padding-bottom: 60px;
   }
+
+  .btn-hero {
+    width: 245px;
+    height: 68px;
+    font-size: 18px;
+  }
 }
 
 /* DESKTOP version width 1280px */
@@ -211,11 +207,6 @@
     line-height: 1.09;
   }
 
-  .paragraf-hero {
-    font-size: 20px;
-    line-height: 1.3;
-  }
-
   .fav-drink {
     position: absolute;
     font-size: 18px;
@@ -226,26 +217,27 @@
     left: 40px;
   }
 
-  .header-hero {
-    color: var(--font-color);
-    font-size: 64px;
-    line-height: 1.09;
-  }
-
   .paragraf-hero {
     font-size: 20px;
     line-height: 1.3;
+    max-width: 478px;
   }
 
   .hero {
-    padding-bottom: 130px;
+    padding-bottom: 250px;
+    padding-top: 90px;
   }
 
   .girl-hero {
     top: -7px;
   }
 
-  .hero {
-    padding-top: 90px;
+  .hero-box {
+    left: 200px;
+    top: 100px;
+  }
+
+  .header-hero {
+    max-width: 555px;
   }
 }

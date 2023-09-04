@@ -46,6 +46,9 @@ function toggleDropdownMenu() {
   }
 }
 
+// Close the dropdown menu by default
+dropdownMenu.style.display = 'none';
+
 // Add a click event listener to the "Favorite" menu item
 favoriteMenuItem.addEventListener('click', toggleDropdownMenu);
 

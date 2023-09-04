@@ -28,7 +28,6 @@ async function getTotalCountPage() {
 
     return totalPageCount;
   } catch (error) {
-    console.error('Error fetching total count:', error);
     return 0;
   }
 }

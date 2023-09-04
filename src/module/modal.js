@@ -1,4 +1,5 @@
 import axios from 'axios';
+
 import local from './service.js';
 
 const refs = {
@@ -10,7 +11,6 @@ const refs = {
   body: document.body,
   cocktailFavoriteList: document.querySelector('.cocktail-favorite'),
 };
-// console.log(refs.cocktailFavoriteList);
 
 const refers = {
   closeModalBtn: document.querySelector('[data-modal-ing-close]'),
@@ -18,21 +18,15 @@ const refers = {
   modalDivIng: document.querySelector('.modal-ingred'),
   modal: document.querySelector('[data-modal-ing]'),
   modalIngredContent: document.querySelector('.modal-ingred-content'),
-
-  // ingredIenlistFav: document.querySelector('.ingredient-list'),
+  learnBtn: document.querySelector('.ingredient-list'),
 };
 
-console.log(refers.modalIngredContent);
-
-
-// refs.cardList.addEventListener('click', onShowModal);
 refs.closeModalBtn.addEventListener('click', onCloseModal);
 refs.modal?.addEventListener('click', onClick);
 
 refs.modalContentRender.addEventListener('click', onIngredientClick);
 refers.closeModalBtn.addEventListener('click', onCloseModalIngred);
 refers.modal?.addEventListener('click', onClickIng);
-// refers.ingredIenlistFav.addEventListener('click', onIngredientClick);
 
 refs.cardList?.addEventListener('click', onShowModal);
 refs.cocktailFavoriteList?.addEventListener('click', onShowModal);
@@ -44,7 +38,6 @@ refers.closeModalBtn?.addEventListener('click', onCloseModalIngred);
 refers.modal?.addEventListener('click', onClickIng);
 refers.ingredIenlistFav?.addEventListener('click', onIngredientClick);
 
-
 const BASE_URL =
   'https://drinkify-backend.p.goit.global/API/V1/cocktails/lookup';
 async function getCocktailDetails(id) {
@@ -53,7 +46,6 @@ async function getCocktailDetails(id) {
 
     return response;
   } catch (err) {
-    console.log('NOT HERE', err);
   }
 }
 
@@ -70,10 +62,8 @@ async function onShowModal(e) {
   }, 100);
   try {
     const response = await getCocktailDetails(id);
-    console.log(response.data[0]);
     renderCocktailDetails(response.data[0]);
   } catch (error) {
-    console.log(error);
   }
 }
 
@@ -134,7 +124,7 @@ function renderListIngredients(arr) {
 }
 
 function onCloseModal(e) {
-  document.body.style.overflowY = 'auto';
+  document.body.style.overflow = 'auto';
   refs.modalDivEl.classList.remove('active');
   setTimeout(() => {
     refs.modal?.classList.add('is-hidden');
@@ -158,7 +148,6 @@ async function getIngredientsDetails(id) {
 
     return response;
   } catch (err) {
-    console.log('ERROR HERE', err);
   }
 }
 
@@ -175,10 +164,10 @@ async function onIngredientClick(e) {
   refers.modal?.classList.remove('is-hidden');
   try {
     const response = await getIngredientsDetails(idIngred);
-    // console.log(response.data[0]);
+
     renderIngredientDetails(response.data[0]);
   } catch (error) {
-    console.log(error);
+   
   }
 }
 
@@ -264,6 +253,11 @@ function onModalButtonFav(e) {
       .closest('.cocktail-fav-item')
       .remove();
 
+    if (!tasksArr.length) {
+      document.querySelector('.error-box').classList.remove('vis-none');
+    } else {
+      document.querySelector('.error-box').classList.add('vis-none');
+    }
     onCloseModal();
 
     if (!tasksArr.length) {
@@ -298,6 +292,11 @@ function onIngridButtonFav(e) {
       .closest('.ingredient-item')
       .remove();
 
+    if (!arrIngrid.length) {
+      document.querySelector('.error-box').classList.remove('vis-none');
+    } else {
+      document.querySelector('.error-box').classList.add('vis-none');
+    }
     onCloseModalIngred();
 
     if (!arrIngrid.length) {
@@ -305,5 +304,32 @@ function onIngridButtonFav(e) {
     } else {
       document.querySelector('.error-box').classList.add('visually-hidden');
     }
+  }
+}
+
+// ///////////////////////////////////////////////////////
+refers.learnBtn?.addEventListener('click', onOpenLearnIngrid);
+
+function onOpenLearnIngrid(e) {
+  if (
+    e.target.nodeName === 'BUTTON' &&
+    e.target.classList.contains('js-btn-learn-more')
+  ) {
+    onIngredient(e);
+    document.body.style.overflow = 'hidden';
+    refers.modal?.classList.remove('is-hidden');
+  }
+}
+
+async function onIngredient(e) {
+  e.preventDefault();
+
+  refers.modalIngredContent.innerHTML = '';
+  idIngred = e.target.dataset.id;
+
+  try {
+    const response = await getIngredientsDetails(idIngred);
+    renderIngredientDetails(response.data[0]);
+  } catch (error) {
   }
 }

@@ -193,7 +193,8 @@
 .btn-favorite:active {
   scale: 1.1;
 }
-.card-icon {
+.card-icon,
+.card-icon-ing {
   stroke: currentColor;
   width: 18px;
   height: 18px;
@@ -203,7 +204,8 @@ use {
   pointer-events: none;
 }
 @media only screen and (min-width: 768px) {
-  .card-icon {
+  .card-icon,
+  .card-icon-ing {
     width: 24px;
     height: 24px;
   }

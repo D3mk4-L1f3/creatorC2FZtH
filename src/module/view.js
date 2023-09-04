@@ -10,7 +10,7 @@ const refs = {
 };
 
 const logo = new URL('../public/sprite.svg#heart', import.meta.url);
-// const logo = new URL(`${heart}`, import.meta.url);
+
 
 function isScreenMobile() {
   return window.matchMedia('(max-width: 1279px)').matches;
@@ -35,7 +35,6 @@ export async function getCocktails() {
     );
     renderMarkUp(arrCocktails);
   } catch (err) {
-    console.log(err);
   }
 }
 
@@ -49,7 +48,6 @@ export function renderMarkUpFavCocktail(arr) {
 }
 export function renderMarkUpIngridients(arr) {
   const markup = arr.flat().map(createMarkupIngredients).join('');
-  console.log(refs.ingredientsList);
   refs.ingredientsList.insertAdjacentHTML('beforeend', markup);
 }
 
@@ -114,8 +112,8 @@ function createMarkupIngredients({ description, title, _id }) {
     <div class="btn-box">
       <button class="card-btn js-btn-learn-more" data-id="${_id}">learn more</button>
       <button class="btn-favorite js-btn-favorite" data-id="${_id}">
-        <svg class="card-icon" width="18" height="18">
-          <use class="js-icon-favorite" href="./public/href="${sprite}#trash-icon"></use>
+        <svg class="card-icon-ing width="18" height="18">
+          <use class="js-icon-favorite-ing" href="${sprite}#trash-icon"></use>
         </svg>
       </button>
     </div>
