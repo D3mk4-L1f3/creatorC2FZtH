@@ -29,6 +29,10 @@
     gap: 8px;
   }
 
+  .button-pagination {
+    font-size: 14px;
+  }
+
   .button-pagination:first-child {
     margin-right: 20px;
   }
