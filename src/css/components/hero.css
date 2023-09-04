@@ -230,6 +230,7 @@
     color: var(--font-color);
     font-size: 64px;
     line-height: 1.09;
+    
   }
 
   .paragraf-hero {
@@ -238,14 +239,26 @@
   }
 
   .hero {
-    padding-bottom: 130px;
+    padding-bottom: 250px;
+    padding-top: 90px;
   }
 
   .girl-hero {
     top: -7px;
   }
 
-  .hero {
-    padding-top: 90px;
+  .hero-box {
+    left: 200px;
+    top: 100px;
+    
   }
+
+
+
+.header-hero{
+  max-width: 555px;
+
+}
+
+  
 }
