@@ -257,6 +257,11 @@ function onModalButtonFav(e) {
       .closest('.cocktail-fav-item')
       .remove();
 
+    if (!tasksArr.length) {
+      document.querySelector('.error-box').classList.remove('vis-none');
+    } else {
+      document.querySelector('.error-box').classList.add('vis-none');
+    }
     onCloseModal();
 
     if (!tasksArr.length) {
@@ -291,6 +296,11 @@ function onIngridButtonFav(e) {
       .closest('.ingredient-item')
       .remove();
 
+    if (!arrIngrid.length) {
+      document.querySelector('.error-box').classList.remove('vis-none');
+    } else {
+      document.querySelector('.error-box').classList.add('vis-none');
+    }
     onCloseModalIngred();
 
     if (!arrIngrid.length) {
@@ -305,7 +315,6 @@ function onIngridButtonFav(e) {
 refers.learnBtn?.addEventListener('click', onOpenLearnIngrid);
 
 function onOpenLearnIngrid(e) {
-  console.log(e.target);
   if (
     e.target.nodeName === 'BUTTON' &&
     e.target.classList.contains('js-btn-learn-more')

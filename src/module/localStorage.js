@@ -10,7 +10,6 @@ const refs = {
 
 refs.cocktailList?.addEventListener('click', onHeartClick);
 refs.favoriteList?.addEventListener('click', onHeartClick);
-refs.ingredientsList?.addEventListener('click', onHeartClick);
 
 let tasksArr = local.load('id') || [];
 

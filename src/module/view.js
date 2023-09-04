@@ -113,8 +113,8 @@ function createMarkupIngredients({ description, title, _id }) {
     <div class="btn-box">
       <button class="card-btn js-btn-learn-more" data-id="${_id}">learn more</button>
       <button class="btn-favorite js-btn-favorite" data-id="${_id}">
-        <svg class="card-icon" width="18" height="18">
-          <use class="js-icon-favorite" href="./public/href="${sprite}#trash-icon"></use>
+        <svg class="card-icon-ing width="18" height="18">
+          <use class="js-icon-favorite-ing" href="${sprite}#trash-icon"></use>
         </svg>
       </button>
     </div>
