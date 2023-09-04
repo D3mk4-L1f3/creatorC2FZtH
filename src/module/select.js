@@ -70,10 +70,12 @@ function onCocktailSelectClick() {
 }
 
 function onBodyClick(e) {
-  if (!refs.cocktailSelect.contains(e.target)) {
-    refs.iconEl.classList.remove('rotate');
-    isDropdownOpen = false;
-  }
+  try {
+    if (!refs.cocktailSelect.contains(e.target)) {
+      refs.iconEl.classList.remove('rotate');
+      isDropdownOpen = false;
+    }
+  } catch (err) {}
 }
 
 // =============================BUTTON SELECT====================================
