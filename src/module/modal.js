@@ -21,19 +21,12 @@ const refers = {
   learnBtn: document.querySelector('.ingredient-list'),
 };
 
-refs.closeModalBtn.addEventListener('click', onCloseModal);
 refs.modal?.addEventListener('click', onClick);
-
-refs.modalContentRender.addEventListener('click', onIngredientClick);
-refers.closeModalBtn.addEventListener('click', onCloseModalIngred);
-refers.modal?.addEventListener('click', onClickIng);
-
 refs.cardList?.addEventListener('click', onShowModal);
-refs.cocktailFavoriteList?.addEventListener('click', onShowModal);
 refs.closeModalBtn?.addEventListener('click', onCloseModal);
-refs.modal?.addEventListener('click', onClick);
-
+refs.cocktailFavoriteList?.addEventListener('click', onShowModal);
 refs.modalContentRender?.addEventListener('click', onIngredientClick);
+
 refers.closeModalBtn?.addEventListener('click', onCloseModalIngred);
 refers.modal?.addEventListener('click', onClickIng);
 refers.ingredIenlistFav?.addEventListener('click', onIngredientClick);
@@ -122,11 +115,11 @@ function renderListIngredients(arr) {
 }
 
 function onCloseModal(e) {
-  document.body.style.overflow = 'auto';
   refs.modalDivEl.classList.remove('active');
   setTimeout(() => {
     refs.modal?.classList.add('is-hidden');
   }, 100);
+  document.body.style.overflow = 'auto';
 }
 
 function onClick(e) {
@@ -166,7 +159,7 @@ async function onIngredientClick(e) {
   } catch (error) {}
 }
 
-function renderIngredientDetails({
+export function renderIngredientDetails({
   title,
   type,
   country,
@@ -221,8 +214,8 @@ function onClickIng(e) {
   }
 }
 
-refs.modalContentRender.addEventListener('click', onModalButtonFav);
-refers.modalIngredContent.addEventListener('click', onIngridButtonFav);
+refs.modalContentRender?.addEventListener('click', onModalButtonFav);
+refers.modalIngredContent?.addEventListener('click', onIngridButtonFav);
 
 function onModalButtonFav(e) {
   let tasksArr = local.load('id') || [];
@@ -309,10 +302,12 @@ function onIngridButtonFav(e) {
   }
 }
 
-// ///////////////////////////////////////////////////////
+///////////////////////////////////////////////////////
 refers.learnBtn?.addEventListener('click', onOpenLearnIngrid);
 
 function onOpenLearnIngrid(e) {
+  refs.modal.classList.add('visually-hidden');
+
   if (
     e.target.nodeName === 'BUTTON' &&
     e.target.classList.contains('js-btn-learn-more')
@@ -324,8 +319,6 @@ function onOpenLearnIngrid(e) {
 }
 
 async function onIngredient(e) {
-  e.preventDefault();
-
   refers.modalIngredContent.innerHTML = '';
   idIngred = e.target.dataset.id;
 

@@ -13,7 +13,6 @@ const BASE_URL = 'https://drinkify-backend.p.goit.global/api/v1/ingredients/';
 const refs = {
   heart: document.querySelector('.js-btn-favorite'),
   favoriteList: document.querySelector('.ingredient-list'),
-  modal: document.querySelector('[data-modal]'),
 };
 
 refs.favoriteList.addEventListener('click', onTrashBtnClick);
@@ -35,8 +34,7 @@ async function getFavIngredients() {
     const newData = arrForRender.map(el => el.data);
 
     renderMarkUpIngridients(newData);
-  } catch (err) {
-  }
+  } catch (err) {}
 }
 
 getFavIngredients();
