@@ -1,6 +1,6 @@
 import axios from 'axios';
-
 import local from './service.js';
+import sprite from '../public/sprite.svg';
 
 const refs = {
   cardList: document.querySelector('.cocktail-list'),
@@ -224,14 +224,23 @@ function onModalButtonFav(e) {
   }
   const btnId = e.target.dataset.id;
 
+  const useEl = document.querySelector(`.js-btn-favorite[data-id='${btnId}']`)
+    .firstElementChild.firstElementChild;
+
   if (!tasksArr.includes(btnId)) {
     tasksArr.push(btnId);
     local.save('id', tasksArr);
+
+    let newHref = `${sprite}#trash-icon`;
+    useEl.setAttribute('href', newHref);
 
     e.target.textContent = 'remove from favorite';
   } else {
     tasksArr = local.load('id').filter(id => id !== btnId);
     local.save('id', tasksArr);
+
+    let newHref = `${sprite}#heart`;
+    useEl.setAttribute('href', newHref);
 
     e.target.textContent = 'add to favorite';
 
@@ -257,7 +266,6 @@ function onModalButtonFav(e) {
 
 function onIngridButtonFav(e) {
   let arrIngrid = local.load('id_ing') || [];
-
   if (e.target.nodeName !== 'BUTTON') {
     return;
   }

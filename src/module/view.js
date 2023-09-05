@@ -11,7 +11,6 @@ const refs = {
 
 const logo = new URL('../public/sprite.svg#heart', import.meta.url);
 
-
 function isScreenMobile() {
   return window.matchMedia('(max-width: 1279px)').matches;
 }
@@ -34,8 +33,7 @@ export async function getCocktails() {
       })
     );
     renderMarkUp(arrCocktails);
-  } catch (err) {
-  }
+  } catch (err) {}
 }
 
 export function renderMarkUp(arr) {
@@ -58,6 +56,10 @@ function createMarkup({ drinkThumb, description, drink, _id }) {
   const localStorage = local.load('id') || [];
   if (localStorage.find(id => id === _id)) {
     icon = '#trash-icon';
+  }
+  if (drink === 'AT&T') {
+    drinkThumb =
+      'https://wolper.com.au/wp-content/uploads/2017/10/image-placeholder.jpg';
   }
 
   return `<li class="cocktail-item">
