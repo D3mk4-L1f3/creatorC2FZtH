@@ -1,6 +1,6 @@
 import axios from 'axios';
-
 import local from './service.js';
+import sprite from '../public/sprite.svg';
 
 const refs = {
   cardList: document.querySelector('.cocktail-list'),
@@ -45,8 +45,7 @@ async function getCocktailDetails(id) {
     const response = await axios.get(`${BASE_URL}?id=${id}`);
 
     return response;
-  } catch (err) {
-  }
+  } catch (err) {}
 }
 
 let id = '';
@@ -63,8 +62,7 @@ async function onShowModal(e) {
   try {
     const response = await getCocktailDetails(id);
     renderCocktailDetails(response.data[0]);
-  } catch (error) {
-  }
+  } catch (error) {}
 }
 
 function renderCocktailDetails({
@@ -147,8 +145,7 @@ async function getIngredientsDetails(id) {
     const response = await axios.get(`${BASE_URL2}${id}`);
 
     return response;
-  } catch (err) {
-  }
+  } catch (err) {}
 }
 
 let idIngred = '';
@@ -166,9 +163,7 @@ async function onIngredientClick(e) {
     const response = await getIngredientsDetails(idIngred);
 
     renderIngredientDetails(response.data[0]);
-  } catch (error) {
-   
-  }
+  } catch (error) {}
 }
 
 function renderIngredientDetails({
@@ -226,25 +221,33 @@ function onClickIng(e) {
   }
 }
 
-let tasksArr = local.load('id') || [];
-
 refs.modalContentRender.addEventListener('click', onModalButtonFav);
 refers.modalIngredContent.addEventListener('click', onIngridButtonFav);
 
 function onModalButtonFav(e) {
+  let tasksArr = local.load('id') || [];
   if (e.target.nodeName !== 'BUTTON') {
     return;
   }
   const btnId = e.target.dataset.id;
 
+  const useEl = document.querySelector(`.js-btn-favorite[data-id='${btnId}']`)
+    .firstElementChild.firstElementChild;
+
   if (!tasksArr.includes(btnId)) {
     tasksArr.push(btnId);
     local.save('id', tasksArr);
+
+    let newHref = `${sprite}#trash-icon`;
+    useEl.setAttribute('href', newHref);
 
     e.target.textContent = 'remove from favorite';
   } else {
     tasksArr = local.load('id').filter(id => id !== btnId);
     local.save('id', tasksArr);
+
+    let newHref = `${sprite}#heart`;
+    useEl.setAttribute('href', newHref);
 
     e.target.textContent = 'add to favorite';
 
@@ -268,9 +271,8 @@ function onModalButtonFav(e) {
   }
 }
 
-let arrIngrid = local.load('id_ing') || [];
-
 function onIngridButtonFav(e) {
+  let arrIngrid = local.load('id_ing') || [];
   if (e.target.nodeName !== 'BUTTON') {
     return;
   }
@@ -330,6 +332,5 @@ async function onIngredient(e) {
   try {
     const response = await getIngredientsDetails(idIngred);
     renderIngredientDetails(response.data[0]);
-  } catch (error) {
-  }
+  } catch (error) {}
 }
